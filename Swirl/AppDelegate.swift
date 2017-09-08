@@ -9,12 +9,21 @@
 import UIKit
 
 @UIApplicationMain
-final class AppDelegate: UIResponder, UIApplicationDelegate {
+final class AppDelegate: UIResponder {
     var window: UIWindow?
+    fileprivate var rootCoorindator: RootCoordinator?
+}
 
+extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        return true
+
+        if let window = window {
+            rootCoorindator = RootCoordinator(window: window)
+            rootCoorindator?.start()
+            return true
+        } else {
+            return false
+        }
     }
 }
