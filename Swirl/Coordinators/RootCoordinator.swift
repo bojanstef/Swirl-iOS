@@ -19,6 +19,6 @@ final class RootCoordinator {
 extension RootCoordinator: Starting {
     func start() {
         window.makeKeyAndVisible()
-        window.rootViewController = TestViewController(message: "It Works!")
+        window.rootViewController = UIViewController()
     }
 }
