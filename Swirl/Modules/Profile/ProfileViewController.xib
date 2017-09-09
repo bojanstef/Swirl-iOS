@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Swirl" customModuleProvider="target">
             <connections>
+                <outlet property="loginButton" destination="Poq-he-t1p" id="lb1-fh-b1z"/>
                 <outlet property="messageLabel" destination="Sij-wz-OsR" id="Ijg-iS-VrB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,17 +22,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sij-wz-OsR">
-                    <rect key="frame" x="166" y="323" width="42" height="21"/>
+                    <rect key="frame" x="166" y="323.5" width="42" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Poq-he-t1p" customClass="FBSDKLoginButton">
+                    <rect key="frame" x="32" y="352" width="311" height="28"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="wbM-x5-LPH"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Poq-he-t1p" secondAttribute="trailing" constant="32" id="MTJ-6Z-rJj"/>
                 <constraint firstItem="Sij-wz-OsR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RaH-mj-y7S"/>
+                <constraint firstItem="Poq-he-t1p" firstAttribute="top" secondItem="Sij-wz-OsR" secondAttribute="bottom" constant="8" id="U6W-Y3-dkL"/>
+                <constraint firstItem="Poq-he-t1p" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="bda-qD-bQa"/>
                 <constraint firstItem="Sij-wz-OsR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="vtP-05-pOe"/>
             </constraints>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
     </objects>
 </document>
