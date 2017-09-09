@@ -20,6 +20,6 @@ final class CreateContentWireframe {
 
 extension CreateContentWireframe: ControllerGettable {
     var viewController: UIViewController {
-        return CreateContentViewController(message: "CreateContent Works!")
+        return CreateContentViewController(message: "Create Works!")
     }
 }
