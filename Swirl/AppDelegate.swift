@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import FacebookCore
 
 @UIApplicationMain
 final class AppDelegate: UIResponder {
