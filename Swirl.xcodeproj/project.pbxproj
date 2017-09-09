@@ -19,6 +19,18 @@
 		F14B7FB01F636B670096C365 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FAE1F636B670096C365 /* DiscoverViewController.swift */; };
 		F14B7FB11F636B670096C365 /* DiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FAF1F636B670096C365 /* DiscoverViewController.xib */; };
 		F14B7FB41F636D9C0096C365 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FB31F636D9C0096C365 /* UIImage+Extensions.swift */; };
+		F14B7FB61F637C860096C365 /* CreateContentWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FB51F637C860096C365 /* CreateContentWireframe.swift */; };
+		F14B7FB91F637CCA0096C365 /* CreateContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FB71F637CCA0096C365 /* CreateContentViewController.swift */; };
+		F14B7FBA1F637CCA0096C365 /* CreateContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FB81F637CCA0096C365 /* CreateContentViewController.xib */; };
+		F14B7FBC1F63803E0096C365 /* CurateWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FBB1F63803E0096C365 /* CurateWireframe.swift */; };
+		F14B7FBE1F63833B0096C365 /* FollowingWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FBD1F63833B0096C365 /* FollowingWireframe.swift */; };
+		F14B7FC01F63836F0096C365 /* ProfileWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FBF1F63836F0096C365 /* ProfileWireframe.swift */; };
+		F14B7FC31F6383A60096C365 /* CurateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FC11F6383A60096C365 /* CurateViewController.swift */; };
+		F14B7FC41F6383A60096C365 /* CurateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FC21F6383A60096C365 /* CurateViewController.xib */; };
+		F14B7FC71F6384030096C365 /* FollowingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FC51F6384030096C365 /* FollowingViewController.swift */; };
+		F14B7FC81F6384030096C365 /* FollowingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FC61F6384030096C365 /* FollowingViewController.xib */; };
+		F14B7FCB1F6384670096C365 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FC91F6384670096C365 /* ProfileViewController.swift */; };
+		F14B7FCC1F6384670096C365 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FCA1F6384670096C365 /* ProfileViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +48,18 @@
 		F14B7FAE1F636B670096C365 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverViewController.swift; path = Modules/Discover/DiscoverViewController.swift; sourceTree = "<group>"; };
 		F14B7FAF1F636B670096C365 /* DiscoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DiscoverViewController.xib; path = Modules/Discover/DiscoverViewController.xib; sourceTree = "<group>"; };
 		F14B7FB31F636D9C0096C365 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Extensions.swift"; path = "Extensions/UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		F14B7FB51F637C860096C365 /* CreateContentWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateContentWireframe.swift; path = Modules/CreateContent/CreateContentWireframe.swift; sourceTree = "<group>"; };
+		F14B7FB71F637CCA0096C365 /* CreateContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateContentViewController.swift; path = Modules/CreateContent/CreateContentViewController.swift; sourceTree = "<group>"; };
+		F14B7FB81F637CCA0096C365 /* CreateContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateContentViewController.xib; path = Modules/CreateContent/CreateContentViewController.xib; sourceTree = "<group>"; };
+		F14B7FBB1F63803E0096C365 /* CurateWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurateWireframe.swift; path = Modules/Curate/CurateWireframe.swift; sourceTree = "<group>"; };
+		F14B7FBD1F63833B0096C365 /* FollowingWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowingWireframe.swift; path = Modules/Following/FollowingWireframe.swift; sourceTree = "<group>"; };
+		F14B7FBF1F63836F0096C365 /* ProfileWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileWireframe.swift; path = Modules/Profile/ProfileWireframe.swift; sourceTree = "<group>"; };
+		F14B7FC11F6383A60096C365 /* CurateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurateViewController.swift; path = Modules/Curate/CurateViewController.swift; sourceTree = "<group>"; };
+		F14B7FC21F6383A60096C365 /* CurateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CurateViewController.xib; path = Modules/Curate/CurateViewController.xib; sourceTree = "<group>"; };
+		F14B7FC51F6384030096C365 /* FollowingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowingViewController.swift; path = Modules/Following/FollowingViewController.swift; sourceTree = "<group>"; };
+		F14B7FC61F6384030096C365 /* FollowingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FollowingViewController.xib; path = Modules/Following/FollowingViewController.xib; sourceTree = "<group>"; };
+		F14B7FC91F6384670096C365 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Modules/Profile/ProfileViewController.swift; sourceTree = "<group>"; };
+		F14B7FCA1F6384670096C365 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = Modules/Profile/ProfileViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +134,7 @@
 		F14B7F9F1F63622D0096C365 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				F14B7FA71F6368D00096C365 /* Create */,
+				F14B7FA71F6368D00096C365 /* CreateContent */,
 				F14B7FA61F6368C90096C365 /* Curate */,
 				F14B7FA51F6368C10096C365 /* Discover */,
 				F14B7FA81F6368E10096C365 /* Following */,
@@ -132,20 +156,29 @@
 		F14B7FA61F6368C90096C365 /* Curate */ = {
 			isa = PBXGroup;
 			children = (
+				F14B7FC11F6383A60096C365 /* CurateViewController.swift */,
+				F14B7FC21F6383A60096C365 /* CurateViewController.xib */,
+				F14B7FBB1F63803E0096C365 /* CurateWireframe.swift */,
 			);
 			name = Curate;
 			sourceTree = "<group>";
 		};
-		F14B7FA71F6368D00096C365 /* Create */ = {
+		F14B7FA71F6368D00096C365 /* CreateContent */ = {
 			isa = PBXGroup;
 			children = (
+				F14B7FB71F637CCA0096C365 /* CreateContentViewController.swift */,
+				F14B7FB81F637CCA0096C365 /* CreateContentViewController.xib */,
+				F14B7FB51F637C860096C365 /* CreateContentWireframe.swift */,
 			);
-			name = Create;
+			name = CreateContent;
 			sourceTree = "<group>";
 		};
 		F14B7FA81F6368E10096C365 /* Following */ = {
 			isa = PBXGroup;
 			children = (
+				F14B7FC51F6384030096C365 /* FollowingViewController.swift */,
+				F14B7FC61F6384030096C365 /* FollowingViewController.xib */,
+				F14B7FBD1F63833B0096C365 /* FollowingWireframe.swift */,
 			);
 			name = Following;
 			sourceTree = "<group>";
@@ -153,6 +186,9 @@
 		F14B7FA91F6368F30096C365 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				F14B7FC91F6384670096C365 /* ProfileViewController.swift */,
+				F14B7FCA1F6384670096C365 /* ProfileViewController.xib */,
+				F14B7FBF1F63836F0096C365 /* ProfileWireframe.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -226,9 +262,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F14B7FC41F6383A60096C365 /* CurateViewController.xib in Resources */,
 				F14B7F8D1F635A9A0096C365 /* LaunchScreen.storyboard in Resources */,
+				F14B7FCC1F6384670096C365 /* ProfileViewController.xib in Resources */,
 				F14B7FB11F636B670096C365 /* DiscoverViewController.xib in Resources */,
+				F14B7FC81F6384030096C365 /* FollowingViewController.xib in Resources */,
 				F14B7F8A1F635A9A0096C365 /* Assets.xcassets in Resources */,
+				F14B7FBA1F637CCA0096C365 /* CreateContentViewController.xib in Resources */,
 				F14B7F881F635A9A0096C365 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,13 +297,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F14B7F9E1F6360A00096C365 /* Stoppable.swift in Sources */,
+				F14B7FC71F6384030096C365 /* FollowingViewController.swift in Sources */,
 				F14B7F991F635EE40096C365 /* RootCoordinator.swift in Sources */,
 				F14B7FB01F636B670096C365 /* DiscoverViewController.swift in Sources */,
 				F14B7F9C1F635F3C0096C365 /* Starting.swift in Sources */,
 				F14B7FAB1F636A8E0096C365 /* DiscoverWireframe.swift in Sources */,
+				F14B7FCB1F6384670096C365 /* ProfileViewController.swift in Sources */,
+				F14B7FB61F637C860096C365 /* CreateContentWireframe.swift in Sources */,
+				F14B7FBE1F63833B0096C365 /* FollowingWireframe.swift in Sources */,
 				F14B7F831F635A9A0096C365 /* AppDelegate.swift in Sources */,
 				F14B7FAD1F636B220096C365 /* ControllerGettable.swift in Sources */,
+				F14B7FB91F637CCA0096C365 /* CreateContentViewController.swift in Sources */,
+				F14B7FC31F6383A60096C365 /* CurateViewController.swift in Sources */,
 				F14B7FB41F636D9C0096C365 /* UIImage+Extensions.swift in Sources */,
+				F14B7FBC1F63803E0096C365 /* CurateWireframe.swift in Sources */,
+				F14B7FC01F63836F0096C365 /* ProfileWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

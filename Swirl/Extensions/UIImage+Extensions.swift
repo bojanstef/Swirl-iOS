@@ -10,7 +10,9 @@ import UIKit
 
 extension UIImage {
     enum AssetIdentifier: String {
-        case discover
+        /** These cases are grouped as a reminder:
+         *  that they are used as the tab bar items **/
+        case createContent, curate, discover, following, profile
     }
 
     convenience init?(asset: AssetIdentifier) {

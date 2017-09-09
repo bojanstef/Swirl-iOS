@@ -9,14 +9,18 @@
 import UIKit
 
 private enum Controller {
-    case create, curate, discover, following, profile
+    case createContent, curate, discover, following, profile
 }
 
 final class RootCoordinator {
     fileprivate let window: UIWindow
     fileprivate let tabBarController = UITabBarController()
 
-    fileprivate lazy var discoverController: UINavigationController = self.create(.discover)
+    fileprivate lazy var createContentController: UINavigationController = self.createController(.createContent)
+    fileprivate lazy var curateController: UINavigationController = self.createController(.curate)
+    fileprivate lazy var discoverController: UINavigationController = self.createController(.discover)
+    fileprivate lazy var followingController: UINavigationController = self.createController(.following)
+    fileprivate lazy var profileController: UINavigationController = self.createController(.profile)
 
     init(window: UIWindow) {
         self.window = window
@@ -25,7 +29,13 @@ final class RootCoordinator {
 
 extension RootCoordinator: Starting {
     func start() {
-        let controllers = [discoverController]
+        let controllers = [
+            discoverController,
+            curateController,
+            createContentController,
+            followingController,
+            profileController
+        ]
         tabBarController.setViewControllers(controllers, animated: false)
 
         window.makeKeyAndVisible()
@@ -33,7 +43,11 @@ extension RootCoordinator: Starting {
     }
 }
 
+extension RootCoordinator: CreateContentModuleDelegate {}
+extension RootCoordinator: CurateModuleDelegate {}
 extension RootCoordinator: DiscoverModuleDelegate {}
+extension RootCoordinator: FollowingModuleDelegate {}
+extension RootCoordinator: ProfileModuleDelegate {}
 
 fileprivate extension RootCoordinator {
     private func create(_ viewController: UIViewController, image: UIImage?, title: String?) -> UINavigationController {
@@ -43,14 +57,27 @@ fileprivate extension RootCoordinator {
         return navigationController
     }
 
-    func create(_ controller: Controller) -> UINavigationController {
+    func createController(_ controller: Controller) -> UINavigationController {
         switch controller {
+        case .createContent:
+            let viewController = CreateContentWireframe(moduleDelegate: self).viewController
+            return create(viewController, image: UIImage(asset: .createContent), title: "Create")
+
+        case .curate:
+            let viewController = CurateWireframe(moduleDelegate: self).viewController
+            return create(viewController, image: UIImage(asset: .curate), title: "Curate")
+
         case .discover:
             let viewController = DiscoverWireframe(moduleDelegate: self).viewController
             return create(viewController, image: UIImage(asset: .discover), title: "Discover")
 
-        default:
-            return UINavigationController()
+        case .following:
+            let viewController = FollowingWireframe(moduleDelegate: self).viewController
+            return create(viewController, image: UIImage(asset: .following), title: "Following")
+
+        case .profile:
+            let viewController = ProfileWireframe(moduleDelegate: self).viewController
+            return create(viewController, image: UIImage(asset: .profile), title: "Profile")
         }
     }
 }
