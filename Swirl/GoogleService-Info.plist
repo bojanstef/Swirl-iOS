@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>426339594022-7gt17ei740daodlcqlrdl1eb7skp2i8c.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.426339594022-7gt17ei740daodlcqlrdl1eb7skp2i8c</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB8AAlwKrbWaSiNUI7lQTHF1SRSTP6wO-M</string>
+	<key>GCM_SENDER_ID</key>
+	<string>426339594022</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>xyz.bojan.Swirl</string>
+	<key>PROJECT_ID</key>
+	<string>swirl-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>swirl-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:426339594022:ios:637ef2590d7f6fc7</string>
+	<key>DATABASE_URL</key>
+	<string>https://swirl-app.firebaseio.com</string>
+</dict>
+</plist>
