@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 final class AppDelegate: UIResponder {
@@ -18,12 +19,10 @@ extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        if let window = window {
-            rootCoorindator = RootCoordinator(window: window)
-            rootCoorindator?.start()
-            return true
-        } else {
-            return false
-        }
+        guard let window = window else { return false }
+        FirebaseApp.configure()
+        rootCoorindator = RootCoordinator(window: window)
+        rootCoorindator?.start()
+        return true
     }
 }

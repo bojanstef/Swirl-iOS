@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E7E91BE0823367FD1AE2FB4 /* Pods_Swirl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65342E5BB2F181270806186 /* Pods_Swirl.framework */; };
 		F14B7F831F635A9A0096C365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7F821F635A9A0096C365 /* AppDelegate.swift */; };
 		F14B7F881F635A9A0096C365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14B7F861F635A9A0096C365 /* Main.storyboard */; };
 		F14B7F8A1F635A9A0096C365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F14B7F891F635A9A0096C365 /* Assets.xcassets */; };
@@ -31,9 +32,12 @@
 		F14B7FC81F6384030096C365 /* FollowingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FC61F6384030096C365 /* FollowingViewController.xib */; };
 		F14B7FCB1F6384670096C365 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FC91F6384670096C365 /* ProfileViewController.swift */; };
 		F14B7FCC1F6384670096C365 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FCA1F6384670096C365 /* ProfileViewController.xib */; };
+		F14B7FCE1F6389260096C365 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FCD1F6389260096C365 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A83FD0F261146F51024ECC93 /* Pods-Swirl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swirl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swirl/Pods-Swirl.debug.xcconfig"; sourceTree = "<group>"; };
+		B65342E5BB2F181270806186 /* Pods_Swirl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swirl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14B7F7F1F635A9A0096C365 /* Swirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14B7F821F635A9A0096C365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F14B7F871F635A9A0096C365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 		F14B7FC61F6384030096C365 /* FollowingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FollowingViewController.xib; path = Modules/Following/FollowingViewController.xib; sourceTree = "<group>"; };
 		F14B7FC91F6384670096C365 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Modules/Profile/ProfileViewController.swift; sourceTree = "<group>"; };
 		F14B7FCA1F6384670096C365 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = Modules/Profile/ProfileViewController.xib; sourceTree = "<group>"; };
+		F14B7FCD1F6389260096C365 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FC7CF23AE2863C50D8FF7E8D /* Pods-Swirl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swirl.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swirl/Pods-Swirl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,17 +73,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E7E91BE0823367FD1AE2FB4 /* Pods_Swirl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C71EEBC00A8F3CBAD521AB1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A83FD0F261146F51024ECC93 /* Pods-Swirl.debug.xcconfig */,
+				FC7CF23AE2863C50D8FF7E8D /* Pods-Swirl.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B640D4AB24F5FB69CCB780E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B65342E5BB2F181270806186 /* Pods_Swirl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F14B7F761F635A990096C365 = {
 			isa = PBXGroup;
 			children = (
 				F14B7F811F635A9A0096C365 /* Swirl */,
 				F14B7F801F635A9A0096C365 /* Products */,
+				3C71EEBC00A8F3CBAD521AB1 /* Pods */,
+				B640D4AB24F5FB69CCB780E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,10 +120,11 @@
 			children = (
 				F14B7F821F635A9A0096C365 /* AppDelegate.swift */,
 				F14B7F891F635A9A0096C365 /* Assets.xcassets */,
+				F14B7F8E1F635A9A0096C365 /* Info.plist */,
+				F14B7FCD1F6389260096C365 /* GoogleService-Info.plist */,
 				F14B7F951F635D0A0096C365 /* Base.lproj */,
 				F14B7F961F635E4C0096C365 /* Coordinators */,
 				F14B7FB21F636D800096C365 /* Extensions */,
-				F14B7F8E1F635A9A0096C365 /* Info.plist */,
 				F14B7F9F1F63622D0096C365 /* Modules */,
 				F14B7F9A1F635EF10096C365 /* Protocols */,
 			);
@@ -208,10 +235,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F14B7F911F635A9A0096C365 /* Build configuration list for PBXNativeTarget "Swirl" */;
 			buildPhases = (
+				EE67443C322882489EE02B7E /* [CP] Check Pods Manifest.lock */,
 				F14B7F7B1F635A9A0096C365 /* Sources */,
 				F14B7F7C1F635A9A0096C365 /* Frameworks */,
 				F14B7F7D1F635A9A0096C365 /* Resources */,
 				F14B7F941F635C6D0096C365 /* ShellScript */,
+				A8291E2D747A6CBB37F2F6F6 /* [CP] Embed Pods Frameworks */,
+				8883BED40403E2439F7CBBCF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,6 +294,7 @@
 			files = (
 				F14B7FC41F6383A60096C365 /* CurateViewController.xib in Resources */,
 				F14B7F8D1F635A9A0096C365 /* LaunchScreen.storyboard in Resources */,
+				F14B7FCE1F6389260096C365 /* GoogleService-Info.plist in Resources */,
 				F14B7FCC1F6384670096C365 /* ProfileViewController.xib in Resources */,
 				F14B7FB11F636B670096C365 /* DiscoverViewController.xib in Resources */,
 				F14B7FC81F6384030096C365 /* FollowingViewController.xib in Resources */,
@@ -276,6 +307,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8883BED40403E2439F7CBBCF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swirl/Pods-Swirl-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8291E2D747A6CBB37F2F6F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swirl/Pods-Swirl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE67443C322882489EE02B7E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		F14B7F941F635C6D0096C365 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -434,6 +510,7 @@
 		};
 		F14B7F921F635A9A0096C365 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A83FD0F261146F51024ECC93 /* Pods-Swirl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K8JFVKN675;
@@ -447,6 +524,7 @@
 		};
 		F14B7F931F635A9A0096C365 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC7CF23AE2863C50D8FF7E8D /* Pods-Swirl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K8JFVKN675;
@@ -477,6 +555,7 @@
 				F14B7F931F635A9A0096C365 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
