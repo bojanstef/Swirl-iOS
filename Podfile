@@ -9,4 +9,9 @@ target 'Swirl' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
 
+  pod 'Bolts'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKShareKit'
+  pod 'FBSDKLoginKit'
+
 end
