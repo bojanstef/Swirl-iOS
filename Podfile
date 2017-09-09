@@ -10,6 +10,5 @@ target 'Swirl' do
   pod 'Firebase/Storage'
   pod 'FacebookCore'
   pod 'FacebookLogin'
-  pod 'FacebookShare'
 
 end
