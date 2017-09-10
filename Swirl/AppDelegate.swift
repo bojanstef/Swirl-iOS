@@ -13,7 +13,7 @@ import FBSDKCoreKit
 @UIApplicationMain
 final class AppDelegate: UIResponder {
     var window: UIWindow?
-    fileprivate var rootCoorindator: RootCoordinator?
+    fileprivate var rootCoordinator: Starting?
 }
 
 extension AppDelegate: UIApplicationDelegate {
@@ -23,8 +23,11 @@ extension AppDelegate: UIApplicationDelegate {
         guard let window = window else { return false }
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         FirebaseApp.configure()
-        rootCoorindator = RootCoordinator(window: window)
-        rootCoorindator?.start()
+
+        let authService: AuthServicable = DataService.defaultService
+        rootCoordinator = AuthCoordinator(window: window, authService: authService)
+        rootCoordinator?.start()
+
         return true
     }
 
