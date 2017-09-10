@@ -10,11 +10,11 @@ import UIKit
 
 final class AuthCoordinator {
     fileprivate let window: UIWindow
-    fileprivate let authService: AuthServicable
+    fileprivate let authService: AuthDataServiceable
+    fileprivate let navigationController = UINavigationController()
     fileprivate var mainCoordinator: Stoppable?
-    fileprivate var navigationController: UINavigationController?
 
-    init(window: UIWindow, authService: AuthServicable) {
+    init(window: UIWindow, authService: AuthDataServiceable) {
         self.window = window
         self.authService = authService
     }
@@ -22,10 +22,11 @@ final class AuthCoordinator {
 
 extension AuthCoordinator: Starting {
     func start() {
-        window.makeKeyAndVisible()
         window.rootViewController = getRootController()
-
-        if authService.isAuthenticated { navigateToMainCoordinator() }
+        window.makeKeyAndVisible()
+        if authService.isAuthenticated {
+            navigateToMainCoordinator()
+        }
     }
 }
 
@@ -34,11 +35,14 @@ extension AuthCoordinator: AuthModuleDelegate {
 }
 
 fileprivate extension AuthCoordinator {
-    func getRootController() -> UINavigationController? {
+    func getRootController() -> UINavigationController {
         let viewController = AuthWireframe(moduleDelegate: self).viewController
-        navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.pushViewController(viewController, animated: false)
         return navigationController
     }
 
-    func navigateToMainCoordinator() {}
+    func navigateToMainCoordinator() {
+        mainCoordinator = MainCoordinator(navigationController: navigationController)
+        mainCoordinator?.start()
+    }
 }

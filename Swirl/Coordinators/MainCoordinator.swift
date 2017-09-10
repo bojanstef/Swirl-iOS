@@ -13,29 +13,30 @@ private enum Controller {
 }
 
 final class MainCoordinator {
-    fileprivate let tabBarController = UITabBarController()
+    fileprivate let navigationController: UINavigationController
 
     fileprivate lazy var createContentController: UINavigationController = self.createController(.createContent)
     fileprivate lazy var curateController: UINavigationController = self.createController(.curate)
     fileprivate lazy var discoverController: UINavigationController = self.createController(.discover)
     fileprivate lazy var followingController: UINavigationController = self.createController(.following)
     fileprivate lazy var profileController: UINavigationController = self.createController(.profile)
+
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
 }
 
 extension MainCoordinator: Stoppable {
     func start() {
-        let controllers = [
-            discoverController,
-            curateController,
-            createContentController,
-            followingController,
-            profileController
-        ]
+        let controllers = [discoverController, createContentController, followingController, profileController]
+        let tabBarController = UITabBarController()
         tabBarController.setViewControllers(controllers, animated: false)
+        navigationController.setNavigationBarHidden(true, animated: false)
+        navigationController.pushViewController(tabBarController, animated: false)
     }
 
     func stop() {
-
+        navigationController.popViewController(animated: true)
     }
 }
 

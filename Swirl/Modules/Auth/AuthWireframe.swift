@@ -20,6 +20,9 @@ final class AuthWireframe {
 
 extension AuthWireframe: ControllerGettable {
     var viewController: UIViewController {
-        return AuthViewController(message: "Auth Works!")
+        let dataService: AuthDataServiceable = DataService.defaultService
+        let interactor = AuthInteractor(moduleDelegate: moduleDelegate, dataService: dataService)
+        let presenter = AuthPresenter(interactor: interactor)
+        return AuthViewController(presenter: presenter)
     }
 }

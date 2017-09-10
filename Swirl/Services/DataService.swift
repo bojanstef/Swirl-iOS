@@ -8,18 +8,14 @@
 
 import Foundation
 
-protocol AuthServicable {
-    var isAuthenticated: Bool { get }
-}
-
 final class DataService {
     static var defaultService: DataService {
         return DataService()
     }
 }
 
-extension DataService: AuthServicable {
+extension DataService: AuthDataServiceable {
     var isAuthenticated: Bool {
-        return true
+        return false
     }
 }

@@ -24,7 +24,7 @@ extension AppDelegate: UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         FirebaseApp.configure()
 
-        let authService: AuthServicable = DataService.defaultService
+        let authService: AuthDataServiceable = DataService.defaultService
         rootCoordinator = AuthCoordinator(window: window, authService: authService)
         rootCoordinator?.start()
 
