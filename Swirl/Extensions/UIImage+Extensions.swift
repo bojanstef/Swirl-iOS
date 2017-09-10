@@ -13,6 +13,8 @@ extension UIImage {
         /** These cases are grouped as a reminder:
          *  that they are used as the tab bar items **/
         case createContent, curate, discover, following, profile
+        case swirlEmoji
+        case logo
     }
 
     convenience init?(asset: AssetIdentifier) {

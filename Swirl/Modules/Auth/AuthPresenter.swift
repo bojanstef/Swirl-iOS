@@ -6,16 +6,23 @@
 //  Copyright © 2017 Stefanovic Ventures. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-protocol AuthPresentable {}
+protocol AuthPresentable {
+    var titleView: UIImageView { get }
+}
 
 final class AuthPresenter {
-    fileprivate let interactor: AuthInteractor
+    fileprivate let interactor: AuthInteractable
 
-    init(interactor: AuthInteractor) {
+    init(interactor: AuthInteractable) {
         self.interactor = interactor
     }
 }
 
-extension AuthPresenter: AuthPresentable {}
+extension AuthPresenter: AuthPresentable {
+    var titleView: UIImageView {
+        let logo = UIImage(asset: .logo)
+        return UIImageView(image: logo)
+    }
+}

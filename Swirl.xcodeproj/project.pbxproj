@@ -41,6 +41,7 @@
 		F1CC7FF31F64EFD6006242F1 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF21F64EFD6006242F1 /* AuthPresenter.swift */; };
 		F1CC7FF51F64F024006242F1 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF41F64F024006242F1 /* AuthInteractor.swift */; };
 		F1CC7FF71F64F162006242F1 /* AuthDataServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF61F64F162006242F1 /* AuthDataServiceable.swift */; };
+		F1CC7FF91F650C43006242F1 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF81F650C43006242F1 /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		F1CC7FF21F64EFD6006242F1 /* AuthPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthPresenter.swift; path = Modules/Auth/AuthPresenter.swift; sourceTree = "<group>"; };
 		F1CC7FF41F64F024006242F1 /* AuthInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthInteractor.swift; path = Modules/Auth/AuthInteractor.swift; sourceTree = "<group>"; };
 		F1CC7FF61F64F162006242F1 /* AuthDataServiceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthDataServiceable.swift; path = Modules/Auth/AuthDataServiceable.swift; sourceTree = "<group>"; };
+		F1CC7FF81F650C43006242F1 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "Extensions/UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		FC7CF23AE2863C50D8FF7E8D /* Pods-Swirl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swirl.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swirl/Pods-Swirl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				F14B7FB31F636D9C0096C365 /* UIImage+Extensions.swift */,
+				F1CC7FF81F650C43006242F1 /* UIColor+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				F14B7FB91F637CCA0096C365 /* CreateContentViewController.swift in Sources */,
 				F14B7FC31F6383A60096C365 /* CurateViewController.swift in Sources */,
 				F14B7FB41F636D9C0096C365 /* UIImage+Extensions.swift in Sources */,
+				F1CC7FF91F650C43006242F1 /* UIColor+Extensions.swift in Sources */,
 				F11CE57C1F64AF3900CD60C2 /* DataService.swift in Sources */,
 				F11CE5821F64B6F300CD60C2 /* AuthViewController.swift in Sources */,
 				F14B7FBC1F63803E0096C365 /* CurateWireframe.swift in Sources */,
