@@ -5,6 +5,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - Cheers (1.2.0)
   - FBSDKCoreKit (4.23.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.23.0):
@@ -55,6 +56,7 @@ PODS:
 
 DEPENDENCIES:
   - Bolts
+  - Cheers
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
@@ -65,6 +67,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Cheers: 860c061defd9bb10124b091ee1584a5761dbac23
   FBSDKCoreKit: d7829f5a69901cd7296105328e4c3c3fc7da6518
   FBSDKLoginKit: 6b92bd65f319d669d2b0730e49db495ef1660566
   FBSDKShareKit: 65751c3b9937ab9d594e6c37611ecc115ceeb448
@@ -78,6 +81,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
 
-PODFILE CHECKSUM: 64d006e179e9e1f32333b1c8bc59793e731ba630
+PODFILE CHECKSUM: a183d58f5d282694abf95857cd1c41e3f1055018
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

@@ -12,5 +12,6 @@ target 'Swirl' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKShareKit'
   pod 'FBSDKLoginKit'
+  pod 'Cheers'
 
 end
