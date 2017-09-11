@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfZ-lM-R6a" customClass="AuthCardView" customModule="Swirl" customModuleProvider="target">
-                    <rect key="frame" x="32" y="96" width="311" height="507"/>
+                    <rect key="frame" x="32" y="64" width="311" height="539"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
@@ -30,7 +30,7 @@
                 <constraint firstAttribute="bottom" secondItem="sfZ-lM-R6a" secondAttribute="bottom" constant="64" id="5c6-4S-ltt"/>
                 <constraint firstAttribute="trailing" secondItem="sfZ-lM-R6a" secondAttribute="trailing" constant="32" id="KwG-wx-Qjv"/>
                 <constraint firstItem="sfZ-lM-R6a" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="Qbq-Pr-p4H"/>
-                <constraint firstItem="sfZ-lM-R6a" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="96" id="viN-XT-3Kc"/>
+                <constraint firstItem="sfZ-lM-R6a" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="viN-XT-3Kc"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>

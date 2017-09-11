@@ -35,7 +35,7 @@ extension AuthViewController: AuthCardViewDelegate {
 
 fileprivate extension AuthViewController {
     func setupNavBar() {
-        navigationItem.titleView = presenter.titleView
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     func setupCheerView() {

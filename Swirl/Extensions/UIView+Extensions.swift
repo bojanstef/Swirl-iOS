@@ -9,13 +9,13 @@
 import UIKit
 
 extension UIView {
-    func loadNib(completion: ((UIView) -> Void)) {
+    func loadNib(completion: ((UIView) -> Void)? = nil) {
         let nibName = String(describing: type(of: self))
         guard let view = Bundle.main.loadNibNamed(nibName, owner: self, options: nil)?.first as? UIView else { return }
         self.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layoutAttachAll(to: self)
-        completion(view)
+        completion?(view)
     }
 }
 

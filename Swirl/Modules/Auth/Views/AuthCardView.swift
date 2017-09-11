@@ -13,7 +13,8 @@ protocol AuthCardViewDelegate: class {
 }
 
 final class AuthCardView: UIView {
-    @IBOutlet fileprivate weak var aboutPageView: UIView!
+    @IBOutlet fileprivate weak var titleLabel: UILabel!
+    @IBOutlet fileprivate weak var subtitleLabel: UILabel!
     @IBOutlet fileprivate weak var loginButton: UIButton!
     @IBOutlet fileprivate weak var bottomLabel: UILabel!
     weak var delegate: AuthCardViewDelegate?
@@ -21,8 +22,8 @@ final class AuthCardView: UIView {
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
         loadNib { [weak self] view in self?.setup(view) }
-        backgroundColor = UIColor.white.withAlphaComponent(0)
-        setupBottomLabel()
+        backgroundColor = .clear
+        setupLabels()
         setupLoginButton()
     }
 
@@ -42,24 +43,31 @@ fileprivate extension AuthCardView {
         view.layer.shadowRadius = Constants.viewCornerRadius
     }
 
+    func setupLabels() {
+        titleLabel.attributedText = NSAttributedString(string: Constants.titleLabelText, attributes: [
+            NSFontAttributeName: UIFont(name: Constants.futuraFont, size: Constants.largeFontSize) as Any
+        ])
+
+        subtitleLabel.attributedText = NSAttributedString(string: Constants.subtitleLabelText, attributes: [
+            NSForegroundColorAttributeName: UIColor.lightGray,
+            NSFontAttributeName: UIFont(name: Constants.futuraFont, size: Constants.regularFontSize) as Any
+        ])
+
+        bottomLabel.attributedText = NSAttributedString(string: Constants.bottomLabelText, attributes: [
+            NSForegroundColorAttributeName: UIColor.lightGray,
+            NSFontAttributeName: UIFont(name: Constants.futuraFont, size: Constants.smallFontSize) as Any
+        ])
+    }
+
     func setupLoginButton() {
         let attributedTitle = NSAttributedString(string: Constants.buttonText, attributes: [
             NSForegroundColorAttributeName: UIColor.blue.withAlphaComponent(Constants.alphaValue),
-            NSFontAttributeName: UIFont(name: Constants.futuraFont, size: Constants.largeFontSize) as Any
+            NSFontAttributeName: UIFont(name: Constants.futuraFont, size: Constants.mediumFontSize) as Any
         ])
 
         loginButton.setAttributedTitle(attributedTitle, for: .normal)
         loginButton.backgroundColor = UIColor.lightBlue.withAlphaComponent(Constants.alphaValue)
         loginButton.layer.cornerRadius = Constants.buttonCornerRadius
-    }
-
-    func setupBottomLabel() {
-        let attributedText = NSAttributedString(string: Constants.bottomLabelText, attributes: [
-            NSForegroundColorAttributeName: UIColor.lightGray,
-            NSFontAttributeName: UIFont(name: Constants.futuraFont, size: Constants.smallFontSize) as Any
-        ])
-
-        bottomLabel.attributedText = attributedText
     }
 }
 
@@ -69,8 +77,12 @@ private struct Constants {
     static let shadowOpacity: Float = 0.8
     static let alphaValue: CGFloat = 0.8
     static let smallFontSize: CGFloat = 12
-    static let largeFontSize: CGFloat = 24
+    static let regularFontSize: CGFloat = 16
+    static let mediumFontSize: CGFloat = 24
+    static let largeFontSize: CGFloat = 32
     static let futuraFont = "Futura-Medium"
+    static let titleLabelText = "Swirl Video Sharing"
+    static let subtitleLabelText = "Create videos and discover what's happening in the World!"
     static let buttonText = "Login with Facebook"
     static let bottomLabelText = "We will never post anything to your Facebook ♥️"
 }

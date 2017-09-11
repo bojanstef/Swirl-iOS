@@ -15,6 +15,7 @@ extension UIImage {
         case createContent, curate, discover, following, profile
         case swirlEmoji
         case logo
+        case icon
     }
 
     convenience init?(asset: AssetIdentifier) {
