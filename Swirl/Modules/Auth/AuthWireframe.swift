@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol AuthModuleDelegate: class {}
+protocol AuthModuleDelegate: class {
+    func loginSucceeded()
+}
 
 final class AuthWireframe {
     fileprivate weak var moduleDelegate: AuthModuleDelegate?

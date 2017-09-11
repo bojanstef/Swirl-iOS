@@ -8,7 +8,10 @@
 
 import Foundation
 
-protocol AuthInteractable {}
+protocol AuthInteractable {
+    func loginSucceeded()
+    func requestLogin(with viewController: AuthViewController, completion: @escaping ((Bool, Error?) -> Void))
+}
 
 final class AuthInteractor {
     fileprivate weak var moduleDelegate: AuthModuleDelegate?
@@ -20,4 +23,12 @@ final class AuthInteractor {
     }
 }
 
-extension AuthInteractor: AuthInteractable {}
+extension AuthInteractor: AuthInteractable {
+    func loginSucceeded() {
+        moduleDelegate?.loginSucceeded()
+    }
+
+    func requestLogin(with viewController: AuthViewController, completion: @escaping ((Bool, Error?) -> Void)) {
+        dataService.requestLogin(with: viewController, completion: completion)
+    }
+}

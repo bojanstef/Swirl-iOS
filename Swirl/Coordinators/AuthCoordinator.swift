@@ -31,7 +31,9 @@ extension AuthCoordinator: Starting {
 }
 
 extension AuthCoordinator: AuthModuleDelegate {
-    // if log in is successful { navigateToMainCoordinator() }
+    func loginSucceeded() {
+        navigateToMainCoordinator()
+    }
 }
 
 fileprivate extension AuthCoordinator {

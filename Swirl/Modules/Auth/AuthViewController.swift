@@ -29,7 +29,10 @@ final class AuthViewController: UIViewController {
 
 extension AuthViewController: AuthCardViewDelegate {
     func loginButtonWasPressed() {
-        print(#function)
+        presenter.requestLogin(with: self) { [weak self] success, error in
+            guard success, error == nil else { print("Auth Failed."); return }
+            self?.navigateToMain()
+        }
     }
 }
 
@@ -46,5 +49,9 @@ fileprivate extension AuthViewController {
         cheerView.config.colors = [.blue]
         cheerView.start()
         view.insertSubview(cheerView, at: 0)
+    }
+
+    func navigateToMain() {
+        presenter.loginSucceeded()
     }
 }

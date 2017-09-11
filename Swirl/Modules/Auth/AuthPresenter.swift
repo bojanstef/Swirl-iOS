@@ -9,7 +9,8 @@
 import UIKit
 
 protocol AuthPresentable {
-    var titleView: UIImageView { get }
+    func loginSucceeded()
+    func requestLogin(with viewController: AuthViewController, completion: @escaping ((Bool, Error?) -> Void))
 }
 
 final class AuthPresenter {
@@ -21,8 +22,11 @@ final class AuthPresenter {
 }
 
 extension AuthPresenter: AuthPresentable {
-    var titleView: UIImageView {
-        let logo = UIImage(asset: .logo)
-        return UIImageView(image: logo)
+    func loginSucceeded() {
+        interactor.loginSucceeded()
+    }
+
+    func requestLogin(with viewController: AuthViewController, completion: @escaping ((Bool, Error?) -> Void)) {
+        interactor.requestLogin(with: viewController, completion: completion)
     }
 }

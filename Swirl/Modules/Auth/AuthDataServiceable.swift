@@ -10,4 +10,5 @@ import Foundation
 
 protocol AuthDataServiceable {
     var isAuthenticated: Bool { get }
+    func requestLogin(with viewController: AuthViewController, completion: @escaping ((Bool, Error?) -> Void))
 }
