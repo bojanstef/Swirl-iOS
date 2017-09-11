@@ -17,17 +17,13 @@ final class AuthCardView: UIView {
     @IBOutlet fileprivate weak var loginButton: UIButton!
     @IBOutlet fileprivate weak var bottomLabel: UILabel!
     weak var delegate: AuthCardViewDelegate?
-    var bottomText: NSAttributedString? {
-        didSet { updateBottomLabel(with: bottomText) }
-    }
 
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
-        loadNib { [weak self] view in
-            self?.setup(view)
-        }
-
+        loadNib { [weak self] view in self?.setup(view) }
         backgroundColor = UIColor.white.withAlphaComponent(0)
+        setupBottomLabel()
+        setupLoginButton()
     }
 
     @IBAction fileprivate func loginButtonWasPressed(_ sender: Any) {
@@ -46,7 +42,30 @@ fileprivate extension AuthCardView {
         view.layer.shadowRadius = 10
     }
 
-    func updateBottomLabel(with text: NSAttributedString?) {
-        bottomLabel.attributedText = text
+    func setupLoginButton() {
+        let attributedTitle = NSAttributedString(string: Constants.buttonText, attributes: [
+            NSForegroundColorAttributeName: UIColor.blue.withAlphaComponent(0.8),
+            NSFontAttributeName: UIFont(name: Constants.futuraFont, size: Constants.largeFontSize) as Any
+        ])
+
+        loginButton.setAttributedTitle(attributedTitle, for: .normal)
+        loginButton.backgroundColor = .lightBlue
     }
+
+    func setupBottomLabel() {
+        let attributedText = NSAttributedString(string: Constants.bottomLabelText, attributes: [
+            NSForegroundColorAttributeName: UIColor.lightGray,
+            NSFontAttributeName: UIFont(name: Constants.futuraFont, size: Constants.smallFontSize) as Any
+        ])
+
+        bottomLabel.attributedText = attributedText
+    }
+}
+
+private struct Constants {
+    static let smallFontSize: CGFloat = 12
+    static let largeFontSize: CGFloat = 24
+    static let futuraFont = "Futura-Medium"
+    static let buttonText = "Login with Facebook"
+    static let bottomLabelText = "We will never post anything to your Facebook ♥️"
 }

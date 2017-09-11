@@ -21,9 +21,9 @@ final class AuthViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        authCardView.delegate = self
         setupNavBar()
         setupCheerView()
-        setupAuthCardView()
     }
 }
 
@@ -46,10 +46,5 @@ fileprivate extension AuthViewController {
         cheerView.config.colors = [.blue]
         cheerView.start()
         view.insertSubview(cheerView, at: 0)
-    }
-
-    func setupAuthCardView() {
-        authCardView.delegate = self
-        authCardView.bottomText = presenter.authCardText
     }
 }
