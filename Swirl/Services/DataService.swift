@@ -34,7 +34,7 @@ final class DataService {
 
 extension DataService: AuthDataServiceable {
     var isAuthenticated: Bool {
-        return false
+        return Auth.auth().currentUser != nil
     }
 
     func requestLogin(with viewController: AuthViewController, completion: @escaping ((Bool, Error?) -> Void)) {
@@ -57,11 +57,11 @@ fileprivate extension DataService {
     func authenticateWithFirebase(_ credential: AuthCredential, completion: @escaping ((Bool, Error?) -> Void)) {
         Auth.auth().signIn(with: credential) { [weak self] user, error in
             guard let user = user, error == nil else { completion(false, error); return }
-            self?.saveUser(user, completion: completion)
+            self?.checkIfNewUser(user, completion: completion)
         }
     }
 
-    func saveUser(_ user: User, completion: @escaping ((Bool, Error?) -> Void)) {
+    func checkIfNewUser(_ user: User, completion: @escaping ((Bool, Error?) -> Void)) {
         let ref = databaseReference.child(DatabaseNodes.users).child(user.uid)
         ref.observeSingleEvent(of: .value, with: { [weak self] snapshot in
             if snapshot.exists() {
