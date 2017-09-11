@@ -84,5 +84,5 @@ private struct Constants {
     static let titleLabelText = "Swirl Video Sharing"
     static let subtitleLabelText = "Create videos and discover what's happening in the World!"
     static let buttonText = "Login with Facebook"
-    static let bottomLabelText = "We will never post anything to your Facebook ♥️"
+    static let bottomLabelText = "We promise to keep your data safe ♥️"
 }
