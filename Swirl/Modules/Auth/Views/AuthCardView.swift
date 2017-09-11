@@ -33,18 +33,18 @@ final class AuthCardView: UIView {
 
 fileprivate extension AuthCardView {
     func setup(_ view: UIView) {
-        view.backgroundColor = UIColor.white.withAlphaComponent(0.8)
-        view.layer.cornerRadius = 10
+        view.backgroundColor = UIColor.white.withAlphaComponent(Constants.alphaValue)
+        view.layer.cornerRadius = Constants.cornerRadius
         view.layer.shadowColor = UIColor.lightGray.cgColor
         view.layer.shadowPath = UIBezierPath(rect: bounds).cgPath
-        view.layer.shadowOpacity = 0.8
+        view.layer.shadowOpacity = Constants.shadowOpacity
         view.layer.shadowOffset = CGSize.zero
-        view.layer.shadowRadius = 10
+        view.layer.shadowRadius = Constants.cornerRadius
     }
 
     func setupLoginButton() {
         let attributedTitle = NSAttributedString(string: Constants.buttonText, attributes: [
-            NSForegroundColorAttributeName: UIColor.blue.withAlphaComponent(0.8),
+            NSForegroundColorAttributeName: UIColor.blue.withAlphaComponent(Constants.alphaValue),
             NSFontAttributeName: UIFont(name: Constants.futuraFont, size: Constants.largeFontSize) as Any
         ])
 
@@ -63,6 +63,9 @@ fileprivate extension AuthCardView {
 }
 
 private struct Constants {
+    static let cornerRadius: CGFloat = 10
+    static let shadowOpacity: Float = 0.8
+    static let alphaValue: CGFloat = 0.8
     static let smallFontSize: CGFloat = 12
     static let largeFontSize: CGFloat = 24
     static let futuraFont = "Futura-Medium"
