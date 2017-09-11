@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AuthCardViewDelegate: class {
-    func loginButtonWasPressed()
+    func loginButtonWasPressed(completion: @escaping (() -> Void))
 }
 
 final class AuthCardView: UIView {
@@ -28,7 +28,8 @@ final class AuthCardView: UIView {
     }
 
     @IBAction fileprivate func loginButtonWasPressed(_ sender: Any) {
-        delegate?.loginButtonWasPressed()
+        disableLoginButton()
+        delegate?.loginButtonWasPressed { [weak self] in self?.enableLoginButton() }
     }
 }
 
@@ -68,6 +69,22 @@ fileprivate extension AuthCardView {
         loginButton.setAttributedTitle(attributedTitle, for: .normal)
         loginButton.backgroundColor = UIColor.lightBlue.withAlphaComponent(Constants.alphaValue)
         loginButton.layer.cornerRadius = Constants.buttonCornerRadius
+    }
+
+    func disableLoginButton() {
+        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        spinner.center = loginButton.center
+        spinner.startAnimating()
+
+        loginButton.isEnabled = false
+        loginButton.addSubview(spinner)
+    }
+
+    func enableLoginButton() {
+        loginButton.isEnabled = true
+        loginButton.subviews.forEach { view in
+            if view is UIActivityIndicatorView { view.removeFromSuperview(); return }
+        }
     }
 }
 

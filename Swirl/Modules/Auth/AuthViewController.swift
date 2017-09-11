@@ -28,9 +28,10 @@ final class AuthViewController: UIViewController {
 }
 
 extension AuthViewController: AuthCardViewDelegate {
-    func loginButtonWasPressed() {
+    func loginButtonWasPressed(completion: @escaping (() -> Void)) {
         presenter.requestLogin(with: self) { [weak self] success, error in
-            guard success, error == nil else { print("Auth Failed."); return }
+            completion() // Both on success or fail: enable the login button.
+            guard success, error == nil else { print(#function, "TODO: - Alert."); return }
             self?.navigateToMain()
         }
     }
