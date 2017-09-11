@@ -21,13 +21,23 @@ final class AuthViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupCheerView()
         setupNavBar()
+        setupCheerView()
         setupAuthCardView()
     }
 }
 
+extension AuthViewController: AuthCardViewDelegate {
+    func loginButtonWasPressed() {
+        print(#function)
+    }
+}
+
 fileprivate extension AuthViewController {
+    func setupNavBar() {
+        navigationItem.titleView = presenter.titleView
+    }
+
     func setupCheerView() {
         guard let swirlEmoji = UIImage(asset: .swirlEmoji) else { return }
         let cheerView = CheerView(frame: view.bounds)
@@ -38,19 +48,8 @@ fileprivate extension AuthViewController {
         view.insertSubview(cheerView, at: 0)
     }
 
-    func setupNavBar() {
-        navigationItem.titleView = presenter.titleView
-    }
-
     func setupAuthCardView() {
-        authCardView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
-        authCardView.isOpaque = false
-
-        authCardView.layer.cornerRadius = 10
-        authCardView.layer.shadowColor = UIColor.lightGray.cgColor
-        authCardView.layer.shadowPath = UIBezierPath(rect: authCardView.bounds).cgPath
-        authCardView.layer.shadowOpacity = 0.8
-        authCardView.layer.shadowOffset = CGSize.zero
-        authCardView.layer.shadowRadius = 10
+        authCardView.delegate = self
+        authCardView.bottomText = presenter.authCardText
     }
 }

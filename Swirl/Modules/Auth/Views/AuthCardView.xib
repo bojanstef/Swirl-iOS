@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthCardView" customModule="Swirl" customModuleProvider="target">
             <connections>
                 <outlet property="aboutPageView" destination="am0-35-7tR" id="0Hq-RH-8M5"/>
-                <outlet property="disclaimerLabel" destination="8us-qN-53d" id="8c5-Dy-FrP"/>
+                <outlet property="bottomLabel" destination="8us-qN-53d" id="rnJ-4E-qYd"/>
                 <outlet property="loginButton" destination="geQ-9A-X4c" id="3dY-WQ-uWX"/>
             </connections>
         </placeholder>
@@ -23,7 +23,6 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8us-qN-53d">
                     <rect key="frame" x="32" y="630" width="311" height="21"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -35,6 +34,9 @@
                         <constraint firstAttribute="height" constant="54" id="bce-Hj-Gbq"/>
                     </constraints>
                     <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="loginButtonWasPressed:" destination="-1" eventType="touchUpInside" id="blp-Sa-Zi6"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="am0-35-7tR">
                     <rect key="frame" x="16" y="16" width="343" height="544"/>

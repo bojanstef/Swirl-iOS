@@ -10,6 +10,7 @@ import UIKit
 
 protocol AuthPresentable {
     var titleView: UIImageView { get }
+    var authCardText: NSAttributedString { get }
 }
 
 final class AuthPresenter {
@@ -25,4 +26,15 @@ extension AuthPresenter: AuthPresentable {
         let logo = UIImage(asset: .logo)
         return UIImageView(image: logo)
     }
+
+    var authCardText: NSAttributedString {
+        return NSAttributedString(string: Constants.authCardText, attributes: [
+            NSForegroundColorAttributeName: UIColor.lightGray,
+            NSFontAttributeName: UIFont(name: "Futura-Medium", size: 12) as Any
+        ])
+    }
+}
+
+private struct Constants {
+    static let authCardText = "We will never post anything to your Facebook ♥️"
 }
