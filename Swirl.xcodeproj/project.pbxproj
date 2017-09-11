@@ -45,6 +45,8 @@
 		F1EB905A1F66279D0016D57B /* AuthCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90591F66279D0016D57B /* AuthCardView.swift */; };
 		F1EB905C1F6627AE0016D57B /* AuthCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EB905B1F6627AE0016D57B /* AuthCardView.xib */; };
 		F1EB90661F66393E0016D57B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90651F66393E0016D57B /* UIView+Extensions.swift */; };
+		F1EB90741F67363D0016D57B /* SwirlUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90731F67363D0016D57B /* SwirlUser.swift */; };
+		F1EB90781F67496C0016D57B /* ModelConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90771F67496C0016D57B /* ModelConvertable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +91,8 @@
 		F1EB90591F66279D0016D57B /* AuthCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthCardView.swift; path = Modules/Auth/Views/AuthCardView.swift; sourceTree = "<group>"; };
 		F1EB905B1F6627AE0016D57B /* AuthCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AuthCardView.xib; path = Modules/Auth/Views/AuthCardView.xib; sourceTree = "<group>"; };
 		F1EB90651F66393E0016D57B /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
+		F1EB90731F67363D0016D57B /* SwirlUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwirlUser.swift; path = Models/SwirlUser.swift; sourceTree = "<group>"; };
+		F1EB90771F67496C0016D57B /* ModelConvertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelConvertable.swift; path = Protocols/ModelConvertable.swift; sourceTree = "<group>"; };
 		FC7CF23AE2863C50D8FF7E8D /* Pods-Swirl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swirl.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swirl/Pods-Swirl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +175,7 @@
 				F14B7F951F635D0A0096C365 /* Base.lproj */,
 				F14B7F961F635E4C0096C365 /* Coordinators */,
 				F14B7FB21F636D800096C365 /* Extensions */,
+				F1EB90721F6735ED0016D57B /* Models */,
 				F14B7F9F1F63622D0096C365 /* Modules */,
 				F14B7F9A1F635EF10096C365 /* Protocols */,
 				F11CE57A1F64AF0900CD60C2 /* Services */,
@@ -199,9 +204,10 @@
 		F14B7F9A1F635EF10096C365 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				F14B7FAC1F636B220096C365 /* ControllerGettable.swift */,
+				F1EB90771F67496C0016D57B /* ModelConvertable.swift */,
 				F14B7F9B1F635F3C0096C365 /* Starting.swift */,
 				F14B7F9D1F6360A00096C365 /* Stoppable.swift */,
-				F14B7FAC1F636B220096C365 /* ControllerGettable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -286,6 +292,14 @@
 				F1EB905B1F6627AE0016D57B /* AuthCardView.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		F1EB90721F6735ED0016D57B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1EB90731F67363D0016D57B /* SwirlUser.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +471,7 @@
 				F14B7FC71F6384030096C365 /* FollowingViewController.swift in Sources */,
 				F14B7F991F635EE40096C365 /* AuthCoordinator.swift in Sources */,
 				F14B7FB01F636B670096C365 /* DiscoverViewController.swift in Sources */,
+				F1EB90741F67363D0016D57B /* SwirlUser.swift in Sources */,
 				F14B7F9C1F635F3C0096C365 /* Starting.swift in Sources */,
 				F14B7FAB1F636A8E0096C365 /* DiscoverWireframe.swift in Sources */,
 				F1EB905A1F66279D0016D57B /* AuthCardView.swift in Sources */,
@@ -466,6 +481,7 @@
 				F14B7FB61F637C860096C365 /* CreateContentWireframe.swift in Sources */,
 				F1EB90661F66393E0016D57B /* UIView+Extensions.swift in Sources */,
 				F14B7FBE1F63833B0096C365 /* FollowingWireframe.swift in Sources */,
+				F1EB90781F67496C0016D57B /* ModelConvertable.swift in Sources */,
 				F11CE5851F64B70600CD60C2 /* AuthWireframe.swift in Sources */,
 				F14B7F831F635A9A0096C365 /* AppDelegate.swift in Sources */,
 				F14B7FAD1F636B220096C365 /* ControllerGettable.swift in Sources */,

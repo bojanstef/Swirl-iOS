@@ -15,9 +15,20 @@ private struct Constants {
     static let readPermissions = ["public_profile", "email", "user_friends"]
 }
 
+private struct DatabaseNodes {
+    static let users = "users"
+}
+
 final class DataService {
+    fileprivate let databaseReference: DatabaseReference
+
     static var defaultService: DataService {
-        return DataService()
+        let databaseReference = Database.database().reference()
+        return DataService(databaseReference: databaseReference)
+    }
+
+    private init(databaseReference: DatabaseReference) {
+        self.databaseReference = databaseReference
     }
 }
 
@@ -51,8 +62,22 @@ fileprivate extension DataService {
     }
 
     func saveUser(_ user: User, completion: @escaping ((Bool, Error?) -> Void)) {
-        print("Save user:", user)
-        completion(true, nil)
-        return
+        let ref = databaseReference.child(DatabaseNodes.users).child(user.uid)
+        ref.observeSingleEvent(of: .value, with: { [weak self] snapshot in
+            if snapshot.exists() {
+                completion(true, nil)
+                return
+            } else {
+                self?.saveSwirlUser(user, to: ref, completion: completion)
+            }
+        })
+    }
+
+    func saveSwirlUser(_ user: User, to ref: DatabaseReference, completion: @escaping ((Bool, Error?) -> Void)) {
+        let swirlUser = SwirlUser(uid: user.uid)
+        ref.setValue(SwirlUser.toJSON(from: swirlUser)) { error, _ in
+            completion(error == nil, error)
+            return
+        }
     }
 }
