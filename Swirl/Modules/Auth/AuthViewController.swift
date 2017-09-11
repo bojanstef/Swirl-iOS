@@ -43,11 +43,13 @@ fileprivate extension AuthViewController {
     }
 
     func setupCardView() {
-        cardView.layer.shouldRasterize = true
+        cardView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        cardView.isOpaque = false
+
         cardView.layer.cornerRadius = 10
         cardView.layer.shadowColor = UIColor.lightGray.cgColor
         cardView.layer.shadowPath = UIBezierPath(rect: cardView.bounds).cgPath
-        cardView.layer.shadowOpacity = 1
+        cardView.layer.shadowOpacity = 0.8
         cardView.layer.shadowOffset = CGSize.zero
         cardView.layer.shadowRadius = 10
     }

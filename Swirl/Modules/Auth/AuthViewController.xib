@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12121"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,8 +21,41 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfZ-lM-R6a">
-                    <rect key="frame" x="32" y="128" width="311" height="475"/>
+                    <rect key="frame" x="32" y="96" width="311" height="507"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sm4-iH-JD7">
+                            <rect key="frame" x="32" y="476.5" width="247" height="14.5"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fT-Ey-exZ">
+                            <rect key="frame" x="16" y="424.5" width="279" height="44"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="5AN-pZ-wQY"/>
+                            </constraints>
+                            <state key="normal" title="Log In with Facebook"/>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UCe-oX-mtY">
+                            <rect key="frame" x="16" y="16" width="279" height="400.5"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Sm4-iH-JD7" secondAttribute="bottom" constant="16" id="2AF-0c-BIl"/>
+                        <constraint firstItem="9fT-Ey-exZ" firstAttribute="top" secondItem="UCe-oX-mtY" secondAttribute="bottom" constant="8" id="7hR-pW-YEc"/>
+                        <constraint firstAttribute="trailing" secondItem="UCe-oX-mtY" secondAttribute="trailing" constant="16" id="CVB-0j-5zR"/>
+                        <constraint firstItem="Sm4-iH-JD7" firstAttribute="top" secondItem="9fT-Ey-exZ" secondAttribute="bottom" constant="8" id="HXB-th-32H"/>
+                        <constraint firstItem="9fT-Ey-exZ" firstAttribute="leading" secondItem="sfZ-lM-R6a" secondAttribute="leading" constant="16" id="JEs-cE-uYF"/>
+                        <constraint firstItem="UCe-oX-mtY" firstAttribute="leading" secondItem="sfZ-lM-R6a" secondAttribute="leading" constant="16" id="e01-Qb-NEz"/>
+                        <constraint firstItem="Sm4-iH-JD7" firstAttribute="leading" secondItem="sfZ-lM-R6a" secondAttribute="leading" constant="32" id="gea-Ah-lPG"/>
+                        <constraint firstAttribute="trailing" secondItem="Sm4-iH-JD7" secondAttribute="trailing" constant="32" id="jRh-j6-EaL"/>
+                        <constraint firstItem="UCe-oX-mtY" firstAttribute="top" secondItem="sfZ-lM-R6a" secondAttribute="top" constant="16" id="l3X-NL-jI4"/>
+                        <constraint firstAttribute="trailing" secondItem="9fT-Ey-exZ" secondAttribute="trailing" constant="16" id="o46-cW-XhG"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -30,8 +63,9 @@
                 <constraint firstAttribute="bottom" secondItem="sfZ-lM-R6a" secondAttribute="bottom" constant="64" id="5c6-4S-ltt"/>
                 <constraint firstAttribute="trailing" secondItem="sfZ-lM-R6a" secondAttribute="trailing" constant="32" id="KwG-wx-Qjv"/>
                 <constraint firstItem="sfZ-lM-R6a" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="Qbq-Pr-p4H"/>
-                <constraint firstItem="sfZ-lM-R6a" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="128" id="viN-XT-3Kc"/>
+                <constraint firstItem="sfZ-lM-R6a" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="96" id="viN-XT-3Kc"/>
             </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
 </document>
