@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthCardView" customModule="Swirl" customModuleProvider="target">
+            <connections>
+                <outlet property="aboutPageView" destination="am0-35-7tR" id="0Hq-RH-8M5"/>
+                <outlet property="disclaimerLabel" destination="8us-qN-53d" id="8c5-Dy-FrP"/>
+                <outlet property="loginButton" destination="geQ-9A-X4c" id="3dY-WQ-uWX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8us-qN-53d">
+                    <rect key="frame" x="32" y="630" width="311" height="21"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geQ-9A-X4c">
+                    <rect key="frame" x="16" y="568" width="343" height="54"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="bce-Hj-Gbq"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="am0-35-7tR">
+                    <rect key="frame" x="16" y="16" width="343" height="544"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="8us-qN-53d" secondAttribute="trailing" constant="32" id="15R-7n-0Zs"/>
+                <constraint firstAttribute="bottom" secondItem="8us-qN-53d" secondAttribute="bottom" constant="16" id="1Pj-Oq-W32"/>
+                <constraint firstItem="am0-35-7tR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="7Kr-3d-KqG"/>
+                <constraint firstItem="am0-35-7tR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="7k3-sl-VOE"/>
+                <constraint firstItem="8us-qN-53d" firstAttribute="top" secondItem="geQ-9A-X4c" secondAttribute="bottom" constant="8" id="7wj-kW-x70"/>
+                <constraint firstAttribute="trailing" secondItem="geQ-9A-X4c" secondAttribute="trailing" constant="16" id="C9H-gL-PKn"/>
+                <constraint firstItem="8us-qN-53d" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="L2m-Rb-UDf"/>
+                <constraint firstItem="geQ-9A-X4c" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="LRP-qF-9gN"/>
+                <constraint firstAttribute="trailing" secondItem="am0-35-7tR" secondAttribute="trailing" constant="16" id="oQr-MZ-d8v"/>
+                <constraint firstItem="geQ-9A-X4c" firstAttribute="top" secondItem="am0-35-7tR" secondAttribute="bottom" constant="8" id="vcO-xG-wmp"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

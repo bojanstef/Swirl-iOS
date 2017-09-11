@@ -10,7 +10,7 @@ import UIKit
 import Cheers
 
 final class AuthViewController: UIViewController {
-    @IBOutlet fileprivate weak var cardView: UIView!
+    @IBOutlet fileprivate weak var authCardView: AuthCardView!
     fileprivate let presenter: AuthPresentable
 
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -23,7 +23,7 @@ final class AuthViewController: UIViewController {
         super.viewWillAppear(animated)
         setupCheerView()
         setupNavBar()
-        setupCardView()
+        setupAuthCardView()
     }
 }
 
@@ -42,15 +42,15 @@ fileprivate extension AuthViewController {
         navigationItem.titleView = presenter.titleView
     }
 
-    func setupCardView() {
-        cardView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
-        cardView.isOpaque = false
+    func setupAuthCardView() {
+        authCardView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        authCardView.isOpaque = false
 
-        cardView.layer.cornerRadius = 10
-        cardView.layer.shadowColor = UIColor.lightGray.cgColor
-        cardView.layer.shadowPath = UIBezierPath(rect: cardView.bounds).cgPath
-        cardView.layer.shadowOpacity = 0.8
-        cardView.layer.shadowOffset = CGSize.zero
-        cardView.layer.shadowRadius = 10
+        authCardView.layer.cornerRadius = 10
+        authCardView.layer.shadowColor = UIColor.lightGray.cgColor
+        authCardView.layer.shadowPath = UIBezierPath(rect: authCardView.bounds).cgPath
+        authCardView.layer.shadowOpacity = 0.8
+        authCardView.layer.shadowOffset = CGSize.zero
+        authCardView.layer.shadowRadius = 10
     }
 }

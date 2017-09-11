@@ -42,6 +42,11 @@
 		F1CC7FF51F64F024006242F1 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF41F64F024006242F1 /* AuthInteractor.swift */; };
 		F1CC7FF71F64F162006242F1 /* AuthDataServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF61F64F162006242F1 /* AuthDataServiceable.swift */; };
 		F1CC7FF91F650C43006242F1 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF81F650C43006242F1 /* UIColor+Extensions.swift */; };
+		F1EB905A1F66279D0016D57B /* AuthCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90591F66279D0016D57B /* AuthCardView.swift */; };
+		F1EB905C1F6627AE0016D57B /* AuthCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EB905B1F6627AE0016D57B /* AuthCardView.xib */; };
+		F1EB90631F66371A0016D57B /* AuthPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90611F66371A0016D57B /* AuthPageViewController.swift */; };
+		F1EB90641F66371A0016D57B /* AuthPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EB90621F66371A0016D57B /* AuthPageViewController.xib */; };
+		F1EB90661F66393E0016D57B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90651F66393E0016D57B /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +88,11 @@
 		F1CC7FF41F64F024006242F1 /* AuthInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthInteractor.swift; path = Modules/Auth/AuthInteractor.swift; sourceTree = "<group>"; };
 		F1CC7FF61F64F162006242F1 /* AuthDataServiceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthDataServiceable.swift; path = Modules/Auth/AuthDataServiceable.swift; sourceTree = "<group>"; };
 		F1CC7FF81F650C43006242F1 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "Extensions/UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		F1EB90591F66279D0016D57B /* AuthCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthCardView.swift; path = Modules/Auth/Views/AuthCardView.swift; sourceTree = "<group>"; };
+		F1EB905B1F6627AE0016D57B /* AuthCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AuthCardView.xib; path = Modules/Auth/Views/AuthCardView.xib; sourceTree = "<group>"; };
+		F1EB90611F66371A0016D57B /* AuthPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthPageViewController.swift; path = Modules/Auth/Views/AuthPageViewController.swift; sourceTree = "<group>"; };
+		F1EB90621F66371A0016D57B /* AuthPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AuthPageViewController.xib; path = Modules/Auth/Views/AuthPageViewController.xib; sourceTree = "<group>"; };
+		F1EB90651F66393E0016D57B /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
 		FC7CF23AE2863C50D8FF7E8D /* Pods-Swirl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swirl.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swirl/Pods-Swirl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +136,7 @@
 		F11CE57F1F64B6C800CD60C2 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				F1EB90581F66277C0016D57B /* Views */,
 				F1CC7FF61F64F162006242F1 /* AuthDataServiceable.swift */,
 				F1CC7FF41F64F024006242F1 /* AuthInteractor.swift */,
 				F1CC7FF21F64EFD6006242F1 /* AuthPresenter.swift */,
@@ -267,8 +278,20 @@
 			children = (
 				F14B7FB31F636D9C0096C365 /* UIImage+Extensions.swift */,
 				F1CC7FF81F650C43006242F1 /* UIColor+Extensions.swift */,
+				F1EB90651F66393E0016D57B /* UIView+Extensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		F1EB90581F66277C0016D57B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1EB90591F66279D0016D57B /* AuthCardView.swift */,
+				F1EB905B1F6627AE0016D57B /* AuthCardView.xib */,
+				F1EB90611F66371A0016D57B /* AuthPageViewController.swift */,
+				F1EB90621F66371A0016D57B /* AuthPageViewController.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,12 +360,14 @@
 			files = (
 				F14B7FC41F6383A60096C365 /* CurateViewController.xib in Resources */,
 				F14B7F8D1F635A9A0096C365 /* LaunchScreen.storyboard in Resources */,
+				F1EB905C1F6627AE0016D57B /* AuthCardView.xib in Resources */,
 				F11CE5831F64B6F300CD60C2 /* AuthViewController.xib in Resources */,
 				F14B7FCE1F6389260096C365 /* GoogleService-Info.plist in Resources */,
 				F14B7FCC1F6384670096C365 /* ProfileViewController.xib in Resources */,
 				F14B7FB11F636B670096C365 /* DiscoverViewController.xib in Resources */,
 				F14B7FC81F6384030096C365 /* FollowingViewController.xib in Resources */,
 				F14B7F8A1F635A9A0096C365 /* Assets.xcassets in Resources */,
+				F1EB90641F66371A0016D57B /* AuthPageViewController.xib in Resources */,
 				F14B7FBA1F637CCA0096C365 /* CreateContentViewController.xib in Resources */,
 				F14B7F881F635A9A0096C365 /* Main.storyboard in Resources */,
 			);
@@ -441,11 +466,14 @@
 				F14B7FB01F636B670096C365 /* DiscoverViewController.swift in Sources */,
 				F14B7F9C1F635F3C0096C365 /* Starting.swift in Sources */,
 				F14B7FAB1F636A8E0096C365 /* DiscoverWireframe.swift in Sources */,
+				F1EB905A1F66279D0016D57B /* AuthCardView.swift in Sources */,
 				F14B7FCB1F6384670096C365 /* ProfileViewController.swift in Sources */,
 				F11CE57E1F64B50400CD60C2 /* MainCoordinator.swift in Sources */,
 				F1CC7FF71F64F162006242F1 /* AuthDataServiceable.swift in Sources */,
 				F14B7FB61F637C860096C365 /* CreateContentWireframe.swift in Sources */,
+				F1EB90661F66393E0016D57B /* UIView+Extensions.swift in Sources */,
 				F14B7FBE1F63833B0096C365 /* FollowingWireframe.swift in Sources */,
+				F1EB90631F66371A0016D57B /* AuthPageViewController.swift in Sources */,
 				F11CE5851F64B70600CD60C2 /* AuthWireframe.swift in Sources */,
 				F14B7F831F635A9A0096C365 /* AppDelegate.swift in Sources */,
 				F14B7FAD1F636B220096C365 /* ControllerGettable.swift in Sources */,
