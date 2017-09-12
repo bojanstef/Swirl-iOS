@@ -1,8 +1,8 @@
 //
-//  RootCoordinator.swift
+//  MainCoordinator.swift
 //  Swirl
 //
-//  Created by Bojan Stefanovic on 9/8/17.
+//  Created by Bojan Stefanovic on 9/9/17.
 //  Copyright © 2017 Stefanovic Ventures. All rights reserved.
 //
 
@@ -12,9 +12,8 @@ private enum Controller {
     case createContent, curate, discover, following, profile
 }
 
-final class RootCoordinator {
-    fileprivate let window: UIWindow
-    fileprivate let tabBarController = UITabBarController()
+final class MainCoordinator {
+    fileprivate let navigationController: UINavigationController
 
     fileprivate lazy var createContentController: UINavigationController = self.createController(.createContent)
     fileprivate lazy var curateController: UINavigationController = self.createController(.curate)
@@ -22,34 +21,32 @@ final class RootCoordinator {
     fileprivate lazy var followingController: UINavigationController = self.createController(.following)
     fileprivate lazy var profileController: UINavigationController = self.createController(.profile)
 
-    init(window: UIWindow) {
-        self.window = window
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
 }
 
-extension RootCoordinator: Starting {
+extension MainCoordinator: Stoppable {
     func start() {
-        let controllers = [
-            discoverController,
-            curateController,
-            createContentController,
-            followingController,
-            profileController
-        ]
+        let controllers = [discoverController, createContentController, followingController, profileController]
+        let tabBarController = UITabBarController()
         tabBarController.setViewControllers(controllers, animated: false)
+        navigationController.setNavigationBarHidden(true, animated: false)
+        navigationController.pushViewController(tabBarController, animated: false)
+    }
 
-        window.makeKeyAndVisible()
-        window.rootViewController = tabBarController
+    func stop() {
+        navigationController.popViewController(animated: true)
     }
 }
 
-extension RootCoordinator: CreateContentModuleDelegate {}
-extension RootCoordinator: CurateModuleDelegate {}
-extension RootCoordinator: DiscoverModuleDelegate {}
-extension RootCoordinator: FollowingModuleDelegate {}
-extension RootCoordinator: ProfileModuleDelegate {}
+extension MainCoordinator: CreateContentModuleDelegate {}
+extension MainCoordinator: CurateModuleDelegate {}
+extension MainCoordinator: DiscoverModuleDelegate {}
+extension MainCoordinator: FollowingModuleDelegate {}
+extension MainCoordinator: ProfileModuleDelegate {}
 
-fileprivate extension RootCoordinator {
+fileprivate extension MainCoordinator {
     private func create(_ viewController: UIViewController, image: UIImage?, title: String?) -> UINavigationController {
         viewController.navigationItem.title = title
         let navigationController = UINavigationController(rootViewController: viewController)

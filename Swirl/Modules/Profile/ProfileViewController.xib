@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sij-wz-OsR">
-                    <rect key="frame" x="166" y="323" width="42" height="21"/>
+                    <rect key="frame" x="166" y="323.5" width="42" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -32,6 +32,7 @@
                 <constraint firstItem="Sij-wz-OsR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RaH-mj-y7S"/>
                 <constraint firstItem="Sij-wz-OsR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="vtP-05-pOe"/>
             </constraints>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
     </objects>
 </document>

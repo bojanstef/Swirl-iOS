@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		8E7E91BE0823367FD1AE2FB4 /* Pods_Swirl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65342E5BB2F181270806186 /* Pods_Swirl.framework */; };
+		F11CE57C1F64AF3900CD60C2 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11CE57B1F64AF3900CD60C2 /* DataService.swift */; };
+		F11CE57E1F64B50400CD60C2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11CE57D1F64B50400CD60C2 /* MainCoordinator.swift */; };
+		F11CE5821F64B6F300CD60C2 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11CE5801F64B6F300CD60C2 /* AuthViewController.swift */; };
+		F11CE5831F64B6F300CD60C2 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F11CE5811F64B6F300CD60C2 /* AuthViewController.xib */; };
+		F11CE5851F64B70600CD60C2 /* AuthWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11CE5841F64B70600CD60C2 /* AuthWireframe.swift */; };
 		F14B7F831F635A9A0096C365 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7F821F635A9A0096C365 /* AppDelegate.swift */; };
 		F14B7F881F635A9A0096C365 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14B7F861F635A9A0096C365 /* Main.storyboard */; };
 		F14B7F8A1F635A9A0096C365 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F14B7F891F635A9A0096C365 /* Assets.xcassets */; };
 		F14B7F8D1F635A9A0096C365 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14B7F8B1F635A9A0096C365 /* LaunchScreen.storyboard */; };
-		F14B7F991F635EE40096C365 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7F981F635EE40096C365 /* RootCoordinator.swift */; };
+		F14B7F991F635EE40096C365 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7F981F635EE40096C365 /* AuthCoordinator.swift */; };
 		F14B7F9C1F635F3C0096C365 /* Starting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7F9B1F635F3C0096C365 /* Starting.swift */; };
 		F14B7F9E1F6360A00096C365 /* Stoppable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7F9D1F6360A00096C365 /* Stoppable.swift */; };
 		F14B7FAB1F636A8E0096C365 /* DiscoverWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FAA1F636A8E0096C365 /* DiscoverWireframe.swift */; };
@@ -33,18 +38,32 @@
 		F14B7FCB1F6384670096C365 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FC91F6384670096C365 /* ProfileViewController.swift */; };
 		F14B7FCC1F6384670096C365 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FCA1F6384670096C365 /* ProfileViewController.xib */; };
 		F14B7FCE1F6389260096C365 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FCD1F6389260096C365 /* GoogleService-Info.plist */; };
+		F1CC7FF31F64EFD6006242F1 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF21F64EFD6006242F1 /* AuthPresenter.swift */; };
+		F1CC7FF51F64F024006242F1 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF41F64F024006242F1 /* AuthInteractor.swift */; };
+		F1CC7FF71F64F162006242F1 /* AuthDataServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF61F64F162006242F1 /* AuthDataServiceable.swift */; };
+		F1CC7FF91F650C43006242F1 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF81F650C43006242F1 /* UIColor+Extensions.swift */; };
+		F1EB905A1F66279D0016D57B /* AuthCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90591F66279D0016D57B /* AuthCardView.swift */; };
+		F1EB905C1F6627AE0016D57B /* AuthCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EB905B1F6627AE0016D57B /* AuthCardView.xib */; };
+		F1EB90661F66393E0016D57B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90651F66393E0016D57B /* UIView+Extensions.swift */; };
+		F1EB90741F67363D0016D57B /* SwirlUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90731F67363D0016D57B /* SwirlUser.swift */; };
+		F1EB90781F67496C0016D57B /* ModelConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90771F67496C0016D57B /* ModelConvertable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A83FD0F261146F51024ECC93 /* Pods-Swirl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swirl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swirl/Pods-Swirl.debug.xcconfig"; sourceTree = "<group>"; };
 		B65342E5BB2F181270806186 /* Pods_Swirl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swirl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11CE57B1F64AF3900CD60C2 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataService.swift; path = Services/DataService.swift; sourceTree = "<group>"; };
+		F11CE57D1F64B50400CD60C2 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainCoordinator.swift; path = Coordinators/MainCoordinator.swift; sourceTree = "<group>"; };
+		F11CE5801F64B6F300CD60C2 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthViewController.swift; path = Modules/Auth/AuthViewController.swift; sourceTree = "<group>"; };
+		F11CE5811F64B6F300CD60C2 /* AuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AuthViewController.xib; path = Modules/Auth/AuthViewController.xib; sourceTree = "<group>"; };
+		F11CE5841F64B70600CD60C2 /* AuthWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthWireframe.swift; path = Modules/Auth/AuthWireframe.swift; sourceTree = "<group>"; };
 		F14B7F7F1F635A9A0096C365 /* Swirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14B7F821F635A9A0096C365 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F14B7F871F635A9A0096C365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F14B7F891F635A9A0096C365 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F14B7F8C1F635A9A0096C365 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F14B7F8E1F635A9A0096C365 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F14B7F981F635EE40096C365 /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootCoordinator.swift; path = Coordinators/RootCoordinator.swift; sourceTree = "<group>"; };
+		F14B7F981F635EE40096C365 /* AuthCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthCoordinator.swift; path = Coordinators/AuthCoordinator.swift; sourceTree = "<group>"; };
 		F14B7F9B1F635F3C0096C365 /* Starting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Starting.swift; path = Protocols/Starting.swift; sourceTree = "<group>"; };
 		F14B7F9D1F6360A00096C365 /* Stoppable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stoppable.swift; path = Protocols/Stoppable.swift; sourceTree = "<group>"; };
 		F14B7FAA1F636A8E0096C365 /* DiscoverWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverWireframe.swift; path = Modules/Discover/DiscoverWireframe.swift; sourceTree = "<group>"; };
@@ -65,6 +84,15 @@
 		F14B7FC91F6384670096C365 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Modules/Profile/ProfileViewController.swift; sourceTree = "<group>"; };
 		F14B7FCA1F6384670096C365 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = Modules/Profile/ProfileViewController.xib; sourceTree = "<group>"; };
 		F14B7FCD1F6389260096C365 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F1CC7FF21F64EFD6006242F1 /* AuthPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthPresenter.swift; path = Modules/Auth/AuthPresenter.swift; sourceTree = "<group>"; };
+		F1CC7FF41F64F024006242F1 /* AuthInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthInteractor.swift; path = Modules/Auth/AuthInteractor.swift; sourceTree = "<group>"; };
+		F1CC7FF61F64F162006242F1 /* AuthDataServiceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthDataServiceable.swift; path = Modules/Auth/AuthDataServiceable.swift; sourceTree = "<group>"; };
+		F1CC7FF81F650C43006242F1 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "Extensions/UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		F1EB90591F66279D0016D57B /* AuthCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthCardView.swift; path = Modules/Auth/Views/AuthCardView.swift; sourceTree = "<group>"; };
+		F1EB905B1F6627AE0016D57B /* AuthCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AuthCardView.xib; path = Modules/Auth/Views/AuthCardView.xib; sourceTree = "<group>"; };
+		F1EB90651F66393E0016D57B /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
+		F1EB90731F67363D0016D57B /* SwirlUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwirlUser.swift; path = Models/SwirlUser.swift; sourceTree = "<group>"; };
+		F1EB90771F67496C0016D57B /* ModelConvertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelConvertable.swift; path = Protocols/ModelConvertable.swift; sourceTree = "<group>"; };
 		FC7CF23AE2863C50D8FF7E8D /* Pods-Swirl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swirl.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swirl/Pods-Swirl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +125,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F11CE57A1F64AF0900CD60C2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F11CE57B1F64AF3900CD60C2 /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		F11CE57F1F64B6C800CD60C2 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F1EB90581F66277C0016D57B /* Views */,
+				F1CC7FF61F64F162006242F1 /* AuthDataServiceable.swift */,
+				F1CC7FF41F64F024006242F1 /* AuthInteractor.swift */,
+				F1CC7FF21F64EFD6006242F1 /* AuthPresenter.swift */,
+				F11CE5801F64B6F300CD60C2 /* AuthViewController.swift */,
+				F11CE5811F64B6F300CD60C2 /* AuthViewController.xib */,
+				F11CE5841F64B70600CD60C2 /* AuthWireframe.swift */,
+			);
+			name = Auth;
+			sourceTree = "<group>";
+		};
 		F14B7F761F635A990096C365 = {
 			isa = PBXGroup;
 			children = (
@@ -120,13 +170,15 @@
 			children = (
 				F14B7F821F635A9A0096C365 /* AppDelegate.swift */,
 				F14B7F891F635A9A0096C365 /* Assets.xcassets */,
-				F14B7F8E1F635A9A0096C365 /* Info.plist */,
 				F14B7FCD1F6389260096C365 /* GoogleService-Info.plist */,
+				F14B7F8E1F635A9A0096C365 /* Info.plist */,
 				F14B7F951F635D0A0096C365 /* Base.lproj */,
 				F14B7F961F635E4C0096C365 /* Coordinators */,
 				F14B7FB21F636D800096C365 /* Extensions */,
+				F1EB90721F6735ED0016D57B /* Models */,
 				F14B7F9F1F63622D0096C365 /* Modules */,
 				F14B7F9A1F635EF10096C365 /* Protocols */,
+				F11CE57A1F64AF0900CD60C2 /* Services */,
 			);
 			path = Swirl;
 			sourceTree = "<group>";
@@ -143,7 +195,8 @@
 		F14B7F961F635E4C0096C365 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				F14B7F981F635EE40096C365 /* RootCoordinator.swift */,
+				F14B7F981F635EE40096C365 /* AuthCoordinator.swift */,
+				F11CE57D1F64B50400CD60C2 /* MainCoordinator.swift */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -151,9 +204,10 @@
 		F14B7F9A1F635EF10096C365 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				F14B7FAC1F636B220096C365 /* ControllerGettable.swift */,
+				F1EB90771F67496C0016D57B /* ModelConvertable.swift */,
 				F14B7F9B1F635F3C0096C365 /* Starting.swift */,
 				F14B7F9D1F6360A00096C365 /* Stoppable.swift */,
-				F14B7FAC1F636B220096C365 /* ControllerGettable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -161,6 +215,7 @@
 		F14B7F9F1F63622D0096C365 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F11CE57F1F64B6C800CD60C2 /* Auth */,
 				F14B7FA71F6368D00096C365 /* CreateContent */,
 				F14B7FA61F6368C90096C365 /* Curate */,
 				F14B7FA51F6368C10096C365 /* Discover */,
@@ -224,8 +279,27 @@
 			isa = PBXGroup;
 			children = (
 				F14B7FB31F636D9C0096C365 /* UIImage+Extensions.swift */,
+				F1CC7FF81F650C43006242F1 /* UIColor+Extensions.swift */,
+				F1EB90651F66393E0016D57B /* UIView+Extensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		F1EB90581F66277C0016D57B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1EB90591F66279D0016D57B /* AuthCardView.swift */,
+				F1EB905B1F6627AE0016D57B /* AuthCardView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F1EB90721F6735ED0016D57B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1EB90731F67363D0016D57B /* SwirlUser.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +368,8 @@
 			files = (
 				F14B7FC41F6383A60096C365 /* CurateViewController.xib in Resources */,
 				F14B7F8D1F635A9A0096C365 /* LaunchScreen.storyboard in Resources */,
+				F1EB905C1F6627AE0016D57B /* AuthCardView.xib in Resources */,
+				F11CE5831F64B6F300CD60C2 /* AuthViewController.xib in Resources */,
 				F14B7FCE1F6389260096C365 /* GoogleService-Info.plist in Resources */,
 				F14B7FCC1F6384670096C365 /* ProfileViewController.xib in Resources */,
 				F14B7FB11F636B670096C365 /* DiscoverViewController.xib in Resources */,
@@ -328,9 +404,24 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Swirl/Pods-Swirl-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Cheers/Cheers.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cheers.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -343,13 +434,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Swirl-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F14B7F941F635C6D0096C365 /* ShellScript */ = {
@@ -373,19 +467,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				F14B7F9E1F6360A00096C365 /* Stoppable.swift in Sources */,
+				F1CC7FF31F64EFD6006242F1 /* AuthPresenter.swift in Sources */,
 				F14B7FC71F6384030096C365 /* FollowingViewController.swift in Sources */,
-				F14B7F991F635EE40096C365 /* RootCoordinator.swift in Sources */,
+				F14B7F991F635EE40096C365 /* AuthCoordinator.swift in Sources */,
 				F14B7FB01F636B670096C365 /* DiscoverViewController.swift in Sources */,
+				F1EB90741F67363D0016D57B /* SwirlUser.swift in Sources */,
 				F14B7F9C1F635F3C0096C365 /* Starting.swift in Sources */,
 				F14B7FAB1F636A8E0096C365 /* DiscoverWireframe.swift in Sources */,
+				F1EB905A1F66279D0016D57B /* AuthCardView.swift in Sources */,
 				F14B7FCB1F6384670096C365 /* ProfileViewController.swift in Sources */,
+				F11CE57E1F64B50400CD60C2 /* MainCoordinator.swift in Sources */,
+				F1CC7FF71F64F162006242F1 /* AuthDataServiceable.swift in Sources */,
 				F14B7FB61F637C860096C365 /* CreateContentWireframe.swift in Sources */,
+				F1EB90661F66393E0016D57B /* UIView+Extensions.swift in Sources */,
 				F14B7FBE1F63833B0096C365 /* FollowingWireframe.swift in Sources */,
+				F1EB90781F67496C0016D57B /* ModelConvertable.swift in Sources */,
+				F11CE5851F64B70600CD60C2 /* AuthWireframe.swift in Sources */,
 				F14B7F831F635A9A0096C365 /* AppDelegate.swift in Sources */,
 				F14B7FAD1F636B220096C365 /* ControllerGettable.swift in Sources */,
+				F1CC7FF51F64F024006242F1 /* AuthInteractor.swift in Sources */,
 				F14B7FB91F637CCA0096C365 /* CreateContentViewController.swift in Sources */,
 				F14B7FC31F6383A60096C365 /* CurateViewController.swift in Sources */,
 				F14B7FB41F636D9C0096C365 /* UIImage+Extensions.swift in Sources */,
+				F1CC7FF91F650C43006242F1 /* UIColor+Extensions.swift in Sources */,
+				F11CE57C1F64AF3900CD60C2 /* DataService.swift in Sources */,
+				F11CE5821F64B6F300CD60C2 /* AuthViewController.swift in Sources */,
 				F14B7FBC1F63803E0096C365 /* CurateWireframe.swift in Sources */,
 				F14B7FC01F63836F0096C365 /* ProfileWireframe.swift in Sources */,
 			);
