@@ -9,6 +9,11 @@
 import UIKit
 import Cheers
 
+private struct Constant {
+    static let circle: CGFloat = 2 * .pi
+    static let rotationDampening: CGFloat = 0.01
+}
+
 final class AuthViewController: UIViewController {
     @IBOutlet fileprivate weak var authCardView: AuthCardView!
     fileprivate let presenter: AuthPresentable
@@ -21,7 +26,7 @@ final class AuthViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        authCardView.delegate = self
+        setupAuthCardView()
         setupNavBar()
         setupCheerView()
     }
@@ -38,6 +43,33 @@ extension AuthViewController: AuthCardViewDelegate {
 }
 
 fileprivate extension AuthViewController {
+    dynamic func dragAuthCardView(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: view)
+        let xTranslation = authCardView.center.x + translation.x
+        let yTranslation = authCardView.center.y + translation.y
+        authCardView.center = CGPoint(x: xTranslation, y: yTranslation)
+        sender.setTranslation(.zero, in: view)
+
+        let difference = authCardView.center.x - view.center.x
+        let rotationAngle = difference * Constant.circle * Constant.rotationDampening
+        authCardView.transform = CGAffineTransform(rotationAngle: rotationAngle)
+
+        if sender.state == .ended { resetAuthCardView() }
+    }
+
+    func resetAuthCardView() {
+        UIView.animate(withDuration: 0.2) { [weak self] in
+            guard let this = self else { return }
+            this.authCardView.center = this.view.center
+            this.authCardView.transform = CGAffineTransform(rotationAngle: 0)
+        }
+    }
+
+    func setupAuthCardView() {
+        authCardView.delegate = self
+        authCardView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: .dragAuthCardView))
+    }
+
     func setupNavBar() {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -55,4 +87,8 @@ fileprivate extension AuthViewController {
     func navigateToMain() {
         presenter.loginSucceeded()
     }
+}
+
+fileprivate extension Selector {
+    static let dragAuthCardView = #selector(AuthViewController.dragAuthCardView(_:))
 }
