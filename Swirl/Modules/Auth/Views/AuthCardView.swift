@@ -19,8 +19,8 @@ final class AuthCardView: UIView {
     @IBOutlet fileprivate weak var bottomLabel: UILabel!
     weak var delegate: AuthCardViewDelegate?
 
-    override func willMove(toSuperview newSuperview: UIView?) {
-        super.willMove(toSuperview: newSuperview)
+    override func awakeFromNib() {
+        super.awakeFromNib()
         loadNib { [weak self] view in self?.setup(view) }
         backgroundColor = .clear
         setupLabels()
