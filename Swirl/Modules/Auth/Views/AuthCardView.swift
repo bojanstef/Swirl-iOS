@@ -50,7 +50,7 @@ fileprivate extension AuthCardView {
         ])
 
         subtitleLabel.attributedText = NSAttributedString(string: Constants.subtitleLabelText, attributes: [
-            NSForegroundColorAttributeName: UIColor.lightGray,
+            NSForegroundColorAttributeName: UIColor.lightBlue,
             NSFontAttributeName: UIFont(name: Constants.futuraFont, size: Constants.regularFontSize) as Any
         ])
 
@@ -95,11 +95,11 @@ private struct Constants {
     static let alphaValue: CGFloat = 0.8
     static let smallFontSize: CGFloat = 12
     static let regularFontSize: CGFloat = 16
-    static let mediumFontSize: CGFloat = 24
+    static let mediumFontSize: CGFloat = 20
     static let largeFontSize: CGFloat = 32
     static let futuraFont = "Futura-Medium"
     static let titleLabelText = "Swirl Video Sharing"
     static let subtitleLabelText = "Create videos and discover what's happening in the World!"
-    static let buttonText = "Login with Facebook"
-    static let bottomLabelText = "We promise to keep your data safe ♥️"
+    static let buttonText = "Continue with Facebook"
+    static let bottomLabelText = "We promise to keep your data safe and never post without your permission ♥️"
 }
