@@ -62,12 +62,12 @@ fileprivate extension AuthCardView {
 
     func setupLoginButton() {
         let attributedTitle = NSAttributedString(string: Constants.buttonText, attributes: [
-            NSForegroundColorAttributeName: UIColor.blue.withAlphaComponent(Constants.alphaValue),
+            NSForegroundColorAttributeName: UIColor.white.withAlphaComponent(Constants.alphaValue),
             NSFontAttributeName: UIFont(name: Constants.futuraFont, size: Constants.mediumFontSize) as Any
         ])
 
         loginButton.setAttributedTitle(attributedTitle, for: .normal)
-        loginButton.backgroundColor = UIColor.lightBlue.withAlphaComponent(Constants.alphaValue)
+        loginButton.backgroundColor = UIColor.facebookBlue
         loginButton.layer.cornerRadius = Constants.buttonCornerRadius
     }
 
