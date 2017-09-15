@@ -14,7 +14,6 @@ private enum Controller {
 
 final class MainCoordinator {
     fileprivate let navigationController: UINavigationController
-
     fileprivate lazy var createContentController: UINavigationController = self.createController(.createContent)
     fileprivate lazy var curateController: UINavigationController = self.createController(.curate)
     fileprivate lazy var discoverController: UINavigationController = self.createController(.discover)
@@ -44,7 +43,12 @@ extension MainCoordinator: CreateContentModuleDelegate {}
 extension MainCoordinator: CurateModuleDelegate {}
 extension MainCoordinator: DiscoverModuleDelegate {}
 extension MainCoordinator: FollowingModuleDelegate {}
-extension MainCoordinator: ProfileModuleDelegate {}
+
+extension MainCoordinator: ProfileModuleDelegate {
+    func openSettings() {
+        print(#function)
+    }
+}
 
 fileprivate extension MainCoordinator {
     private func create(_ viewController: UIViewController, image: UIImage?, title: String?) -> UINavigationController {
