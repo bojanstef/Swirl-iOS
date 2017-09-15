@@ -12,6 +12,14 @@ private enum Controller {
     case createContent, curate, discover, following, profile
 }
 
+private struct Constants {
+    static let createTitle = "Create"
+    static let curateTitle = "Curate"
+    static let discoverTitle = "Discover"
+    static let followingTitle = "Following"
+    static let profileTitle = "Profile"
+}
+
 final class MainCoordinator {
     fileprivate let navigationController: UINavigationController
     fileprivate lazy var createContentController: UINavigationController = self.createController(.createContent)
@@ -70,23 +78,28 @@ fileprivate extension MainCoordinator {
         switch controller {
         case .createContent:
             let viewController = CreateContentWireframe(moduleDelegate: self).viewController
-            return create(viewController, image: UIImage(asset: .createContent), title: "Create")
+            let image = UIImage(asset: .createContent)
+            return create(viewController, image: image, title: Constants.createTitle)
 
         case .curate:
             let viewController = CurateWireframe(moduleDelegate: self).viewController
-            return create(viewController, image: UIImage(asset: .curate), title: "Curate")
+            let image = UIImage(asset: .curate)
+            return create(viewController, image: image, title: Constants.curateTitle)
 
         case .discover:
             let viewController = DiscoverWireframe(moduleDelegate: self).viewController
-            return create(viewController, image: UIImage(asset: .discover), title: "Discover")
+            let image = UIImage(asset: .discover)
+            return create(viewController, image: image, title: Constants.discoverTitle)
 
         case .following:
             let viewController = FollowingWireframe(moduleDelegate: self).viewController
-            return create(viewController, image: UIImage(asset: .following), title: "Following")
+            let image = UIImage(asset: .following)
+            return create(viewController, image: image, title: Constants.followingTitle)
 
         case .profile:
             let viewController = ProfileWireframe(moduleDelegate: self).viewController
-            return createNoTitle(viewController, image: UIImage(asset: .profile), title: "Profile")
+            let image = UIImage(asset: .profile)
+            return createNoTitle(viewController, image: image, title: Constants.profileTitle)
         }
     }
 }
