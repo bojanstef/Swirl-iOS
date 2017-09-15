@@ -54,6 +54,14 @@ fileprivate extension MainCoordinator {
         return navigationController
     }
 
+    private func createNoTitle(_ viewController: UIViewController,
+                               image: UIImage?, title: String?) -> UINavigationController {
+
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.tabBarItem = UITabBarItem(title: title, image: image, selectedImage: nil)
+        return navigationController
+    }
+
     func createController(_ controller: Controller) -> UINavigationController {
         switch controller {
         case .createContent:
@@ -74,7 +82,7 @@ fileprivate extension MainCoordinator {
 
         case .profile:
             let viewController = ProfileWireframe(moduleDelegate: self).viewController
-            return create(viewController, image: UIImage(asset: .profile), title: "Profile")
+            return createNoTitle(viewController, image: UIImage(asset: .profile), title: "Profile")
         }
     }
 }
