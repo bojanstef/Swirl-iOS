@@ -54,7 +54,7 @@ extension MainCoordinator: FollowingModuleDelegate {}
 
 extension MainCoordinator: ProfileModuleDelegate {
     func openSettings() {
-        print(#function)
+        print(#file, #function)
     }
 }
 

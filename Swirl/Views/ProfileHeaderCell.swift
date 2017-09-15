@@ -13,6 +13,7 @@ protocol ProfileHeaderCellInitializing {
 }
 
 private struct Constants {
+    static let viewsTitle = " " + "views"
     static let totalViewsTextAttributes = [
         NSForegroundColorAttributeName: UIColor.black,
         NSFontAttributeName: UIFont.futura(size: .small)
@@ -52,12 +53,13 @@ fileprivate extension ProfileHeaderCell {
 
     func setupLabels(with profile: Profile) {
         biographyTextView.attributedText = NSAttributedString(
-            string: profile.swirlUser?.biography ?? "",
+            string: profile.swirlUser?.biography ?? String(),
             attributes: Constants.biographyTextAttribues
         )
 
+        totalViewsLabel.backgroundColor = .lightBlue
         totalViewsLabel.attributedText = NSAttributedString(
-            string: String(profile.posts.reduce(0) { $0 + $1.views }),
+            string: String(profile.posts.reduce(0) { $0 + $1.views }).appending(Constants.viewsTitle),
             attributes: Constants.totalViewsTextAttributes
         )
     }
