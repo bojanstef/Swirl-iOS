@@ -90,8 +90,8 @@ fileprivate extension ProfileViewController {
     }
 
     func updateUser(_ swirlUser: SwirlUser) {
-        profile = profile.update(swirlUser)
         navigationItem.title = swirlUser.username
+        profile = profile.update(swirlUser)
         adapter.performUpdates(animated: true)
     }
 
