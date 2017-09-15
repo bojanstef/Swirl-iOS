@@ -43,7 +43,7 @@ extension DataService: AuthDataServiceable {
 
             guard let result = result, error == nil else { completion(false, error); return }
             if result.isCancelled {
-                completion(false, nil)
+                completion(false, nil); return
             } else {
                 let credential = FacebookAuthProvider
                     .credential(withAccessToken: FBSDKAccessToken.current().tokenString)
@@ -67,8 +67,7 @@ fileprivate extension DataService {
         let ref = databaseReference.child(DatabaseNodes.users).child(user.uid)
         ref.observeSingleEvent(of: .value, with: { [weak self] snapshot in
             if snapshot.exists() {
-                completion(true, nil)
-                return
+                completion(true, nil); return
             } else {
                 self?.saveSwirlUser(user, to: ref, completion: completion)
             }
@@ -76,10 +75,11 @@ fileprivate extension DataService {
     }
 
     func saveSwirlUser(_ user: User, to ref: DatabaseReference, completion: @escaping ((Bool, Error?) -> Void)) {
-        let swirlUser = SwirlUser(uid: user.uid)
+        let transformedDisplayName = user.displayName?.removingWhitespaces.lowercased()
+        let username = transformedDisplayName ?? String.randomAnimalUnique
+        let swirlUser = SwirlUser(uid: user.uid, username: username)
         ref.setValue(SwirlUser.toJSON(from: swirlUser)) { error, _ in
-            completion(error == nil, error)
-            return
+            completion(error == nil, error); return
         }
     }
 }
