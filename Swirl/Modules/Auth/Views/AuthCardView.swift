@@ -46,24 +46,24 @@ fileprivate extension AuthCardView {
 
     func setupLabels() {
         titleLabel.attributedText = NSAttributedString(string: Constants.titleLabelText, attributes: [
-            NSFontAttributeName: UIFont(name: Constants.futuraFont, size: Constants.largeFontSize) as Any
+            NSFontAttributeName: UIFont.futura(size: .large)
         ])
 
         subtitleLabel.attributedText = NSAttributedString(string: Constants.subtitleLabelText, attributes: [
             NSForegroundColorAttributeName: UIColor.lightBlue,
-            NSFontAttributeName: UIFont(name: Constants.futuraFont, size: Constants.regularFontSize) as Any
+            NSFontAttributeName: UIFont.futura(size: .regular)
         ])
 
         bottomLabel.attributedText = NSAttributedString(string: Constants.bottomLabelText, attributes: [
             NSForegroundColorAttributeName: UIColor.lightGray,
-            NSFontAttributeName: UIFont(name: Constants.futuraFont, size: Constants.smallFontSize) as Any
+            NSFontAttributeName: UIFont.futura(size: .small)
         ])
     }
 
     func setupLoginButton() {
         let attributedTitle = NSAttributedString(string: Constants.buttonText, attributes: [
             NSForegroundColorAttributeName: UIColor.white.withAlphaComponent(Constants.alphaValue),
-            NSFontAttributeName: UIFont(name: Constants.futuraFont, size: Constants.mediumFontSize) as Any
+            NSFontAttributeName: UIFont.futura(size: .medium)
         ])
 
         loginButton.setAttributedTitle(attributedTitle, for: .normal)
@@ -93,11 +93,6 @@ private struct Constants {
     static let viewCornerRadius: CGFloat = 10
     static let shadowOpacity: Float = 0.8
     static let alphaValue: CGFloat = 0.8
-    static let smallFontSize: CGFloat = 12
-    static let regularFontSize: CGFloat = 16
-    static let mediumFontSize: CGFloat = 20
-    static let largeFontSize: CGFloat = 32
-    static let futuraFont = "Futura-Medium"
     static let titleLabelText = "Swirl Video Sharing"
     static let subtitleLabelText = "Create videos and discover what's happening in the World!"
     static let buttonText = "Continue with Facebook"
