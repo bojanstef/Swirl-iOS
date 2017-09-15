@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol ProfileModuleDelegate: class {}
+protocol ProfileModuleDelegate: class {
+    func openSettings()
+}
 
 final class ProfileWireframe {
     fileprivate weak var moduleDelegate: ProfileModuleDelegate?
@@ -20,6 +22,9 @@ final class ProfileWireframe {
 
 extension ProfileWireframe: ControllerGettable {
     var viewController: UIViewController {
-        return ProfileViewController(message: "Profile Works!")
+        let dataService: ProfileDataServiceable = DataService.defaultService
+        let interactor = ProfileInteractor(moduleDelegate: moduleDelegate, dataService: dataService)
+        let presenter = ProfilePresenter(interactor: interactor)
+        return ProfileViewController(presenter: presenter)
     }
 }

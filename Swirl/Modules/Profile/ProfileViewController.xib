@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Swirl" customModuleProvider="target">
             <connections>
-                <outlet property="messageLabel" destination="Sij-wz-OsR" id="Ijg-iS-VrB"/>
+                <outlet property="collectionView" destination="u7k-v7-khw" id="kDe-OI-c53"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,17 +20,23 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sij-wz-OsR">
-                    <rect key="frame" x="166" y="323.5" width="42" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="u7k-v7-khw">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="et5-C2-1bj">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Sij-wz-OsR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RaH-mj-y7S"/>
-                <constraint firstItem="Sij-wz-OsR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="vtP-05-pOe"/>
+                <constraint firstItem="u7k-v7-khw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1hg-0G-eyD"/>
+                <constraint firstAttribute="trailing" secondItem="u7k-v7-khw" secondAttribute="trailing" id="T5v-8a-SbS"/>
+                <constraint firstItem="u7k-v7-khw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="naf-af-rb7"/>
+                <constraint firstAttribute="bottom" secondItem="u7k-v7-khw" secondAttribute="bottom" id="rlO-JC-PnH"/>
             </constraints>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProfileHeaderCell" customModule="Swirl" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="403" height="364"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="403" height="364"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YH1-mZ-aa0">
+                        <rect key="frame" x="0.0" y="0.0" width="403" height="256"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="256" id="Cej-9M-WD8"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNb-jv-16K">
+                        <rect key="frame" x="0.0" y="256" width="403" height="108"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="i3H-oj-ObV">
+                                <rect key="frame" x="0.0" y="0.0" width="403" height="108"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WfO-X4-pJs" customClass="ProfileSocialsView" customModule="Swirl" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="403" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="l0X-ax-miB"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkT-Wi-W3r">
+                                        <rect key="frame" x="0.0" y="44" width="403" height="64"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RK3-9x-PsP">
+                                                <rect key="frame" x="16" y="4" width="371" height="33"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="RK3-9x-PsP" firstAttribute="leading" secondItem="xkT-Wi-W3r" secondAttribute="leading" constant="16" id="PNE-gv-h2g"/>
+                                            <constraint firstAttribute="trailing" secondItem="RK3-9x-PsP" secondAttribute="trailing" constant="16" id="kWu-lC-UeI"/>
+                                            <constraint firstItem="RK3-9x-PsP" firstAttribute="top" secondItem="xkT-Wi-W3r" secondAttribute="top" constant="4" id="ndu-OD-H2y"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="i3H-oj-ObV" firstAttribute="leading" secondItem="dNb-jv-16K" secondAttribute="leading" id="CrP-q6-WjP"/>
+                            <constraint firstAttribute="bottom" secondItem="i3H-oj-ObV" secondAttribute="bottom" id="Fy3-ie-19a"/>
+                            <constraint firstAttribute="trailing" secondItem="i3H-oj-ObV" secondAttribute="trailing" id="Z6W-ch-ydh"/>
+                            <constraint firstItem="i3H-oj-ObV" firstAttribute="top" secondItem="dNb-jv-16K" secondAttribute="top" id="s6j-io-Uxn"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F38-C1-auU">
+                        <rect key="frame" x="395" y="248" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="dNb-jv-16K" secondAttribute="bottom" id="4R3-96-Qxr"/>
+                <constraint firstItem="YH1-mZ-aa0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AxO-0K-VAz"/>
+                <constraint firstItem="dNb-jv-16K" firstAttribute="top" secondItem="YH1-mZ-aa0" secondAttribute="bottom" id="S6d-dc-4Lt"/>
+                <constraint firstAttribute="trailing" secondItem="YH1-mZ-aa0" secondAttribute="trailing" id="XEQ-st-4F3"/>
+                <constraint firstItem="YH1-mZ-aa0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fOA-8K-dee"/>
+                <constraint firstItem="dNb-jv-16K" firstAttribute="top" secondItem="F38-C1-auU" secondAttribute="bottom" constant="8" id="mR6-f4-TtJ"/>
+                <constraint firstAttribute="trailing" secondItem="F38-C1-auU" secondAttribute="trailing" constant="8" id="mdj-0z-5kQ"/>
+                <constraint firstAttribute="trailing" secondItem="dNb-jv-16K" secondAttribute="trailing" id="rSS-Of-HBS"/>
+                <constraint firstItem="dNb-jv-16K" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wlf-4H-ka7"/>
+            </constraints>
+            <size key="customSize" width="403" height="692"/>
+            <connections>
+                <outlet property="biographyTextView" destination="RK3-9x-PsP" id="w1z-zS-ilG"/>
+                <outlet property="biographyView" destination="xkT-Wi-W3r" id="h9S-z6-26k"/>
+                <outlet property="displayImageView" destination="YH1-mZ-aa0" id="eda-OV-OpW"/>
+                <outlet property="profileSocialsView" destination="WfO-X4-pJs" id="2oP-7v-UMv"/>
+                <outlet property="totalViewsLabel" destination="F38-C1-auU" id="7HQ-cx-9Fx"/>
+            </connections>
+            <point key="canvasLocation" x="-387.5" y="24.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

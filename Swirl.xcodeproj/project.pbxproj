@@ -38,10 +38,25 @@
 		F14B7FCB1F6384670096C365 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FC91F6384670096C365 /* ProfileViewController.swift */; };
 		F14B7FCC1F6384670096C365 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FCA1F6384670096C365 /* ProfileViewController.xib */; };
 		F14B7FCE1F6389260096C365 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FCD1F6389260096C365 /* GoogleService-Info.plist */; };
+		F161F8BB1F69F4FB0055A8FB /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161F8BA1F69F4FB0055A8FB /* UIFont+Extensions.swift */; };
+		F16EBE641F6B839C00D6CCE7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EBE631F6B839C00D6CCE7 /* Post.swift */; };
+		F18DEA0A1F6C4A6A00F81B50 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA091F6C4A6A00F81B50 /* Profile.swift */; };
+		F18DEA0D1F6C585300F81B50 /* ProfileSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA0C1F6C585300F81B50 /* ProfileSectionController.swift */; };
+		F18DEA111F6C58E600F81B50 /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA0F1F6C58E600F81B50 /* ProfileHeaderCell.swift */; };
+		F18DEA121F6C58E600F81B50 /* ProfileHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F18DEA101F6C58E600F81B50 /* ProfileHeaderCell.xib */; };
+		F18DEA161F6C5F8F00F81B50 /* DataSnapshot+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA151F6C5F8F00F81B50 /* DataSnapshot+Extensions.swift */; };
+		F18DEA191F6C6FF000F81B50 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA171F6C6FF000F81B50 /* PostCell.swift */; };
+		F18DEA1A1F6C6FF000F81B50 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F18DEA181F6C6FF000F81B50 /* PostCell.xib */; };
+		F18DEA211F6C74B000F81B50 /* ProfileSocialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA1F1F6C74B000F81B50 /* ProfileSocialsView.swift */; };
+		F18DEA221F6C74B000F81B50 /* ProfileSocialsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F18DEA201F6C74B000F81B50 /* ProfileSocialsView.xib */; };
+		F198C8561F699A1100AF64E0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198C8551F699A1100AF64E0 /* String+Extensions.swift */; };
 		F1CC7FF31F64EFD6006242F1 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF21F64EFD6006242F1 /* AuthPresenter.swift */; };
 		F1CC7FF51F64F024006242F1 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF41F64F024006242F1 /* AuthInteractor.swift */; };
 		F1CC7FF71F64F162006242F1 /* AuthDataServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF61F64F162006242F1 /* AuthDataServiceable.swift */; };
 		F1CC7FF91F650C43006242F1 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF81F650C43006242F1 /* UIColor+Extensions.swift */; };
+		F1CE75D01F678816007BD68C /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE75CF1F678816007BD68C /* ProfilePresenter.swift */; };
+		F1CE75D21F67884F007BD68C /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE75D11F67884F007BD68C /* ProfileInteractor.swift */; };
+		F1CE75D41F6788FE007BD68C /* ProfileDataServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CE75D31F6788FE007BD68C /* ProfileDataServiceable.swift */; };
 		F1EB905A1F66279D0016D57B /* AuthCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90591F66279D0016D57B /* AuthCardView.swift */; };
 		F1EB905C1F6627AE0016D57B /* AuthCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EB905B1F6627AE0016D57B /* AuthCardView.xib */; };
 		F1EB90661F66393E0016D57B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90651F66393E0016D57B /* UIView+Extensions.swift */; };
@@ -84,10 +99,25 @@
 		F14B7FC91F6384670096C365 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = Modules/Profile/ProfileViewController.swift; sourceTree = "<group>"; };
 		F14B7FCA1F6384670096C365 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = Modules/Profile/ProfileViewController.xib; sourceTree = "<group>"; };
 		F14B7FCD1F6389260096C365 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F161F8BA1F69F4FB0055A8FB /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+Extensions.swift"; path = "Extensions/UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		F16EBE631F6B839C00D6CCE7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Models/Post.swift; sourceTree = "<group>"; };
+		F18DEA091F6C4A6A00F81B50 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = Models/Profile.swift; sourceTree = "<group>"; };
+		F18DEA0C1F6C585300F81B50 /* ProfileSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSectionController.swift; path = SectionControllers/ProfileSectionController.swift; sourceTree = "<group>"; };
+		F18DEA0F1F6C58E600F81B50 /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileHeaderCell.swift; path = Views/ProfileHeaderCell.swift; sourceTree = "<group>"; };
+		F18DEA101F6C58E600F81B50 /* ProfileHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileHeaderCell.xib; path = Views/ProfileHeaderCell.xib; sourceTree = "<group>"; };
+		F18DEA151F6C5F8F00F81B50 /* DataSnapshot+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataSnapshot+Extensions.swift"; path = "Extensions/DataSnapshot+Extensions.swift"; sourceTree = "<group>"; };
+		F18DEA171F6C6FF000F81B50 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostCell.swift; path = Views/PostCell.swift; sourceTree = "<group>"; };
+		F18DEA181F6C6FF000F81B50 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostCell.xib; path = Views/PostCell.xib; sourceTree = "<group>"; };
+		F18DEA1F1F6C74B000F81B50 /* ProfileSocialsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSocialsView.swift; path = Views/ProfileSocialsView.swift; sourceTree = "<group>"; };
+		F18DEA201F6C74B000F81B50 /* ProfileSocialsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileSocialsView.xib; path = Views/ProfileSocialsView.xib; sourceTree = "<group>"; };
+		F198C8551F699A1100AF64E0 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "Extensions/String+Extensions.swift"; sourceTree = "<group>"; };
 		F1CC7FF21F64EFD6006242F1 /* AuthPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthPresenter.swift; path = Modules/Auth/AuthPresenter.swift; sourceTree = "<group>"; };
 		F1CC7FF41F64F024006242F1 /* AuthInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthInteractor.swift; path = Modules/Auth/AuthInteractor.swift; sourceTree = "<group>"; };
 		F1CC7FF61F64F162006242F1 /* AuthDataServiceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthDataServiceable.swift; path = Modules/Auth/AuthDataServiceable.swift; sourceTree = "<group>"; };
 		F1CC7FF81F650C43006242F1 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "Extensions/UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		F1CE75CF1F678816007BD68C /* ProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfilePresenter.swift; path = Modules/Profile/ProfilePresenter.swift; sourceTree = "<group>"; };
+		F1CE75D11F67884F007BD68C /* ProfileInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileInteractor.swift; path = Modules/Profile/ProfileInteractor.swift; sourceTree = "<group>"; };
+		F1CE75D31F6788FE007BD68C /* ProfileDataServiceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileDataServiceable.swift; path = Modules/Profile/ProfileDataServiceable.swift; sourceTree = "<group>"; };
 		F1EB90591F66279D0016D57B /* AuthCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthCardView.swift; path = Modules/Auth/Views/AuthCardView.swift; sourceTree = "<group>"; };
 		F1EB905B1F6627AE0016D57B /* AuthCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AuthCardView.xib; path = Modules/Auth/Views/AuthCardView.xib; sourceTree = "<group>"; };
 		F1EB90651F66393E0016D57B /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -178,7 +208,9 @@
 				F1EB90721F6735ED0016D57B /* Models */,
 				F14B7F9F1F63622D0096C365 /* Modules */,
 				F14B7F9A1F635EF10096C365 /* Protocols */,
+				F18DEA0B1F6C57FE00F81B50 /* SectionControllers */,
 				F11CE57A1F64AF0900CD60C2 /* Services */,
+				F18DEA0E1F6C58A800F81B50 /* Views */,
 			);
 			path = Swirl;
 			sourceTree = "<group>";
@@ -221,6 +253,7 @@
 				F14B7FA51F6368C10096C365 /* Discover */,
 				F14B7FA81F6368E10096C365 /* Following */,
 				F14B7FA91F6368F30096C365 /* Profile */,
+				F18DEA231F6C954800F81B50 /* Settings */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -268,6 +301,9 @@
 		F14B7FA91F6368F30096C365 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				F1CE75D31F6788FE007BD68C /* ProfileDataServiceable.swift */,
+				F1CE75D11F67884F007BD68C /* ProfileInteractor.swift */,
+				F1CE75CF1F678816007BD68C /* ProfilePresenter.swift */,
 				F14B7FC91F6384670096C365 /* ProfileViewController.swift */,
 				F14B7FCA1F6384670096C365 /* ProfileViewController.xib */,
 				F14B7FBF1F63836F0096C365 /* ProfileWireframe.swift */,
@@ -278,11 +314,42 @@
 		F14B7FB21F636D800096C365 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F14B7FB31F636D9C0096C365 /* UIImage+Extensions.swift */,
+				F18DEA151F6C5F8F00F81B50 /* DataSnapshot+Extensions.swift */,
+				F198C8551F699A1100AF64E0 /* String+Extensions.swift */,
 				F1CC7FF81F650C43006242F1 /* UIColor+Extensions.swift */,
+				F161F8BA1F69F4FB0055A8FB /* UIFont+Extensions.swift */,
+				F14B7FB31F636D9C0096C365 /* UIImage+Extensions.swift */,
 				F1EB90651F66393E0016D57B /* UIView+Extensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		F18DEA0B1F6C57FE00F81B50 /* SectionControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F18DEA0C1F6C585300F81B50 /* ProfileSectionController.swift */,
+			);
+			name = SectionControllers;
+			sourceTree = "<group>";
+		};
+		F18DEA0E1F6C58A800F81B50 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F18DEA171F6C6FF000F81B50 /* PostCell.swift */,
+				F18DEA181F6C6FF000F81B50 /* PostCell.xib */,
+				F18DEA0F1F6C58E600F81B50 /* ProfileHeaderCell.swift */,
+				F18DEA101F6C58E600F81B50 /* ProfileHeaderCell.xib */,
+				F18DEA1F1F6C74B000F81B50 /* ProfileSocialsView.swift */,
+				F18DEA201F6C74B000F81B50 /* ProfileSocialsView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F18DEA231F6C954800F81B50 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		F1EB90581F66277C0016D57B /* Views */ = {
@@ -297,6 +364,8 @@
 		F1EB90721F6735ED0016D57B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F16EBE631F6B839C00D6CCE7 /* Post.swift */,
+				F18DEA091F6C4A6A00F81B50 /* Profile.swift */,
 				F1EB90731F67363D0016D57B /* SwirlUser.swift */,
 			);
 			name = Models;
@@ -367,6 +436,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F14B7FC41F6383A60096C365 /* CurateViewController.xib in Resources */,
+				F18DEA121F6C58E600F81B50 /* ProfileHeaderCell.xib in Resources */,
+				F18DEA1A1F6C6FF000F81B50 /* PostCell.xib in Resources */,
+				F18DEA221F6C74B000F81B50 /* ProfileSocialsView.xib in Resources */,
 				F14B7F8D1F635A9A0096C365 /* LaunchScreen.storyboard in Resources */,
 				F1EB905C1F6627AE0016D57B /* AuthCardView.xib in Resources */,
 				F11CE5831F64B6F300CD60C2 /* AuthViewController.xib in Resources */,
@@ -412,6 +484,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -422,6 +495,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -467,6 +541,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F14B7F9E1F6360A00096C365 /* Stoppable.swift in Sources */,
+				F18DEA0D1F6C585300F81B50 /* ProfileSectionController.swift in Sources */,
+				F18DEA191F6C6FF000F81B50 /* PostCell.swift in Sources */,
 				F1CC7FF31F64EFD6006242F1 /* AuthPresenter.swift in Sources */,
 				F14B7FC71F6384030096C365 /* FollowingViewController.swift in Sources */,
 				F14B7F991F635EE40096C365 /* AuthCoordinator.swift in Sources */,
@@ -478,21 +554,31 @@
 				F14B7FCB1F6384670096C365 /* ProfileViewController.swift in Sources */,
 				F11CE57E1F64B50400CD60C2 /* MainCoordinator.swift in Sources */,
 				F1CC7FF71F64F162006242F1 /* AuthDataServiceable.swift in Sources */,
+				F16EBE641F6B839C00D6CCE7 /* Post.swift in Sources */,
 				F14B7FB61F637C860096C365 /* CreateContentWireframe.swift in Sources */,
+				F198C8561F699A1100AF64E0 /* String+Extensions.swift in Sources */,
 				F1EB90661F66393E0016D57B /* UIView+Extensions.swift in Sources */,
 				F14B7FBE1F63833B0096C365 /* FollowingWireframe.swift in Sources */,
 				F1EB90781F67496C0016D57B /* ModelConvertable.swift in Sources */,
 				F11CE5851F64B70600CD60C2 /* AuthWireframe.swift in Sources */,
+				F18DEA111F6C58E600F81B50 /* ProfileHeaderCell.swift in Sources */,
 				F14B7F831F635A9A0096C365 /* AppDelegate.swift in Sources */,
+				F1CE75D41F6788FE007BD68C /* ProfileDataServiceable.swift in Sources */,
 				F14B7FAD1F636B220096C365 /* ControllerGettable.swift in Sources */,
 				F1CC7FF51F64F024006242F1 /* AuthInteractor.swift in Sources */,
 				F14B7FB91F637CCA0096C365 /* CreateContentViewController.swift in Sources */,
+				F1CE75D01F678816007BD68C /* ProfilePresenter.swift in Sources */,
+				F1CE75D21F67884F007BD68C /* ProfileInteractor.swift in Sources */,
+				F18DEA211F6C74B000F81B50 /* ProfileSocialsView.swift in Sources */,
 				F14B7FC31F6383A60096C365 /* CurateViewController.swift in Sources */,
 				F14B7FB41F636D9C0096C365 /* UIImage+Extensions.swift in Sources */,
 				F1CC7FF91F650C43006242F1 /* UIColor+Extensions.swift in Sources */,
 				F11CE57C1F64AF3900CD60C2 /* DataService.swift in Sources */,
 				F11CE5821F64B6F300CD60C2 /* AuthViewController.swift in Sources */,
 				F14B7FBC1F63803E0096C365 /* CurateWireframe.swift in Sources */,
+				F18DEA0A1F6C4A6A00F81B50 /* Profile.swift in Sources */,
+				F18DEA161F6C5F8F00F81B50 /* DataSnapshot+Extensions.swift in Sources */,
+				F161F8BB1F69F4FB0055A8FB /* UIFont+Extensions.swift in Sources */,
 				F14B7FC01F63836F0096C365 /* ProfileWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
