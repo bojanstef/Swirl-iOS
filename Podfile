@@ -14,5 +14,6 @@ target 'Swirl' do
   pod 'FBSDKLoginKit'
   pod 'Cheers'
   pod 'IGListKit'
+  pod 'NextLevel'
 
 end
