@@ -11,12 +11,17 @@ import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
 
+private enum APIError: Error {
+    case noUser
+}
+
 private struct Constants {
     static let readPermissions = ["public_profile", "email", "user_friends"]
 }
 
 private struct DatabaseNodes {
     static let users = "users"
+    static let posts = "posts"
 }
 
 final class DataService {
@@ -53,7 +58,26 @@ extension DataService: AuthDataServiceable {
     }
 }
 
-extension DataService: ProfileDataServiceable {}
+extension DataService: ProfileDataServiceable {
+    func getCurrentUser(completion: @escaping ((SwirlUser?, Error?) -> Void)) {
+        guard let userID = Auth.auth().currentUser?.uid else { completion(nil, APIError.noUser); return }
+        let ref = databaseReference.child(DatabaseNodes.users).child(userID)
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            let swirlUser = SwirlUser.toValue(from: snapshot.toJSON)
+            completion(swirlUser, nil); return
+        })
+    }
+
+    // ISSUE: - https://github.com/bojanstef/Swirl-iOS/issues/6
+    func observePosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void)) {
+        let ref = databaseReference.child(DatabaseNodes.posts).child(swirlUser.uid)
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            guard let dict = snapshot.toJSON else { completion([], APIError.noUser); return }
+            print(dict)
+            completion([], nil)
+        })
+    }
+}
 
 fileprivate extension DataService {
     func authenticateWithFirebase(_ credential: AuthCredential, completion: @escaping ((Bool, Error?) -> Void)) {

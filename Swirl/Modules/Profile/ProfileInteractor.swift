@@ -8,7 +8,11 @@
 
 import Foundation
 
-protocol ProfileInteractable {}
+protocol ProfileInteractable {
+    func getCurrentUser(completion: @escaping ((SwirlUser?, Error?) -> Void))
+    func observePosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void))
+    func openSettings()
+}
 
 final class ProfileInteractor {
     fileprivate weak var moduleDelegate: ProfileModuleDelegate?
@@ -20,4 +24,16 @@ final class ProfileInteractor {
     }
 }
 
-extension ProfileInteractor: ProfileInteractable {}
+extension ProfileInteractor: ProfileInteractable {
+    func getCurrentUser(completion: @escaping ((SwirlUser?, Error?) -> Void)) {
+        dataService.getCurrentUser(completion: completion)
+    }
+
+    func observePosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void)) {
+        dataService.observePosts(for: swirlUser, completion: completion)
+    }
+
+    func openSettings() {
+        moduleDelegate?.openSettings()
+    }
+}

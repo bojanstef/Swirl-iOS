@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol ProfileModuleDelegate: class {}
+protocol ProfileModuleDelegate: class {
+    func openSettings()
+}
 
 final class ProfileWireframe {
     fileprivate weak var moduleDelegate: ProfileModuleDelegate?
