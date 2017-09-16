@@ -14,6 +14,6 @@ target 'Swirl' do
   pod 'FBSDKLoginKit'
   pod 'Cheers'
   pod 'IGListKit'
-  pod 'NextLevel'
+  pod 'NextLevel', '~> 0.6.3' # Remove version when Swift 4 is released
 
 end
