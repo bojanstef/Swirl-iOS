@@ -20,6 +20,9 @@ final class CreateContentWireframe {
 
 extension CreateContentWireframe: ControllerGettable {
     var viewController: UIViewController {
-        return CreateContentViewController(message: "Create Works!")
+        let dataService: CreateContentDataServiceable = DataService.defaultService
+        let interactor = CreateContentInteractor(moduleDelegate: moduleDelegate, dataService: dataService)
+        let presenter = CreateContentPresenter(interactor: interactor)
+        return CreateContentViewController(presenter: presenter)
     }
 }

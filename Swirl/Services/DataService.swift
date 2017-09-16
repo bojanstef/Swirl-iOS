@@ -79,6 +79,8 @@ extension DataService: ProfileDataServiceable {
     }
 }
 
+extension DataService: CreateContentDataServiceable {}
+
 fileprivate extension DataService {
     func authenticateWithFirebase(_ credential: AuthCredential, completion: @escaping ((Bool, Error?) -> Void)) {
         Auth.auth().signIn(with: credential) { [weak self] user, error in

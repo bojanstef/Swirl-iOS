@@ -49,6 +49,9 @@
 		F18DEA1A1F6C6FF000F81B50 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F18DEA181F6C6FF000F81B50 /* PostCell.xib */; };
 		F18DEA211F6C74B000F81B50 /* ProfileSocialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA1F1F6C74B000F81B50 /* ProfileSocialsView.swift */; };
 		F18DEA221F6C74B000F81B50 /* ProfileSocialsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F18DEA201F6C74B000F81B50 /* ProfileSocialsView.xib */; };
+		F18DEA251F6C9F2A00F81B50 /* CreateContentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA241F6C9F2A00F81B50 /* CreateContentPresenter.swift */; };
+		F18DEA271F6C9F9100F81B50 /* CreateContentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA261F6C9F9100F81B50 /* CreateContentInteractor.swift */; };
+		F18DEA291F6C9FFD00F81B50 /* CreateContentDataServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA281F6C9FFD00F81B50 /* CreateContentDataServiceable.swift */; };
 		F198C8561F699A1100AF64E0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198C8551F699A1100AF64E0 /* String+Extensions.swift */; };
 		F1CC7FF31F64EFD6006242F1 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF21F64EFD6006242F1 /* AuthPresenter.swift */; };
 		F1CC7FF51F64F024006242F1 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF41F64F024006242F1 /* AuthInteractor.swift */; };
@@ -110,6 +113,9 @@
 		F18DEA181F6C6FF000F81B50 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostCell.xib; path = Views/PostCell.xib; sourceTree = "<group>"; };
 		F18DEA1F1F6C74B000F81B50 /* ProfileSocialsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSocialsView.swift; path = Views/ProfileSocialsView.swift; sourceTree = "<group>"; };
 		F18DEA201F6C74B000F81B50 /* ProfileSocialsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileSocialsView.xib; path = Views/ProfileSocialsView.xib; sourceTree = "<group>"; };
+		F18DEA241F6C9F2A00F81B50 /* CreateContentPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateContentPresenter.swift; path = Modules/CreateContent/CreateContentPresenter.swift; sourceTree = "<group>"; };
+		F18DEA261F6C9F9100F81B50 /* CreateContentInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateContentInteractor.swift; path = Modules/CreateContent/CreateContentInteractor.swift; sourceTree = "<group>"; };
+		F18DEA281F6C9FFD00F81B50 /* CreateContentDataServiceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateContentDataServiceable.swift; path = Modules/CreateContent/CreateContentDataServiceable.swift; sourceTree = "<group>"; };
 		F198C8551F699A1100AF64E0 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "Extensions/String+Extensions.swift"; sourceTree = "<group>"; };
 		F1CC7FF21F64EFD6006242F1 /* AuthPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthPresenter.swift; path = Modules/Auth/AuthPresenter.swift; sourceTree = "<group>"; };
 		F1CC7FF41F64F024006242F1 /* AuthInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthInteractor.swift; path = Modules/Auth/AuthInteractor.swift; sourceTree = "<group>"; };
@@ -281,6 +287,9 @@
 		F14B7FA71F6368D00096C365 /* CreateContent */ = {
 			isa = PBXGroup;
 			children = (
+				F18DEA281F6C9FFD00F81B50 /* CreateContentDataServiceable.swift */,
+				F18DEA261F6C9F9100F81B50 /* CreateContentInteractor.swift */,
+				F18DEA241F6C9F2A00F81B50 /* CreateContentPresenter.swift */,
 				F14B7FB71F637CCA0096C365 /* CreateContentViewController.swift */,
 				F14B7FB81F637CCA0096C365 /* CreateContentViewController.xib */,
 				F14B7FB51F637C860096C365 /* CreateContentWireframe.swift */,
@@ -562,6 +571,7 @@
 				F1EB90661F66393E0016D57B /* UIView+Extensions.swift in Sources */,
 				F14B7FBE1F63833B0096C365 /* FollowingWireframe.swift in Sources */,
 				F1EB90781F67496C0016D57B /* ModelConvertable.swift in Sources */,
+				F18DEA251F6C9F2A00F81B50 /* CreateContentPresenter.swift in Sources */,
 				F11CE5851F64B70600CD60C2 /* AuthWireframe.swift in Sources */,
 				F18DEA111F6C58E600F81B50 /* ProfileHeaderCell.swift in Sources */,
 				F14B7F831F635A9A0096C365 /* AppDelegate.swift in Sources */,
@@ -569,6 +579,7 @@
 				F14B7FAD1F636B220096C365 /* ControllerGettable.swift in Sources */,
 				F1CC7FF51F64F024006242F1 /* AuthInteractor.swift in Sources */,
 				F14B7FB91F637CCA0096C365 /* CreateContentViewController.swift in Sources */,
+				F18DEA271F6C9F9100F81B50 /* CreateContentInteractor.swift in Sources */,
 				F1CE75D01F678816007BD68C /* ProfilePresenter.swift in Sources */,
 				F1CE75D21F67884F007BD68C /* ProfileInteractor.swift in Sources */,
 				F18DEA211F6C74B000F81B50 /* ProfileSocialsView.swift in Sources */,
@@ -576,6 +587,7 @@
 				F14B7FB41F636D9C0096C365 /* UIImage+Extensions.swift in Sources */,
 				F1CC7FF91F650C43006242F1 /* UIColor+Extensions.swift in Sources */,
 				F11CE57C1F64AF3900CD60C2 /* DataService.swift in Sources */,
+				F18DEA291F6C9FFD00F81B50 /* CreateContentDataServiceable.swift in Sources */,
 				F11CE5821F64B6F300CD60C2 /* AuthViewController.swift in Sources */,
 				F14B7FBC1F63803E0096C365 /* CurateWireframe.swift in Sources */,
 				F18DEA0A1F6C4A6A00F81B50 /* Profile.swift in Sources */,
