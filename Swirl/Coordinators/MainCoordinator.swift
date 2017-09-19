@@ -57,7 +57,12 @@ extension MainCoordinator: MainTabBarModuleDelegate {
     }
 }
 
-extension MainCoordinator: CreatePostModuleDelegate {}
+extension MainCoordinator: CreatePostModuleDelegate {
+    func dismiss() {
+        navigationController.dismiss(animated: true, completion: nil)
+    }
+}
+
 extension MainCoordinator: CurateModuleDelegate {}
 extension MainCoordinator: DiscoverModuleDelegate {}
 extension MainCoordinator: FollowingModuleDelegate {}

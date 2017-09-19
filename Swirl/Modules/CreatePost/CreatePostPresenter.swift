@@ -15,6 +15,7 @@ protocol CreatePostPresentable {
     func stopCamera()
     func requestCameraAuthorizationIfNeeded()
     func cameraPreviewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer
+    func dismiss()
 }
 
 final class CreatePostPresenter {
@@ -40,5 +41,9 @@ extension CreatePostPresenter: CreatePostPresentable {
 
     func cameraPreviewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer {
         return interactor.cameraPreviewLayer(frame: frame)
+    }
+
+    func dismiss() {
+        interactor.dismiss()
     }
 }

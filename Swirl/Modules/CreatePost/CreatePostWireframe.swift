@@ -8,7 +8,9 @@
 
 import UIKit
 
-protocol CreatePostModuleDelegate: class {}
+protocol CreatePostModuleDelegate: class {
+    func dismiss()
+}
 
 final class CreatePostWireframe {
     fileprivate weak var moduleDelegate: CreatePostModuleDelegate?
