@@ -9,11 +9,11 @@
 import UIKit
 
 private enum Controller {
-    case createContent, curate, discover, following, profile
+    case createPost, createPostDummy, curate, discover, following, profile
 }
 
 private struct Constants {
-    static let createTitle = "Create"
+    static let createPostTitle = "Create"
     static let curateTitle = "Curate"
     static let discoverTitle = "Discover"
     static let followingTitle = "Following"
@@ -21,12 +21,13 @@ private struct Constants {
 }
 
 final class MainCoordinator {
-    fileprivate let navigationController: UINavigationController
-    fileprivate lazy var createContentController: UINavigationController = self.createController(.createContent)
+    fileprivate lazy var createPostController: UINavigationController = self.createController(.createPost)
+    fileprivate lazy var createPostDummyController: UINavigationController = self.createController(.createPostDummy)
     fileprivate lazy var curateController: UINavigationController = self.createController(.curate)
     fileprivate lazy var discoverController: UINavigationController = self.createController(.discover)
     fileprivate lazy var followingController: UINavigationController = self.createController(.following)
     fileprivate lazy var profileController: UINavigationController = self.createController(.profile)
+    fileprivate let navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -35,9 +36,12 @@ final class MainCoordinator {
 
 extension MainCoordinator: Stoppable {
     func start() {
-        let controllers = [discoverController, createContentController, followingController, profileController]
-        let tabBarController = UITabBarController()
-        tabBarController.setViewControllers(controllers, animated: false)
+        let viewControllers: [UIViewController] = [
+            discoverController, curateController, createPostDummyController, followingController, profileController
+        ]
+
+        let mainTabBarWireframe = MainTabBarWireframe(moduleDelegate: self, viewControllers: viewControllers)
+        let tabBarController = mainTabBarWireframe.tabBarController
         navigationController.setNavigationBarHidden(true, animated: false)
         navigationController.pushViewController(tabBarController, animated: false)
     }
@@ -47,7 +51,13 @@ extension MainCoordinator: Stoppable {
     }
 }
 
-extension MainCoordinator: CreateContentModuleDelegate {}
+extension MainCoordinator: MainTabBarModuleDelegate {
+    func showCreateContent() {
+        navigationController.present(createPostController, animated: true, completion: nil)
+    }
+}
+
+extension MainCoordinator: CreatePostModuleDelegate {}
 extension MainCoordinator: CurateModuleDelegate {}
 extension MainCoordinator: DiscoverModuleDelegate {}
 extension MainCoordinator: FollowingModuleDelegate {}
@@ -76,30 +86,29 @@ fileprivate extension MainCoordinator {
 
     func createController(_ controller: Controller) -> UINavigationController {
         switch controller {
-        case .createContent:
-            let viewController = CreateContentWireframe(moduleDelegate: self).viewController
-            let image = UIImage(asset: .createContent)
-            return create(viewController, image: image, title: Constants.createTitle)
+        case .createPost:
+            let viewController = CreatePostWireframe(moduleDelegate: self).viewController
+            return create(viewController, image: UIImage(asset: .createPost), title: Constants.createPostTitle)
+
+        case .createPostDummy:
+            let viewController = CreatePostDummyViewController()
+            return create(viewController, image: UIImage(asset: .createPost), title: Constants.createPostTitle)
 
         case .curate:
             let viewController = CurateWireframe(moduleDelegate: self).viewController
-            let image = UIImage(asset: .curate)
-            return create(viewController, image: image, title: Constants.curateTitle)
+            return create(viewController, image: UIImage(asset: .curate), title: Constants.curateTitle)
 
         case .discover:
             let viewController = DiscoverWireframe(moduleDelegate: self).viewController
-            let image = UIImage(asset: .discover)
-            return create(viewController, image: image, title: Constants.discoverTitle)
+            return create(viewController, image: UIImage(asset: .discover), title: Constants.discoverTitle)
 
         case .following:
             let viewController = FollowingWireframe(moduleDelegate: self).viewController
-            let image = UIImage(asset: .following)
-            return create(viewController, image: image, title: Constants.followingTitle)
+            return create(viewController, image: UIImage(asset: .following), title: Constants.followingTitle)
 
         case .profile:
             let viewController = ProfileWireframe(moduleDelegate: self).viewController
-            let image = UIImage(asset: .profile)
-            return createNoTitle(viewController, image: image, title: Constants.profileTitle)
+            return createNoTitle(viewController, image: UIImage(asset: .profile), title: Constants.profileTitle)
         }
     }
 }
