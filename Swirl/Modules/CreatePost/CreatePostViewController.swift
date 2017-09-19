@@ -13,7 +13,7 @@ import UIKit
     static let timescale: CMTimeScale = 600
     static let bitRate: Int = 44_000
 }*/
-
+final class CreatePostDummyViewController: UIViewController {}
 final class CreatePostViewController: UIViewController {
     @IBOutlet fileprivate weak var cameraPreview: UIView!
     fileprivate let presenter: CreatePostPresentable

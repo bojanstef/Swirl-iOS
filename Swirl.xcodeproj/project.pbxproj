@@ -55,7 +55,6 @@
 		F1BCADCC1F70B4A800D77AFC /* MainTabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADCB1F70B4A800D77AFC /* MainTabBarInteractor.swift */; };
 		F1BCADCE1F70B51800D77AFC /* MainTabBarDataServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADCD1F70B51800D77AFC /* MainTabBarDataServiceable.swift */; };
 		F1BCADDA1F70BD2900D77AFC /* CreatePostDataServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADD31F70BD2900D77AFC /* CreatePostDataServiceable.swift */; };
-		F1BCADDB1F70BD2900D77AFC /* CreatePostDummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADD41F70BD2900D77AFC /* CreatePostDummyViewController.swift */; };
 		F1BCADDC1F70BD2900D77AFC /* CreatePostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADD51F70BD2900D77AFC /* CreatePostInteractor.swift */; };
 		F1BCADDD1F70BD2900D77AFC /* CreatePostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADD61F70BD2900D77AFC /* CreatePostPresenter.swift */; };
 		F1BCADDE1F70BD2900D77AFC /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADD71F70BD2900D77AFC /* CreatePostViewController.swift */; };
@@ -127,7 +126,6 @@
 		F1BCADCB1F70B4A800D77AFC /* MainTabBarInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarInteractor.swift; path = Modules/MainTabBar/MainTabBarInteractor.swift; sourceTree = "<group>"; };
 		F1BCADCD1F70B51800D77AFC /* MainTabBarDataServiceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarDataServiceable.swift; path = Modules/MainTabBar/MainTabBarDataServiceable.swift; sourceTree = "<group>"; };
 		F1BCADD31F70BD2900D77AFC /* CreatePostDataServiceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostDataServiceable.swift; path = Modules/CreatePost/CreatePostDataServiceable.swift; sourceTree = "<group>"; };
-		F1BCADD41F70BD2900D77AFC /* CreatePostDummyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostDummyViewController.swift; path = Modules/CreatePost/CreatePostDummyViewController.swift; sourceTree = "<group>"; };
 		F1BCADD51F70BD2900D77AFC /* CreatePostInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostInteractor.swift; path = Modules/CreatePost/CreatePostInteractor.swift; sourceTree = "<group>"; };
 		F1BCADD61F70BD2900D77AFC /* CreatePostPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostPresenter.swift; path = Modules/CreatePost/CreatePostPresenter.swift; sourceTree = "<group>"; };
 		F1BCADD71F70BD2900D77AFC /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostViewController.swift; path = Modules/CreatePost/CreatePostViewController.swift; sourceTree = "<group>"; };
@@ -306,7 +304,6 @@
 			isa = PBXGroup;
 			children = (
 				F1BCADD31F70BD2900D77AFC /* CreatePostDataServiceable.swift */,
-				F1BCADD41F70BD2900D77AFC /* CreatePostDummyViewController.swift */,
 				F1BCADD51F70BD2900D77AFC /* CreatePostInteractor.swift */,
 				F1BCADD61F70BD2900D77AFC /* CreatePostPresenter.swift */,
 				F1BCADD71F70BD2900D77AFC /* CreatePostViewController.swift */,
@@ -612,7 +609,6 @@
 				F14B7FBE1F63833B0096C365 /* FollowingWireframe.swift in Sources */,
 				F1EB90781F67496C0016D57B /* ModelConvertable.swift in Sources */,
 				F11CE5851F64B70600CD60C2 /* AuthWireframe.swift in Sources */,
-				F1BCADDB1F70BD2900D77AFC /* CreatePostDummyViewController.swift in Sources */,
 				F18DEA111F6C58E600F81B50 /* ProfileHeaderCell.swift in Sources */,
 				F14B7F831F635A9A0096C365 /* AppDelegate.swift in Sources */,
 				F1CE75D41F6788FE007BD68C /* ProfileDataServiceable.swift in Sources */,
