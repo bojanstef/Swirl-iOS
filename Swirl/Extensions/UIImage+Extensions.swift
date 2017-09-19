@@ -14,6 +14,7 @@ extension UIImage {
          *  that they are used as the tab bar items **/
         case createPost, curate, discover, following, profile
         case swirlEmoji
+        case swirlButton
         case icon
         case settings
     }
