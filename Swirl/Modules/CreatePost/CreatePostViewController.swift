@@ -24,21 +24,20 @@ final class CreatePostViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
+    deinit {
+        presenter.stopCamera()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBar()
-        presenter.requestCameraAuthorizationIfNeeded()
-        do { try presenter.startCamera() } catch { print(error) }
+        setupCamera()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCamera()
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        presenter.stopCamera()
+        presenter.requestCameraAuthorizationIfNeeded()
+        do { try presenter.startCamera() } catch { print(error) }
     }
 }
 
@@ -48,11 +47,7 @@ fileprivate extension CreatePostViewController {
     }
 
     func startCamera() {
-        do {
-            try presenter.startCamera()
-        } catch {
-            print(error)
-        }
+        try? presenter.startCamera()
     }
 
     func setupCamera() {
