@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8E7E91BE0823367FD1AE2FB4 /* Pods_Swirl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65342E5BB2F181270806186 /* Pods_Swirl.framework */; };
+		F10C0C271F6F28BE0041D2F3 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10C0C261F6F28BE0041D2F3 /* CameraService.swift */; };
 		F11CE57C1F64AF3900CD60C2 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11CE57B1F64AF3900CD60C2 /* DataService.swift */; };
 		F11CE57E1F64B50400CD60C2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11CE57D1F64B50400CD60C2 /* MainCoordinator.swift */; };
 		F11CE5821F64B6F300CD60C2 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11CE5801F64B6F300CD60C2 /* AuthViewController.swift */; };
@@ -25,9 +26,6 @@
 		F14B7FB01F636B670096C365 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FAE1F636B670096C365 /* DiscoverViewController.swift */; };
 		F14B7FB11F636B670096C365 /* DiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FAF1F636B670096C365 /* DiscoverViewController.xib */; };
 		F14B7FB41F636D9C0096C365 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FB31F636D9C0096C365 /* UIImage+Extensions.swift */; };
-		F14B7FB61F637C860096C365 /* CreateContentWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FB51F637C860096C365 /* CreateContentWireframe.swift */; };
-		F14B7FB91F637CCA0096C365 /* CreateContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FB71F637CCA0096C365 /* CreateContentViewController.swift */; };
-		F14B7FBA1F637CCA0096C365 /* CreateContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FB81F637CCA0096C365 /* CreateContentViewController.xib */; };
 		F14B7FBC1F63803E0096C365 /* CurateWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FBB1F63803E0096C365 /* CurateWireframe.swift */; };
 		F14B7FBE1F63833B0096C365 /* FollowingWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FBD1F63833B0096C365 /* FollowingWireframe.swift */; };
 		F14B7FC01F63836F0096C365 /* ProfileWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B7FBF1F63836F0096C365 /* ProfileWireframe.swift */; };
@@ -49,10 +47,20 @@
 		F18DEA1A1F6C6FF000F81B50 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F18DEA181F6C6FF000F81B50 /* PostCell.xib */; };
 		F18DEA211F6C74B000F81B50 /* ProfileSocialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA1F1F6C74B000F81B50 /* ProfileSocialsView.swift */; };
 		F18DEA221F6C74B000F81B50 /* ProfileSocialsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F18DEA201F6C74B000F81B50 /* ProfileSocialsView.xib */; };
-		F18DEA251F6C9F2A00F81B50 /* CreateContentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA241F6C9F2A00F81B50 /* CreateContentPresenter.swift */; };
-		F18DEA271F6C9F9100F81B50 /* CreateContentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA261F6C9F9100F81B50 /* CreateContentInteractor.swift */; };
-		F18DEA291F6C9FFD00F81B50 /* CreateContentDataServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA281F6C9FFD00F81B50 /* CreateContentDataServiceable.swift */; };
 		F198C8561F699A1100AF64E0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198C8551F699A1100AF64E0 /* String+Extensions.swift */; };
+		F1BCADC51F70AD1300D77AFC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADC31F70AD1300D77AFC /* MainTabBarController.swift */; };
+		F1BCADC61F70AD1300D77AFC /* MainTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1BCADC41F70AD1300D77AFC /* MainTabBarController.xib */; };
+		F1BCADC81F70AD7D00D77AFC /* MainTabBarWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADC71F70AD7D00D77AFC /* MainTabBarWireframe.swift */; };
+		F1BCADCA1F70B45D00D77AFC /* MainTabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADC91F70B45D00D77AFC /* MainTabBarPresenter.swift */; };
+		F1BCADCC1F70B4A800D77AFC /* MainTabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADCB1F70B4A800D77AFC /* MainTabBarInteractor.swift */; };
+		F1BCADCE1F70B51800D77AFC /* MainTabBarDataServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADCD1F70B51800D77AFC /* MainTabBarDataServiceable.swift */; };
+		F1BCADDA1F70BD2900D77AFC /* CreatePostDataServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADD31F70BD2900D77AFC /* CreatePostDataServiceable.swift */; };
+		F1BCADDB1F70BD2900D77AFC /* CreatePostDummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADD41F70BD2900D77AFC /* CreatePostDummyViewController.swift */; };
+		F1BCADDC1F70BD2900D77AFC /* CreatePostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADD51F70BD2900D77AFC /* CreatePostInteractor.swift */; };
+		F1BCADDD1F70BD2900D77AFC /* CreatePostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADD61F70BD2900D77AFC /* CreatePostPresenter.swift */; };
+		F1BCADDE1F70BD2900D77AFC /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADD71F70BD2900D77AFC /* CreatePostViewController.swift */; };
+		F1BCADDF1F70BD2900D77AFC /* CreatePostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1BCADD81F70BD2900D77AFC /* CreatePostViewController.xib */; };
+		F1BCADE01F70BD2900D77AFC /* CreatePostWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADD91F70BD2900D77AFC /* CreatePostWireframe.swift */; };
 		F1CC7FF31F64EFD6006242F1 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF21F64EFD6006242F1 /* AuthPresenter.swift */; };
 		F1CC7FF51F64F024006242F1 /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF41F64F024006242F1 /* AuthInteractor.swift */; };
 		F1CC7FF71F64F162006242F1 /* AuthDataServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CC7FF61F64F162006242F1 /* AuthDataServiceable.swift */; };
@@ -70,6 +78,7 @@
 /* Begin PBXFileReference section */
 		A83FD0F261146F51024ECC93 /* Pods-Swirl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swirl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swirl/Pods-Swirl.debug.xcconfig"; sourceTree = "<group>"; };
 		B65342E5BB2F181270806186 /* Pods_Swirl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swirl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10C0C261F6F28BE0041D2F3 /* CameraService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraService.swift; path = Services/CameraService.swift; sourceTree = "<group>"; };
 		F11CE57B1F64AF3900CD60C2 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataService.swift; path = Services/DataService.swift; sourceTree = "<group>"; };
 		F11CE57D1F64B50400CD60C2 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainCoordinator.swift; path = Coordinators/MainCoordinator.swift; sourceTree = "<group>"; };
 		F11CE5801F64B6F300CD60C2 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthViewController.swift; path = Modules/Auth/AuthViewController.swift; sourceTree = "<group>"; };
@@ -89,9 +98,6 @@
 		F14B7FAE1F636B670096C365 /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverViewController.swift; path = Modules/Discover/DiscoverViewController.swift; sourceTree = "<group>"; };
 		F14B7FAF1F636B670096C365 /* DiscoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DiscoverViewController.xib; path = Modules/Discover/DiscoverViewController.xib; sourceTree = "<group>"; };
 		F14B7FB31F636D9C0096C365 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Extensions.swift"; path = "Extensions/UIImage+Extensions.swift"; sourceTree = "<group>"; };
-		F14B7FB51F637C860096C365 /* CreateContentWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateContentWireframe.swift; path = Modules/CreateContent/CreateContentWireframe.swift; sourceTree = "<group>"; };
-		F14B7FB71F637CCA0096C365 /* CreateContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateContentViewController.swift; path = Modules/CreateContent/CreateContentViewController.swift; sourceTree = "<group>"; };
-		F14B7FB81F637CCA0096C365 /* CreateContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreateContentViewController.xib; path = Modules/CreateContent/CreateContentViewController.xib; sourceTree = "<group>"; };
 		F14B7FBB1F63803E0096C365 /* CurateWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurateWireframe.swift; path = Modules/Curate/CurateWireframe.swift; sourceTree = "<group>"; };
 		F14B7FBD1F63833B0096C365 /* FollowingWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowingWireframe.swift; path = Modules/Following/FollowingWireframe.swift; sourceTree = "<group>"; };
 		F14B7FBF1F63836F0096C365 /* ProfileWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileWireframe.swift; path = Modules/Profile/ProfileWireframe.swift; sourceTree = "<group>"; };
@@ -113,10 +119,20 @@
 		F18DEA181F6C6FF000F81B50 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostCell.xib; path = Views/PostCell.xib; sourceTree = "<group>"; };
 		F18DEA1F1F6C74B000F81B50 /* ProfileSocialsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSocialsView.swift; path = Views/ProfileSocialsView.swift; sourceTree = "<group>"; };
 		F18DEA201F6C74B000F81B50 /* ProfileSocialsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileSocialsView.xib; path = Views/ProfileSocialsView.xib; sourceTree = "<group>"; };
-		F18DEA241F6C9F2A00F81B50 /* CreateContentPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateContentPresenter.swift; path = Modules/CreateContent/CreateContentPresenter.swift; sourceTree = "<group>"; };
-		F18DEA261F6C9F9100F81B50 /* CreateContentInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateContentInteractor.swift; path = Modules/CreateContent/CreateContentInteractor.swift; sourceTree = "<group>"; };
-		F18DEA281F6C9FFD00F81B50 /* CreateContentDataServiceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateContentDataServiceable.swift; path = Modules/CreateContent/CreateContentDataServiceable.swift; sourceTree = "<group>"; };
 		F198C8551F699A1100AF64E0 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "Extensions/String+Extensions.swift"; sourceTree = "<group>"; };
+		F1BCADC31F70AD1300D77AFC /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = Modules/MainTabBar/MainTabBarController.swift; sourceTree = "<group>"; };
+		F1BCADC41F70AD1300D77AFC /* MainTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainTabBarController.xib; path = Modules/MainTabBar/MainTabBarController.xib; sourceTree = "<group>"; };
+		F1BCADC71F70AD7D00D77AFC /* MainTabBarWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarWireframe.swift; path = Modules/MainTabBar/MainTabBarWireframe.swift; sourceTree = "<group>"; };
+		F1BCADC91F70B45D00D77AFC /* MainTabBarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarPresenter.swift; path = Modules/MainTabBar/MainTabBarPresenter.swift; sourceTree = "<group>"; };
+		F1BCADCB1F70B4A800D77AFC /* MainTabBarInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarInteractor.swift; path = Modules/MainTabBar/MainTabBarInteractor.swift; sourceTree = "<group>"; };
+		F1BCADCD1F70B51800D77AFC /* MainTabBarDataServiceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarDataServiceable.swift; path = Modules/MainTabBar/MainTabBarDataServiceable.swift; sourceTree = "<group>"; };
+		F1BCADD31F70BD2900D77AFC /* CreatePostDataServiceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostDataServiceable.swift; path = Modules/CreatePost/CreatePostDataServiceable.swift; sourceTree = "<group>"; };
+		F1BCADD41F70BD2900D77AFC /* CreatePostDummyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostDummyViewController.swift; path = Modules/CreatePost/CreatePostDummyViewController.swift; sourceTree = "<group>"; };
+		F1BCADD51F70BD2900D77AFC /* CreatePostInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostInteractor.swift; path = Modules/CreatePost/CreatePostInteractor.swift; sourceTree = "<group>"; };
+		F1BCADD61F70BD2900D77AFC /* CreatePostPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostPresenter.swift; path = Modules/CreatePost/CreatePostPresenter.swift; sourceTree = "<group>"; };
+		F1BCADD71F70BD2900D77AFC /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostViewController.swift; path = Modules/CreatePost/CreatePostViewController.swift; sourceTree = "<group>"; };
+		F1BCADD81F70BD2900D77AFC /* CreatePostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreatePostViewController.xib; path = Modules/CreatePost/CreatePostViewController.xib; sourceTree = "<group>"; };
+		F1BCADD91F70BD2900D77AFC /* CreatePostWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostWireframe.swift; path = Modules/CreatePost/CreatePostWireframe.swift; sourceTree = "<group>"; };
 		F1CC7FF21F64EFD6006242F1 /* AuthPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthPresenter.swift; path = Modules/Auth/AuthPresenter.swift; sourceTree = "<group>"; };
 		F1CC7FF41F64F024006242F1 /* AuthInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthInteractor.swift; path = Modules/Auth/AuthInteractor.swift; sourceTree = "<group>"; };
 		F1CC7FF61F64F162006242F1 /* AuthDataServiceable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthDataServiceable.swift; path = Modules/Auth/AuthDataServiceable.swift; sourceTree = "<group>"; };
@@ -165,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				F11CE57B1F64AF3900CD60C2 /* DataService.swift */,
+				F10C0C261F6F28BE0041D2F3 /* CameraService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -254,10 +271,11 @@
 			isa = PBXGroup;
 			children = (
 				F11CE57F1F64B6C800CD60C2 /* Auth */,
-				F14B7FA71F6368D00096C365 /* CreateContent */,
+				F14B7FA71F6368D00096C365 /* CreatePost */,
 				F14B7FA61F6368C90096C365 /* Curate */,
 				F14B7FA51F6368C10096C365 /* Discover */,
 				F14B7FA81F6368E10096C365 /* Following */,
+				F1BCADC21F70AC9E00D77AFC /* MainTabBar */,
 				F14B7FA91F6368F30096C365 /* Profile */,
 				F18DEA231F6C954800F81B50 /* Settings */,
 			);
@@ -284,17 +302,18 @@
 			name = Curate;
 			sourceTree = "<group>";
 		};
-		F14B7FA71F6368D00096C365 /* CreateContent */ = {
+		F14B7FA71F6368D00096C365 /* CreatePost */ = {
 			isa = PBXGroup;
 			children = (
-				F18DEA281F6C9FFD00F81B50 /* CreateContentDataServiceable.swift */,
-				F18DEA261F6C9F9100F81B50 /* CreateContentInteractor.swift */,
-				F18DEA241F6C9F2A00F81B50 /* CreateContentPresenter.swift */,
-				F14B7FB71F637CCA0096C365 /* CreateContentViewController.swift */,
-				F14B7FB81F637CCA0096C365 /* CreateContentViewController.xib */,
-				F14B7FB51F637C860096C365 /* CreateContentWireframe.swift */,
+				F1BCADD31F70BD2900D77AFC /* CreatePostDataServiceable.swift */,
+				F1BCADD41F70BD2900D77AFC /* CreatePostDummyViewController.swift */,
+				F1BCADD51F70BD2900D77AFC /* CreatePostInteractor.swift */,
+				F1BCADD61F70BD2900D77AFC /* CreatePostPresenter.swift */,
+				F1BCADD71F70BD2900D77AFC /* CreatePostViewController.swift */,
+				F1BCADD81F70BD2900D77AFC /* CreatePostViewController.xib */,
+				F1BCADD91F70BD2900D77AFC /* CreatePostWireframe.swift */,
 			);
-			name = CreateContent;
+			name = CreatePost;
 			sourceTree = "<group>";
 		};
 		F14B7FA81F6368E10096C365 /* Following */ = {
@@ -359,6 +378,19 @@
 			children = (
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		F1BCADC21F70AC9E00D77AFC /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F1BCADCD1F70B51800D77AFC /* MainTabBarDataServiceable.swift */,
+				F1BCADCB1F70B4A800D77AFC /* MainTabBarInteractor.swift */,
+				F1BCADC91F70B45D00D77AFC /* MainTabBarPresenter.swift */,
+				F1BCADC31F70AD1300D77AFC /* MainTabBarController.swift */,
+				F1BCADC41F70AD1300D77AFC /* MainTabBarController.xib */,
+				F1BCADC71F70AD7D00D77AFC /* MainTabBarWireframe.swift */,
+			);
+			name = MainTabBar;
 			sourceTree = "<group>";
 		};
 		F1EB90581F66277C0016D57B /* Views */ = {
@@ -450,13 +482,14 @@
 				F18DEA221F6C74B000F81B50 /* ProfileSocialsView.xib in Resources */,
 				F14B7F8D1F635A9A0096C365 /* LaunchScreen.storyboard in Resources */,
 				F1EB905C1F6627AE0016D57B /* AuthCardView.xib in Resources */,
+				F1BCADDF1F70BD2900D77AFC /* CreatePostViewController.xib in Resources */,
 				F11CE5831F64B6F300CD60C2 /* AuthViewController.xib in Resources */,
 				F14B7FCE1F6389260096C365 /* GoogleService-Info.plist in Resources */,
 				F14B7FCC1F6384670096C365 /* ProfileViewController.xib in Resources */,
+				F1BCADC61F70AD1300D77AFC /* MainTabBarController.xib in Resources */,
 				F14B7FB11F636B670096C365 /* DiscoverViewController.xib in Resources */,
 				F14B7FC81F6384030096C365 /* FollowingViewController.xib in Resources */,
 				F14B7F8A1F635A9A0096C365 /* Assets.xcassets in Resources */,
-				F14B7FBA1F637CCA0096C365 /* CreateContentViewController.xib in Resources */,
 				F14B7F881F635A9A0096C365 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,9 +584,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1BCADCA1F70B45D00D77AFC /* MainTabBarPresenter.swift in Sources */,
+				F10C0C271F6F28BE0041D2F3 /* CameraService.swift in Sources */,
 				F14B7F9E1F6360A00096C365 /* Stoppable.swift in Sources */,
+				F1BCADC51F70AD1300D77AFC /* MainTabBarController.swift in Sources */,
 				F18DEA0D1F6C585300F81B50 /* ProfileSectionController.swift in Sources */,
 				F18DEA191F6C6FF000F81B50 /* PostCell.swift in Sources */,
+				F1BCADDC1F70BD2900D77AFC /* CreatePostInteractor.swift in Sources */,
 				F1CC7FF31F64EFD6006242F1 /* AuthPresenter.swift in Sources */,
 				F14B7FC71F6384030096C365 /* FollowingViewController.swift in Sources */,
 				F14B7F991F635EE40096C365 /* AuthCoordinator.swift in Sources */,
@@ -563,31 +600,34 @@
 				F14B7FAB1F636A8E0096C365 /* DiscoverWireframe.swift in Sources */,
 				F1EB905A1F66279D0016D57B /* AuthCardView.swift in Sources */,
 				F14B7FCB1F6384670096C365 /* ProfileViewController.swift in Sources */,
+				F1BCADCE1F70B51800D77AFC /* MainTabBarDataServiceable.swift in Sources */,
 				F11CE57E1F64B50400CD60C2 /* MainCoordinator.swift in Sources */,
 				F1CC7FF71F64F162006242F1 /* AuthDataServiceable.swift in Sources */,
+				F1BCADCC1F70B4A800D77AFC /* MainTabBarInteractor.swift in Sources */,
 				F16EBE641F6B839C00D6CCE7 /* Post.swift in Sources */,
-				F14B7FB61F637C860096C365 /* CreateContentWireframe.swift in Sources */,
 				F198C8561F699A1100AF64E0 /* String+Extensions.swift in Sources */,
+				F1BCADDE1F70BD2900D77AFC /* CreatePostViewController.swift in Sources */,
+				F1BCADDD1F70BD2900D77AFC /* CreatePostPresenter.swift in Sources */,
 				F1EB90661F66393E0016D57B /* UIView+Extensions.swift in Sources */,
 				F14B7FBE1F63833B0096C365 /* FollowingWireframe.swift in Sources */,
 				F1EB90781F67496C0016D57B /* ModelConvertable.swift in Sources */,
-				F18DEA251F6C9F2A00F81B50 /* CreateContentPresenter.swift in Sources */,
 				F11CE5851F64B70600CD60C2 /* AuthWireframe.swift in Sources */,
+				F1BCADDB1F70BD2900D77AFC /* CreatePostDummyViewController.swift in Sources */,
 				F18DEA111F6C58E600F81B50 /* ProfileHeaderCell.swift in Sources */,
 				F14B7F831F635A9A0096C365 /* AppDelegate.swift in Sources */,
 				F1CE75D41F6788FE007BD68C /* ProfileDataServiceable.swift in Sources */,
 				F14B7FAD1F636B220096C365 /* ControllerGettable.swift in Sources */,
 				F1CC7FF51F64F024006242F1 /* AuthInteractor.swift in Sources */,
-				F14B7FB91F637CCA0096C365 /* CreateContentViewController.swift in Sources */,
-				F18DEA271F6C9F9100F81B50 /* CreateContentInteractor.swift in Sources */,
 				F1CE75D01F678816007BD68C /* ProfilePresenter.swift in Sources */,
 				F1CE75D21F67884F007BD68C /* ProfileInteractor.swift in Sources */,
+				F1BCADC81F70AD7D00D77AFC /* MainTabBarWireframe.swift in Sources */,
 				F18DEA211F6C74B000F81B50 /* ProfileSocialsView.swift in Sources */,
+				F1BCADE01F70BD2900D77AFC /* CreatePostWireframe.swift in Sources */,
 				F14B7FC31F6383A60096C365 /* CurateViewController.swift in Sources */,
+				F1BCADDA1F70BD2900D77AFC /* CreatePostDataServiceable.swift in Sources */,
 				F14B7FB41F636D9C0096C365 /* UIImage+Extensions.swift in Sources */,
 				F1CC7FF91F650C43006242F1 /* UIColor+Extensions.swift in Sources */,
 				F11CE57C1F64AF3900CD60C2 /* DataService.swift in Sources */,
-				F18DEA291F6C9FFD00F81B50 /* CreateContentDataServiceable.swift in Sources */,
 				F11CE5821F64B6F300CD60C2 /* AuthViewController.swift in Sources */,
 				F14B7FBC1F63803E0096C365 /* CurateWireframe.swift in Sources */,
 				F18DEA0A1F6C4A6A00F81B50 /* Profile.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  CreateContentDataServiceable.swift
+//  CreatePostDataServiceable.swift
 //  Swirl
 //
 //  Created by Bojan Stefanovic on 9/15/17.
@@ -8,4 +8,4 @@
 
 import Foundation
 
-protocol CreateContentDataServiceable {}
+protocol CreatePostDataServiceable {}
