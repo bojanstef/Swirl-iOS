@@ -79,7 +79,8 @@ extension DataService: ProfileDataServiceable {
     }
 }
 
-extension DataService: CreateContentDataServiceable {}
+extension DataService: CreatePostDataServiceable {}
+extension DataService: MainTabBarDataServiceable {}
 
 fileprivate extension DataService {
     func authenticateWithFirebase(_ credential: AuthCredential, completion: @escaping ((Bool, Error?) -> Void)) {
