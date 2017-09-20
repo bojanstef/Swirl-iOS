@@ -61,7 +61,7 @@ extension ProfileViewController: ProfileSocialsViewDelegate {
 }
 
 fileprivate extension ProfileViewController {
-    dynamic func settingsButtonPressed() {
+    @objc func settingsButtonPressed() {
         presenter.openSettings()
     }
 

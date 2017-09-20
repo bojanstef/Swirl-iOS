@@ -20,12 +20,12 @@ private struct Constants {
     static let followingTitle = "Following"
     static let newline = NSAttributedString(string: "\n")
     static let hardTextAttributes = [
-        NSForegroundColorAttributeName: UIColor.black,
-        NSFontAttributeName: UIFont.futura(size: .regular)
+        NSAttributedStringKey.foregroundColor: UIColor.black,
+        NSAttributedStringKey.font: UIFont.futura(size: .regular)
     ]
     static let softTextAttributes = [
-        NSForegroundColorAttributeName: UIColor.lightGray,
-        NSFontAttributeName: UIFont.futura(size: .small)
+        NSAttributedStringKey.foregroundColor: UIColor.lightGray,
+        NSAttributedStringKey.font: UIFont.futura(size: .small)
     ]
 }
 

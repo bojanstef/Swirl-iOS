@@ -46,24 +46,24 @@ fileprivate extension AuthCardView {
 
     func setupLabels() {
         titleLabel.attributedText = NSAttributedString(string: Constants.titleLabelText, attributes: [
-            NSFontAttributeName: UIFont.futura(size: .large)
+            NSAttributedStringKey.font: UIFont.futura(size: .large)
         ])
 
         subtitleLabel.attributedText = NSAttributedString(string: Constants.subtitleLabelText, attributes: [
-            NSForegroundColorAttributeName: UIColor.lightBlue,
-            NSFontAttributeName: UIFont.futura(size: .regular)
+            NSAttributedStringKey.foregroundColor: UIColor.lightBlue,
+            NSAttributedStringKey.font: UIFont.futura(size: .regular)
         ])
 
         bottomLabel.attributedText = NSAttributedString(string: Constants.bottomLabelText, attributes: [
-            NSForegroundColorAttributeName: UIColor.lightGray,
-            NSFontAttributeName: UIFont.futura(size: .small)
+            NSAttributedStringKey.foregroundColor: UIColor.lightGray,
+            NSAttributedStringKey.font: UIFont.futura(size: .small)
         ])
     }
 
     func setupLoginButton() {
         let attributedTitle = NSAttributedString(string: Constants.buttonText, attributes: [
-            NSForegroundColorAttributeName: UIColor.white.withAlphaComponent(Constants.alphaValue),
-            NSFontAttributeName: UIFont.futura(size: .medium)
+            NSAttributedStringKey.foregroundColor: UIColor.white.withAlphaComponent(Constants.alphaValue),
+            NSAttributedStringKey.font: UIFont.futura(size: .medium)
         ])
 
         loginButton.setAttributedTitle(attributedTitle, for: .normal)

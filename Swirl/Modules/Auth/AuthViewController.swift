@@ -43,7 +43,7 @@ extension AuthViewController: AuthCardViewDelegate {
 }
 
 fileprivate extension AuthViewController {
-    dynamic func dragAuthCardView(_ sender: UIPanGestureRecognizer) {
+    @objc func dragAuthCardView(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
         let xTranslation = authCardView.center.x + translation.x
         let yTranslation = authCardView.center.y + translation.y

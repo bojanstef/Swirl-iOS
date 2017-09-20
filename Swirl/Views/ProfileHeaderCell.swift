@@ -15,12 +15,12 @@ protocol ProfileHeaderCellInitializing {
 private struct Constants {
     static let viewsTitle = " " + "views"
     static let totalViewsTextAttributes = [
-        NSForegroundColorAttributeName: UIColor.black,
-        NSFontAttributeName: UIFont.futura(size: .small)
+        NSAttributedStringKey.foregroundColor: UIColor.black,
+        NSAttributedStringKey.font: UIFont.futura(size: .small)
     ]
     static let biographyTextAttribues = [
-        NSForegroundColorAttributeName: UIColor.black,
-        NSFontAttributeName: UIFont.avenirBook(size: .small)
+        NSAttributedStringKey.foregroundColor: UIColor.black,
+        NSAttributedStringKey.font: UIFont.avenirBook(size: .small)
     ]
 }
 
