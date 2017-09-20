@@ -18,6 +18,6 @@ target 'Swirl' do
   # Other Pods
   pod 'Cheers'
   pod 'IGListKit'
-  # pod 'NextLevel'
+  pod 'NextLevel'
 
 end

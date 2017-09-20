@@ -6,7 +6,7 @@
 //  Copyright © 2017 Stefanovic Ventures. All rights reserved.
 //
 
-//import NextLevel
+import NextLevel
 import CoreGraphics
 import AVFoundation
 
@@ -20,58 +20,52 @@ protocol CameraServiceable {
 }
 
 final class CameraService: NSObject {
-    //fileprivate let nextLevel: NextLevel
+    fileprivate let nextLevel: NextLevel
 
     static var defaultService: CameraServiceable {
-        //let nextLevel = NextLevel()
-        //return CameraService(nextLevel: nextLevel)
-        return CameraService()
+        let nextLevel = NextLevel()
+        return CameraService(nextLevel: nextLevel)
     }
 
-    /*private init(nextLevel: NextLevel) {
+    private init(nextLevel: NextLevel) {
         self.nextLevel = nextLevel
         super.init()
         self.nextLevel.delegate = self
         self.nextLevel.videoDelegate = self
-    }*/
-
-    private override init() {
-        super.init()
     }
 }
 
 extension CameraService: CameraServiceable {
     func start() throws {
-        //try nextLevel.start()
+        try nextLevel.start()
     }
 
     func stop() {
-        //nextLevel.stop()
+        nextLevel.stop()
     }
 
     func requestAuthorizationIfNeeded() {
-        //testAndRequestAuthorization(for: AVMediaTypeVideo)
-        //testAndRequestAuthorization(for: AVMediaTypeAudio)
+        testAndRequestAuthorization(for: AVMediaType.video)
+        testAndRequestAuthorization(for: AVMediaType.audio)
     }
 
     func previewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer {
-        //nextLevel.previewLayer.frame = frame
-        //return nextLevel.previewLayer
-        return AVCaptureVideoPreviewLayer()
+        nextLevel.previewLayer.frame = frame
+        return nextLevel.previewLayer
     }
 
     func record() {
-        //nextLevel.record()
+        nextLevel.record()
     }
 
     func pause() {
-        //nextLevel.pause()
+        nextLevel.pause()
     }
 }
 
-/*extension CameraService: NextLevelDelegate {
-    func nextLevel(_ nextLevel: NextLevel, didUpdateAuthorizationStatus status: NextLevelAuthorizationStatus,
-                   forMediaType mediaType: String) {}
+extension CameraService: NextLevelDelegate {
+    func nextLevel(_ nextLevel: NextLevel,
+                   didUpdateAuthorizationStatus status: NextLevelAuthorizationStatus, forMediaType mediaType: AVMediaType) {}
     func nextLevel(_ nextLevel: NextLevel,
                    didUpdateVideoConfiguration videoConfiguration: NextLevelVideoConfiguration) {}
     func nextLevel(_ nextLevel: NextLevel,
@@ -110,14 +104,14 @@ extension CameraService: NextLevelVideoDelegate {
 }
 
 fileprivate extension CameraService {
-    func authorizationStatus(for mediaType: String) -> NextLevelAuthorizationStatus {
+    func authorizationStatus(for mediaType: AVMediaType) -> NextLevelAuthorizationStatus {
         return nextLevel.authorizationStatus(forMediaType: mediaType)
     }
 
-    func testAndRequestAuthorization(for mediaType: String) {
+    func testAndRequestAuthorization(for mediaType: AVMediaType) {
         guard authorizationStatus(for: mediaType) == .authorized else {
             nextLevel.requestAuthorization(forMediaType: mediaType)
             return
         }
     }
-}*/
+}
