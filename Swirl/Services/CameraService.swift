@@ -64,8 +64,8 @@ extension CameraService: CameraServiceable {
 }
 
 extension CameraService: NextLevelDelegate {
-    func nextLevel(_ nextLevel: NextLevel,
-                   didUpdateAuthorizationStatus status: NextLevelAuthorizationStatus, forMediaType mediaType: AVMediaType) {}
+    func nextLevel(_ nextLevel: NextLevel, didUpdateAuthorizationStatus status: NextLevelAuthorizationStatus,
+                   forMediaType mediaType: AVMediaType) {}
     func nextLevel(_ nextLevel: NextLevel,
                    didUpdateVideoConfiguration videoConfiguration: NextLevelVideoConfiguration) {}
     func nextLevel(_ nextLevel: NextLevel,
