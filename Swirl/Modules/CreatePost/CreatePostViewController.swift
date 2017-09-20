@@ -36,14 +36,20 @@ final class CreatePostViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        presenter.dismiss()
         presenter.requestCameraAuthorizationIfNeeded()
-        do { try presenter.startCamera() } catch { print(error) }
+        try? presenter.startCamera()
     }
+
 }
 
 fileprivate extension CreatePostViewController {
-    dynamic func dismissController() {
-        presenter.dismiss()
+    @IBAction func videoButtonHeld(_ sender: Any) {
+        presenter.recordVideo()
+    }
+
+    @IBAction func videoButtonReleased(_ sender: Any) {
+        presenter.pauseRecording()
     }
 
     func startCamera() {
@@ -52,17 +58,10 @@ fileprivate extension CreatePostViewController {
 
     func setupCamera() {
         let previewLayer = presenter.cameraPreviewLayer(frame: cameraPreview.bounds)
-        cameraPreview.layer.addSublayer(previewLayer)
+        cameraPreview.layer.insertSublayer(previewLayer, at: 0)
     }
 
     func setupNavBar() {
-        let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
-                                                 target: self, action: .dismissController)
-        rightBarButtonItem.tintColor = .black
-        navigationItem.rightBarButtonItem = rightBarButtonItem
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
-}
-
-fileprivate extension Selector {
-    static let dismissController = #selector(CreatePostViewController.dismissController)
 }

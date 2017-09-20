@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12121"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,7 +22,25 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fuf-zJ-DYa">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQC-xM-tNx">
+                            <rect key="frame" x="123.5" y="507" width="128" height="128"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="128" id="A6V-Lw-9bv"/>
+                                <constraint firstAttribute="width" constant="128" id="hw0-aR-s18"/>
+                            </constraints>
+                            <state key="normal" image="swirlButton"/>
+                            <connections>
+                                <action selector="videoButtonHeld:" destination="-1" eventType="touchDown" id="ZME-sy-yz2"/>
+                                <action selector="videoButtonReleased:" destination="-1" eventType="touchCancel" id="4Re-3Y-a7k"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="bQC-xM-tNx" secondAttribute="bottom" constant="32" id="I7y-K0-XRk"/>
+                        <constraint firstItem="bQC-xM-tNx" firstAttribute="centerX" secondItem="Fuf-zJ-DYa" secondAttribute="centerX" id="haV-hV-ONr"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,4 +52,7 @@
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="swirlButton" width="341" height="341"/>
+    </resources>
 </document>
