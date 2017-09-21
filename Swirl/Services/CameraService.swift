@@ -10,6 +10,10 @@ import NextLevel
 import CoreGraphics
 import AVFoundation
 
+private enum CameraErrors: Error {
+    case noSession
+}
+
 private struct Constants {
     private static let seconds = GlobalConstants.maximumVideoCaptureTime
     static let maximumCaptureDuration = CMTime(seconds: seconds, preferredTimescale: 600)
@@ -22,10 +26,13 @@ protocol CameraServiceable {
     func previewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer
     func record()
     func pause()
+    func doneRecording(completion: @escaping ((URL?, Error?) -> Void))
+    func removeLastClip()
     func flipCamera()
 }
 
 final class CameraService: NSObject {
+    fileprivate var recordingIsAllowed = true
     fileprivate let nextLevel: NextLevel
 
     static var defaultService: CameraServiceable {
@@ -61,11 +68,23 @@ extension CameraService: CameraServiceable {
     }
 
     func record() {
-        nextLevel.record()
+        if recordingIsAllowed {
+            nextLevel.record()
+        }
     }
 
     func pause() {
-        nextLevel.pause()
+        recordingIsAllowed = false
+        nextLevel.pause { [weak self] in self?.recordingIsAllowed = true }
+    }
+
+    func doneRecording(completion: @escaping ((URL?, Error?) -> Void)) {
+        guard let session = nextLevel.session else { completion(nil, CameraErrors.noSession); return }
+        session.mergeClips(usingPreset: AVAssetExportPresetHighestQuality, completionHandler: completion)
+    }
+
+    func removeLastClip() {
+        nextLevel.session?.removeLastClip()
     }
 
     func flipCamera() {

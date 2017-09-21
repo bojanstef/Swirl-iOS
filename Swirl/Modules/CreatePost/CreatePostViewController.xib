@@ -56,12 +56,21 @@
                                 <action selector="flipCameraButtonPressed:" destination="-1" eventType="touchUpInside" id="W3B-g3-Fsc"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twC-Jl-Iam">
+                            <rect key="frame" x="166" y="318" width="42" height="30"/>
+                            <state key="normal" title="DONE"/>
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="-1" eventType="touchUpInside" id="5XK-ts-ATL"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="P2a-N6-lsn" firstAttribute="leading" secondItem="Fuf-zJ-DYa" secondAttribute="leading" constant="16" id="2g9-eI-yOM"/>
+                        <constraint firstItem="twC-Jl-Iam" firstAttribute="centerX" secondItem="Fuf-zJ-DYa" secondAttribute="centerX" id="G1E-4W-1bo"/>
                         <constraint firstItem="P2a-N6-lsn" firstAttribute="top" secondItem="Fuf-zJ-DYa" secondAttribute="top" constant="32" id="Gmk-cR-xlh"/>
                         <constraint firstAttribute="bottom" secondItem="bQC-xM-tNx" secondAttribute="bottom" constant="32" id="I7y-K0-XRk"/>
+                        <constraint firstItem="twC-Jl-Iam" firstAttribute="centerY" secondItem="Fuf-zJ-DYa" secondAttribute="centerY" id="J1N-a5-kr8"/>
                         <constraint firstItem="Qm6-q7-h6Z" firstAttribute="top" secondItem="Fuf-zJ-DYa" secondAttribute="top" constant="32" id="dMx-Pk-OOt"/>
                         <constraint firstItem="bQC-xM-tNx" firstAttribute="centerX" secondItem="Fuf-zJ-DYa" secondAttribute="centerX" id="haV-hV-ONr"/>
                         <constraint firstAttribute="trailing" secondItem="Qm6-q7-h6Z" secondAttribute="trailing" constant="16" id="xE3-2K-Qwk"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 private struct Constants {
     static let doubleTap = 2
@@ -36,6 +37,7 @@ final class CreatePostViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        startCamera()
         setupNavBar()
         setupButtons()
         setupCameraButton()
@@ -44,15 +46,28 @@ final class CreatePostViewController: UIViewController {
         setupDoubleTapGesture()
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        startCamera()
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        presenter.doneRecording { url, error in
+            if let error = error {
+                print(error)
+            } else {
+                guard let url = url else { print(#function, "No URL"); return }
+                print(#function, "URL:", url)
+                let player = AVPlayer(url: url)
+                let playerViewController = AVPlayerViewController()
+                playerViewController.player = player
+                self.present(playerViewController, animated: true) {
+                    playerViewController.player?.play()
+                }
+            }
+        }
     }
 }
 
 fileprivate extension CreatePostViewController {
     @IBAction func dismissButtonPressed(_ sender: Any) {
         progressLayer?.removeFromSuperlayer()
+        presenter.stopCamera()
         presenter.dismiss()
     }
 

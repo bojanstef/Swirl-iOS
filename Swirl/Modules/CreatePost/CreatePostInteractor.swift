@@ -16,6 +16,7 @@ protocol CreatePostInteractable {
     func cameraPreviewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer
     func recordVideo()
     func pauseRecording()
+    func doneRecording(completion: @escaping ((URL?, Error?) -> Void))
     func flipCamera()
     func dismiss()
 }
@@ -54,6 +55,10 @@ extension CreatePostInteractor: CreatePostInteractable {
 
     func pauseRecording() {
         cameraService.pause()
+    }
+
+    func doneRecording(completion: @escaping ((URL?, Error?) -> Void)) {
+        cameraService.doneRecording(completion: completion)
     }
 
     func flipCamera() {

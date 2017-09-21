@@ -16,6 +16,7 @@ protocol CreatePostPresentable {
     func cameraPreviewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer
     func recordVideo()
     func pauseRecording()
+    func doneRecording(completion: @escaping ((URL?, Error?) -> Void))
     func flipCamera()
     func dismiss()
 }
@@ -47,6 +48,10 @@ extension CreatePostPresenter: CreatePostPresentable {
 
     func pauseRecording() {
         interactor.pauseRecording()
+    }
+
+    func doneRecording(completion: @escaping ((URL?, Error?) -> Void)) {
+        interactor.doneRecording(completion: completion)
     }
 
     func flipCamera() {
