@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+protocol SubmitPostInteractable {}
+
+final class SubmitPostInteractor {
+    fileprivate weak var moduleDelegate: SubmitPostModuleDelegate?
+    fileprivate let dataService: SubmitPostDataServiceable
+
+    init(moduleDelegate: SubmitPostModuleDelegate?, dataService: SubmitPostDataServiceable) {
+        self.moduleDelegate = moduleDelegate
+        self.dataService = dataService
+    }
+}
+
+extension SubmitPostInteractor: SubmitPostInteractable {}

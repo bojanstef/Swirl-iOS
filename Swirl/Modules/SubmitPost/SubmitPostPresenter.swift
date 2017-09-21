@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+protocol SubmitPostPresentable {}
+
+final class SubmitPostPresenter {
+    fileprivate let interactor: SubmitPostInteractable
+
+    init(interactor: SubmitPostInteractable) {
+        self.interactor = interactor
+    }
+}
+
+extension SubmitPostPresenter: SubmitPostPresentable {}

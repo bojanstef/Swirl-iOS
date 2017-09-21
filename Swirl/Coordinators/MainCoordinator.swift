@@ -66,6 +66,7 @@ extension MainCoordinator: CreatePostModuleDelegate {
 extension MainCoordinator: CurateModuleDelegate {}
 extension MainCoordinator: DiscoverModuleDelegate {}
 extension MainCoordinator: FollowingModuleDelegate {}
+extension MainCoordinator: SubmitPostModuleDelegate {}
 
 extension MainCoordinator: ProfileModuleDelegate {
     func openSettings() {
