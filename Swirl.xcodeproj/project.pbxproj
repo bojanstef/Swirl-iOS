@@ -38,6 +38,7 @@
 		F14B7FCE1F6389260096C365 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FCD1F6389260096C365 /* GoogleService-Info.plist */; };
 		F161F8BB1F69F4FB0055A8FB /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161F8BA1F69F4FB0055A8FB /* UIFont+Extensions.swift */; };
 		F16EBE641F6B839C00D6CCE7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EBE631F6B839C00D6CCE7 /* Post.swift */; };
+		F18BBA081F7440DD0098F78D /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BBA071F7440DD0098F78D /* GlobalConstants.swift */; };
 		F18DEA0A1F6C4A6A00F81B50 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA091F6C4A6A00F81B50 /* Profile.swift */; };
 		F18DEA0D1F6C585300F81B50 /* ProfileSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA0C1F6C585300F81B50 /* ProfileSectionController.swift */; };
 		F18DEA111F6C58E600F81B50 /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA0F1F6C58E600F81B50 /* ProfileHeaderCell.swift */; };
@@ -48,6 +49,7 @@
 		F18DEA211F6C74B000F81B50 /* ProfileSocialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA1F1F6C74B000F81B50 /* ProfileSocialsView.swift */; };
 		F18DEA221F6C74B000F81B50 /* ProfileSocialsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F18DEA201F6C74B000F81B50 /* ProfileSocialsView.xib */; };
 		F198C8561F699A1100AF64E0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198C8551F699A1100AF64E0 /* String+Extensions.swift */; };
+		F19C575E1F7339BB00117DAC /* ProgressLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C575D1F7339BB00117DAC /* ProgressLayer.swift */; };
 		F1BCADC51F70AD1300D77AFC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADC31F70AD1300D77AFC /* MainTabBarController.swift */; };
 		F1BCADC61F70AD1300D77AFC /* MainTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1BCADC41F70AD1300D77AFC /* MainTabBarController.xib */; };
 		F1BCADC81F70AD7D00D77AFC /* MainTabBarWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADC71F70AD7D00D77AFC /* MainTabBarWireframe.swift */; };
@@ -109,6 +111,7 @@
 		F14B7FCD1F6389260096C365 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F161F8BA1F69F4FB0055A8FB /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+Extensions.swift"; path = "Extensions/UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		F16EBE631F6B839C00D6CCE7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Models/Post.swift; sourceTree = "<group>"; };
+		F18BBA071F7440DD0098F78D /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		F18DEA091F6C4A6A00F81B50 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = Models/Profile.swift; sourceTree = "<group>"; };
 		F18DEA0C1F6C585300F81B50 /* ProfileSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSectionController.swift; path = SectionControllers/ProfileSectionController.swift; sourceTree = "<group>"; };
 		F18DEA0F1F6C58E600F81B50 /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileHeaderCell.swift; path = Views/ProfileHeaderCell.swift; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 		F18DEA1F1F6C74B000F81B50 /* ProfileSocialsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSocialsView.swift; path = Views/ProfileSocialsView.swift; sourceTree = "<group>"; };
 		F18DEA201F6C74B000F81B50 /* ProfileSocialsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileSocialsView.xib; path = Views/ProfileSocialsView.xib; sourceTree = "<group>"; };
 		F198C8551F699A1100AF64E0 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "Extensions/String+Extensions.swift"; sourceTree = "<group>"; };
+		F19C575D1F7339BB00117DAC /* ProgressLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressLayer.swift; path = Views/ProgressLayer.swift; sourceTree = "<group>"; };
 		F1BCADC31F70AD1300D77AFC /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = Modules/MainTabBar/MainTabBarController.swift; sourceTree = "<group>"; };
 		F1BCADC41F70AD1300D77AFC /* MainTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainTabBarController.xib; path = Modules/MainTabBar/MainTabBarController.xib; sourceTree = "<group>"; };
 		F1BCADC71F70AD7D00D77AFC /* MainTabBarWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarWireframe.swift; path = Modules/MainTabBar/MainTabBarWireframe.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				F14B7F821F635A9A0096C365 /* AppDelegate.swift */,
+				F18BBA071F7440DD0098F78D /* GlobalConstants.swift */,
 				F14B7F891F635A9A0096C365 /* Assets.xcassets */,
 				F14B7FCD1F6389260096C365 /* GoogleService-Info.plist */,
 				F14B7F8E1F635A9A0096C365 /* Info.plist */,
@@ -366,6 +371,7 @@
 				F18DEA101F6C58E600F81B50 /* ProfileHeaderCell.xib */,
 				F18DEA1F1F6C74B000F81B50 /* ProfileSocialsView.swift */,
 				F18DEA201F6C74B000F81B50 /* ProfileSocialsView.xib */,
+				F19C575D1F7339BB00117DAC /* ProgressLayer.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -590,8 +596,10 @@
 				F10C0C271F6F28BE0041D2F3 /* CameraService.swift in Sources */,
 				F14B7F9E1F6360A00096C365 /* Stoppable.swift in Sources */,
 				F1BCADC51F70AD1300D77AFC /* MainTabBarController.swift in Sources */,
+				F18BBA081F7440DD0098F78D /* GlobalConstants.swift in Sources */,
 				F18DEA0D1F6C585300F81B50 /* ProfileSectionController.swift in Sources */,
 				F18DEA191F6C6FF000F81B50 /* PostCell.swift in Sources */,
+				F19C575E1F7339BB00117DAC /* ProgressLayer.swift in Sources */,
 				F1BCADDC1F70BD2900D77AFC /* CreatePostInteractor.swift in Sources */,
 				F1CC7FF31F64EFD6006242F1 /* AuthPresenter.swift in Sources */,
 				F14B7FC71F6384030096C365 /* FollowingViewController.swift in Sources */,
