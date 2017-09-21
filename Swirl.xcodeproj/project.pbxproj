@@ -39,6 +39,12 @@
 		F161F8BB1F69F4FB0055A8FB /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161F8BA1F69F4FB0055A8FB /* UIFont+Extensions.swift */; };
 		F16EBE641F6B839C00D6CCE7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EBE631F6B839C00D6CCE7 /* Post.swift */; };
 		F18BBA081F7440DD0098F78D /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BBA071F7440DD0098F78D /* GlobalConstants.swift */; };
+		F18BBA0C1F74699C0098F78D /* SubmitPostWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BBA0B1F74699C0098F78D /* SubmitPostWireframe.swift */; };
+		F18BBA0E1F7469AE0098F78D /* SubmitPostDataServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BBA0D1F7469AE0098F78D /* SubmitPostDataServiceable.swift */; };
+		F18BBA101F7469BE0098F78D /* SubmitPostInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BBA0F1F7469BE0098F78D /* SubmitPostInteractor.swift */; };
+		F18BBA121F7469CB0098F78D /* SubmitPostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BBA111F7469CB0098F78D /* SubmitPostPresenter.swift */; };
+		F18BBA151F7469DE0098F78D /* SubmitPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BBA131F7469DE0098F78D /* SubmitPostViewController.swift */; };
+		F18BBA161F7469DE0098F78D /* SubmitPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F18BBA141F7469DE0098F78D /* SubmitPostViewController.xib */; };
 		F18DEA0A1F6C4A6A00F81B50 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA091F6C4A6A00F81B50 /* Profile.swift */; };
 		F18DEA0D1F6C585300F81B50 /* ProfileSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA0C1F6C585300F81B50 /* ProfileSectionController.swift */; };
 		F18DEA111F6C58E600F81B50 /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA0F1F6C58E600F81B50 /* ProfileHeaderCell.swift */; };
@@ -112,6 +118,12 @@
 		F161F8BA1F69F4FB0055A8FB /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+Extensions.swift"; path = "Extensions/UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		F16EBE631F6B839C00D6CCE7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Models/Post.swift; sourceTree = "<group>"; };
 		F18BBA071F7440DD0098F78D /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		F18BBA0B1F74699C0098F78D /* SubmitPostWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubmitPostWireframe.swift; path = Modules/SubmitPost/SubmitPostWireframe.swift; sourceTree = "<group>"; };
+		F18BBA0D1F7469AE0098F78D /* SubmitPostDataServiceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubmitPostDataServiceable.swift; path = Modules/SubmitPost/SubmitPostDataServiceable.swift; sourceTree = "<group>"; };
+		F18BBA0F1F7469BE0098F78D /* SubmitPostInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubmitPostInteractor.swift; path = Modules/SubmitPost/SubmitPostInteractor.swift; sourceTree = "<group>"; };
+		F18BBA111F7469CB0098F78D /* SubmitPostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubmitPostPresenter.swift; path = Modules/SubmitPost/SubmitPostPresenter.swift; sourceTree = "<group>"; };
+		F18BBA131F7469DE0098F78D /* SubmitPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubmitPostViewController.swift; path = Modules/SubmitPost/SubmitPostViewController.swift; sourceTree = "<group>"; };
+		F18BBA141F7469DE0098F78D /* SubmitPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SubmitPostViewController.xib; path = Modules/SubmitPost/SubmitPostViewController.xib; sourceTree = "<group>"; };
 		F18DEA091F6C4A6A00F81B50 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = Models/Profile.swift; sourceTree = "<group>"; };
 		F18DEA0C1F6C585300F81B50 /* ProfileSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSectionController.swift; path = SectionControllers/ProfileSectionController.swift; sourceTree = "<group>"; };
 		F18DEA0F1F6C58E600F81B50 /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileHeaderCell.swift; path = Views/ProfileHeaderCell.swift; sourceTree = "<group>"; };
@@ -281,6 +293,7 @@
 				F1BCADC21F70AC9E00D77AFC /* MainTabBar */,
 				F14B7FA91F6368F30096C365 /* Profile */,
 				F18DEA231F6C954800F81B50 /* Settings */,
+				F18BBA0A1F74697E0098F78D /* SubmitPost */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -352,6 +365,19 @@
 				F1EB90651F66393E0016D57B /* UIView+Extensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		F18BBA0A1F74697E0098F78D /* SubmitPost */ = {
+			isa = PBXGroup;
+			children = (
+				F18BBA0D1F7469AE0098F78D /* SubmitPostDataServiceable.swift */,
+				F18BBA0F1F7469BE0098F78D /* SubmitPostInteractor.swift */,
+				F18BBA111F7469CB0098F78D /* SubmitPostPresenter.swift */,
+				F18BBA131F7469DE0098F78D /* SubmitPostViewController.swift */,
+				F18BBA141F7469DE0098F78D /* SubmitPostViewController.xib */,
+				F18BBA0B1F74699C0098F78D /* SubmitPostWireframe.swift */,
+			);
+			name = SubmitPost;
 			sourceTree = "<group>";
 		};
 		F18DEA0B1F6C57FE00F81B50 /* SectionControllers */ = {
@@ -486,6 +512,7 @@
 				F18DEA221F6C74B000F81B50 /* ProfileSocialsView.xib in Resources */,
 				F14B7F8D1F635A9A0096C365 /* LaunchScreen.storyboard in Resources */,
 				F1EB905C1F6627AE0016D57B /* AuthCardView.xib in Resources */,
+				F18BBA161F7469DE0098F78D /* SubmitPostViewController.xib in Resources */,
 				F1BCADDF1F70BD2900D77AFC /* CreatePostViewController.xib in Resources */,
 				F11CE5831F64B6F300CD60C2 /* AuthViewController.xib in Resources */,
 				F14B7FCE1F6389260096C365 /* GoogleService-Info.plist in Resources */,
@@ -592,14 +619,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F18BBA121F7469CB0098F78D /* SubmitPostPresenter.swift in Sources */,
 				F1BCADCA1F70B45D00D77AFC /* MainTabBarPresenter.swift in Sources */,
 				F10C0C271F6F28BE0041D2F3 /* CameraService.swift in Sources */,
 				F14B7F9E1F6360A00096C365 /* Stoppable.swift in Sources */,
 				F1BCADC51F70AD1300D77AFC /* MainTabBarController.swift in Sources */,
+				F18BBA101F7469BE0098F78D /* SubmitPostInteractor.swift in Sources */,
 				F18BBA081F7440DD0098F78D /* GlobalConstants.swift in Sources */,
 				F18DEA0D1F6C585300F81B50 /* ProfileSectionController.swift in Sources */,
 				F18DEA191F6C6FF000F81B50 /* PostCell.swift in Sources */,
 				F19C575E1F7339BB00117DAC /* ProgressLayer.swift in Sources */,
+				F18BBA151F7469DE0098F78D /* SubmitPostViewController.swift in Sources */,
 				F1BCADDC1F70BD2900D77AFC /* CreatePostInteractor.swift in Sources */,
 				F1CC7FF31F64EFD6006242F1 /* AuthPresenter.swift in Sources */,
 				F14B7FC71F6384030096C365 /* FollowingViewController.swift in Sources */,
@@ -608,6 +638,7 @@
 				F1EB90741F67363D0016D57B /* SwirlUser.swift in Sources */,
 				F14B7F9C1F635F3C0096C365 /* Starting.swift in Sources */,
 				F14B7FAB1F636A8E0096C365 /* DiscoverWireframe.swift in Sources */,
+				F18BBA0C1F74699C0098F78D /* SubmitPostWireframe.swift in Sources */,
 				F1EB905A1F66279D0016D57B /* AuthCardView.swift in Sources */,
 				F14B7FCB1F6384670096C365 /* ProfileViewController.swift in Sources */,
 				F1BCADCE1F70B51800D77AFC /* MainTabBarDataServiceable.swift in Sources */,
@@ -631,6 +662,7 @@
 				F1CE75D21F67884F007BD68C /* ProfileInteractor.swift in Sources */,
 				F1BCADC81F70AD7D00D77AFC /* MainTabBarWireframe.swift in Sources */,
 				F18DEA211F6C74B000F81B50 /* ProfileSocialsView.swift in Sources */,
+				F18BBA0E1F7469AE0098F78D /* SubmitPostDataServiceable.swift in Sources */,
 				F1BCADE01F70BD2900D77AFC /* CreatePostWireframe.swift in Sources */,
 				F14B7FC31F6383A60096C365 /* CurateViewController.swift in Sources */,
 				F1BCADDA1F70BD2900D77AFC /* CreatePostDataServiceable.swift in Sources */,
