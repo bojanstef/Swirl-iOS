@@ -13,10 +13,10 @@ import AVFoundation.AVCaptureVideoPreviewLayer
 protocol CreatePostPresentable {
     func startCamera() throws
     func stopCamera()
-    func requestCameraAuthorizationIfNeeded()
     func cameraPreviewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer
     func recordVideo()
     func pauseRecording()
+    func flipCamera()
     func dismiss()
 }
 
@@ -37,10 +37,6 @@ extension CreatePostPresenter: CreatePostPresentable {
         interactor.stopCamera()
     }
 
-    func requestCameraAuthorizationIfNeeded() {
-        interactor.requestCameraAuthorizationIfNeeded()
-    }
-
     func cameraPreviewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer {
         return interactor.cameraPreviewLayer(frame: frame)
     }
@@ -51,6 +47,10 @@ extension CreatePostPresenter: CreatePostPresentable {
 
     func pauseRecording() {
         interactor.pauseRecording()
+    }
+
+    func flipCamera() {
+        interactor.flipCamera()
     }
 
     func dismiss() {

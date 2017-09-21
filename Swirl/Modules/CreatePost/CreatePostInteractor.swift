@@ -13,10 +13,10 @@ import AVFoundation.AVCaptureVideoPreviewLayer
 protocol CreatePostInteractable {
     func startCamera() throws
     func stopCamera()
-    func requestCameraAuthorizationIfNeeded()
     func cameraPreviewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer
     func recordVideo()
     func pauseRecording()
+    func flipCamera()
     func dismiss()
 }
 
@@ -44,10 +44,6 @@ extension CreatePostInteractor: CreatePostInteractable {
         cameraService.stop()
     }
 
-    func requestCameraAuthorizationIfNeeded() {
-        cameraService.requestAuthorizationIfNeeded()
-    }
-
     func cameraPreviewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer {
         return cameraService.previewLayer(frame: frame)
     }
@@ -58,6 +54,10 @@ extension CreatePostInteractor: CreatePostInteractable {
 
     func pauseRecording() {
         cameraService.pause()
+    }
+
+    func flipCamera() {
+        cameraService.flipCamera()
     }
 
     func dismiss() {

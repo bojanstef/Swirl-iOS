@@ -10,13 +10,19 @@ import NextLevel
 import CoreGraphics
 import AVFoundation
 
+private struct Constants {
+    private static let seconds = GlobalConstants.maximumVideoCaptureTime
+    static let maximumCaptureDuration = CMTime(seconds: seconds, preferredTimescale: 600)
+    static let audioConfigurationBitRate = 44_000
+}
+
 protocol CameraServiceable {
     func start() throws
     func stop()
-    func requestAuthorizationIfNeeded()
     func previewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer
     func record()
     func pause()
+    func flipCamera()
 }
 
 final class CameraService: NSObject {
@@ -30,23 +36,23 @@ final class CameraService: NSObject {
     private init(nextLevel: NextLevel) {
         self.nextLevel = nextLevel
         super.init()
-        self.nextLevel.delegate = self
-        self.nextLevel.videoDelegate = self
+        setup()
     }
 }
 
 extension CameraService: CameraServiceable {
     func start() throws {
-        try nextLevel.start()
+        if nextLevel.authorizationStatus(forMediaType: AVMediaType.video) == .authorized &&
+            nextLevel.authorizationStatus(forMediaType: AVMediaType.audio) == .authorized {
+            try nextLevel.start()
+        } else {
+            nextLevel.requestAuthorization(forMediaType: AVMediaType.video)
+            nextLevel.requestAuthorization(forMediaType: AVMediaType.audio)
+        }
     }
 
     func stop() {
         nextLevel.stop()
-    }
-
-    func requestAuthorizationIfNeeded() {
-        testAndRequestAuthorization(for: AVMediaType.video)
-        testAndRequestAuthorization(for: AVMediaType.audio)
     }
 
     func previewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer {
@@ -61,11 +67,28 @@ extension CameraService: CameraServiceable {
     func pause() {
         nextLevel.pause()
     }
+
+    func flipCamera() {
+        nextLevel.flipCaptureDevicePosition()
+    }
 }
 
 extension CameraService: NextLevelDelegate {
     func nextLevel(_ nextLevel: NextLevel, didUpdateAuthorizationStatus status: NextLevelAuthorizationStatus,
-                   forMediaType mediaType: AVMediaType) {}
+                   forMediaType mediaType: AVMediaType) {
+
+        if nextLevel.authorizationStatus(forMediaType: AVMediaType.video) == .authorized &&
+            nextLevel.authorizationStatus(forMediaType: AVMediaType.audio) == .authorized {
+            do {
+                try nextLevel.start()
+            } catch {
+                print(#file, #function, error)
+            }
+        } else if status == .notAuthorized {
+            print("NextLevel doesn't have authorization for audio or video.")
+        }
+    }
+
     func nextLevel(_ nextLevel: NextLevel,
                    didUpdateVideoConfiguration videoConfiguration: NextLevelVideoConfiguration) {}
     func nextLevel(_ nextLevel: NextLevel,
@@ -104,14 +127,10 @@ extension CameraService: NextLevelVideoDelegate {
 }
 
 fileprivate extension CameraService {
-    func authorizationStatus(for mediaType: AVMediaType) -> NextLevelAuthorizationStatus {
-        return nextLevel.authorizationStatus(forMediaType: mediaType)
-    }
-
-    func testAndRequestAuthorization(for mediaType: AVMediaType) {
-        guard authorizationStatus(for: mediaType) == .authorized else {
-            nextLevel.requestAuthorization(forMediaType: mediaType)
-            return
-        }
+    func setup() {
+        nextLevel.delegate = self
+        nextLevel.videoDelegate = self
+        nextLevel.videoConfiguration.maximumCaptureDuration = Constants.maximumCaptureDuration
+        nextLevel.audioConfiguration.bitRate = Constants.audioConfigurationBitRate
     }
 }

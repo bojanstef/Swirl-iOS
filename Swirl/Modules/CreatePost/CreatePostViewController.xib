@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatePostViewController" customModule="Swirl" customModuleProvider="target">
             <connections>
+                <outlet property="cameraButton" destination="bQC-xM-tNx" id="Evd-O8-SXK"/>
                 <outlet property="cameraPreview" destination="Fuf-zJ-DYa" id="cFL-l8-19K"/>
+                <outlet property="dismissButton" destination="P2a-N6-lsn" id="H5u-2L-RPx"/>
+                <outlet property="flipCameraButton" destination="Qm6-q7-h6Z" id="aLY-vd-jjO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,16 +33,38 @@
                                 <constraint firstAttribute="width" constant="128" id="hw0-aR-s18"/>
                             </constraints>
                             <state key="normal" image="swirlButton"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2a-N6-lsn">
+                            <rect key="frame" x="16" y="32" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="2Yo-Ce-KaV"/>
+                                <constraint firstAttribute="height" constant="44" id="8k6-xi-ygR"/>
+                            </constraints>
+                            <state key="normal" image="downArrow"/>
                             <connections>
-                                <action selector="videoButtonHeld:" destination="-1" eventType="touchDown" id="ZME-sy-yz2"/>
-                                <action selector="videoButtonReleased:" destination="-1" eventType="touchCancel" id="4Re-3Y-a7k"/>
+                                <action selector="dismissButtonPressed:" destination="-1" eventType="touchUpInside" id="sez-GU-zXe"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qm6-q7-h6Z">
+                            <rect key="frame" x="315" y="32" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="Nr7-lQ-we9"/>
+                                <constraint firstAttribute="height" constant="44" id="shL-xA-eI5"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="flipCamera"/>
+                            <connections>
+                                <action selector="flipCameraButtonPressed:" destination="-1" eventType="touchUpInside" id="W3B-g3-Fsc"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="P2a-N6-lsn" firstAttribute="leading" secondItem="Fuf-zJ-DYa" secondAttribute="leading" constant="16" id="2g9-eI-yOM"/>
+                        <constraint firstItem="P2a-N6-lsn" firstAttribute="top" secondItem="Fuf-zJ-DYa" secondAttribute="top" constant="32" id="Gmk-cR-xlh"/>
                         <constraint firstAttribute="bottom" secondItem="bQC-xM-tNx" secondAttribute="bottom" constant="32" id="I7y-K0-XRk"/>
+                        <constraint firstItem="Qm6-q7-h6Z" firstAttribute="top" secondItem="Fuf-zJ-DYa" secondAttribute="top" constant="32" id="dMx-Pk-OOt"/>
                         <constraint firstItem="bQC-xM-tNx" firstAttribute="centerX" secondItem="Fuf-zJ-DYa" secondAttribute="centerX" id="haV-hV-ONr"/>
+                        <constraint firstAttribute="trailing" secondItem="Qm6-q7-h6Z" secondAttribute="trailing" constant="16" id="xE3-2K-Qwk"/>
                     </constraints>
                 </view>
             </subviews>
@@ -53,6 +78,8 @@
         </view>
     </objects>
     <resources>
+        <image name="downArrow" width="44" height="44"/>
+        <image name="flipCamera" width="44" height="44"/>
         <image name="swirlButton" width="341" height="341"/>
     </resources>
 </document>
