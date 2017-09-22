@@ -58,6 +58,11 @@ extension MainCoordinator: MainTabBarModuleDelegate {
 }
 
 extension MainCoordinator: CreatePostModuleDelegate {
+    func navigateToSubmitPost(with videoURL: URL) {
+        let viewController = SubmitPostWireframe(moduleDelegate: self, videoURL: videoURL).viewController
+        createPostController.pushViewController(viewController, animated: true)
+    }
+
     func dismiss() {
         navigationController.dismiss(animated: true, completion: nil)
     }

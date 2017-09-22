@@ -38,6 +38,8 @@
 		F14B7FCE1F6389260096C365 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FCD1F6389260096C365 /* GoogleService-Info.plist */; };
 		F161F8BB1F69F4FB0055A8FB /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161F8BA1F69F4FB0055A8FB /* UIFont+Extensions.swift */; };
 		F16EBE641F6B839C00D6CCE7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EBE631F6B839C00D6CCE7 /* Post.swift */; };
+		F1828F001F747CC300915349 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1828EFF1F747CC300915349 /* VideoPlayerView.swift */; };
+		F1828F021F74819C00915349 /* VideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1828F011F74819C00915349 /* VideoPlayerView.xib */; };
 		F18BBA081F7440DD0098F78D /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BBA071F7440DD0098F78D /* GlobalConstants.swift */; };
 		F18BBA0C1F74699C0098F78D /* SubmitPostWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BBA0B1F74699C0098F78D /* SubmitPostWireframe.swift */; };
 		F18BBA0E1F7469AE0098F78D /* SubmitPostDataServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18BBA0D1F7469AE0098F78D /* SubmitPostDataServiceable.swift */; };
@@ -117,6 +119,8 @@
 		F14B7FCD1F6389260096C365 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F161F8BA1F69F4FB0055A8FB /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+Extensions.swift"; path = "Extensions/UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		F16EBE631F6B839C00D6CCE7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Models/Post.swift; sourceTree = "<group>"; };
+		F1828EFF1F747CC300915349 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoPlayerView.swift; path = Views/VideoPlayerView.swift; sourceTree = "<group>"; };
+		F1828F011F74819C00915349 /* VideoPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = VideoPlayerView.xib; path = Views/VideoPlayerView.xib; sourceTree = "<group>"; };
 		F18BBA071F7440DD0098F78D /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		F18BBA0B1F74699C0098F78D /* SubmitPostWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubmitPostWireframe.swift; path = Modules/SubmitPost/SubmitPostWireframe.swift; sourceTree = "<group>"; };
 		F18BBA0D1F7469AE0098F78D /* SubmitPostDataServiceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubmitPostDataServiceable.swift; path = Modules/SubmitPost/SubmitPostDataServiceable.swift; sourceTree = "<group>"; };
@@ -398,6 +402,8 @@
 				F18DEA1F1F6C74B000F81B50 /* ProfileSocialsView.swift */,
 				F18DEA201F6C74B000F81B50 /* ProfileSocialsView.xib */,
 				F19C575D1F7339BB00117DAC /* ProgressLayer.swift */,
+				F1828EFF1F747CC300915349 /* VideoPlayerView.swift */,
+				F1828F011F74819C00915349 /* VideoPlayerView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -506,6 +512,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1828F021F74819C00915349 /* VideoPlayerView.xib in Resources */,
 				F14B7FC41F6383A60096C365 /* CurateViewController.xib in Resources */,
 				F18DEA121F6C58E600F81B50 /* ProfileHeaderCell.xib in Resources */,
 				F18DEA1A1F6C6FF000F81B50 /* PostCell.xib in Resources */,
@@ -639,6 +646,7 @@
 				F14B7F9C1F635F3C0096C365 /* Starting.swift in Sources */,
 				F14B7FAB1F636A8E0096C365 /* DiscoverWireframe.swift in Sources */,
 				F18BBA0C1F74699C0098F78D /* SubmitPostWireframe.swift in Sources */,
+				F1828F001F747CC300915349 /* VideoPlayerView.swift in Sources */,
 				F1EB905A1F66279D0016D57B /* AuthCardView.swift in Sources */,
 				F14B7FCB1F6384670096C365 /* ProfileViewController.swift in Sources */,
 				F1BCADCE1F70B51800D77AFC /* MainTabBarDataServiceable.swift in Sources */,

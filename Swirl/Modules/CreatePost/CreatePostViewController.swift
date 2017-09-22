@@ -47,18 +47,12 @@ final class CreatePostViewController: UIViewController {
     }
 
     @IBAction func doneButtonPressed(_ sender: Any) {
-        presenter.doneRecording { url, error in
+        presenter.doneRecording { [weak self] videoURL, error in
             if let error = error {
                 print(error)
             } else {
-                guard let url = url else { print(#function, "No URL"); return }
-                print(#function, "URL:", url)
-                let player = AVPlayer(url: url)
-                let playerViewController = AVPlayerViewController()
-                playerViewController.player = player
-                self.present(playerViewController, animated: true) {
-                    playerViewController.player?.play()
-                }
+                guard let videoURL = videoURL else { print(#function, "No URL"); return }
+                self?.showSubmitPost(with: videoURL)
             }
         }
     }
@@ -84,6 +78,7 @@ fileprivate extension CreatePostViewController {
     }
 
     func cameraButtonPressed() {
+        guard presenter.isVideoReady else { return }
         disableAndMakeTransparent(dismissButton)
         disableAndMakeTransparent(flipCameraButton)
         progressLayer?.grow()
@@ -152,6 +147,10 @@ fileprivate extension CreatePostViewController {
         let rect = CGRect(x: 0, y: 0, width: view.frame.width, height: Constants.progressLayerHeight)
         self.progressLayer = ProgressLayer(rect: rect)
         view.layer.addSublayer(progressLayer ?? CALayer())
+    }
+
+    func showSubmitPost(with videoURL: URL) {
+        presenter.navigateToSubmitPost(with: videoURL)
     }
 }
 

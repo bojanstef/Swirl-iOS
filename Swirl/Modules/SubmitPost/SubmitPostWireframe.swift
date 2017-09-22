@@ -12,17 +12,19 @@ protocol SubmitPostModuleDelegate: class {}
 
 final class SubmitPostWireframe {
     fileprivate weak var moduleDelegate: SubmitPostModuleDelegate?
+    fileprivate let videoURL: URL
 
-    init(moduleDelegate: SubmitPostModuleDelegate?) {
+    init(moduleDelegate: SubmitPostModuleDelegate?, videoURL: URL) {
         self.moduleDelegate = moduleDelegate
+        self.videoURL = videoURL
     }
 }
 
 extension SubmitPostWireframe: ControllerGettable {
     var viewController: UIViewController {
-        let dataService: SubmitPostDataServiceable = dataService.defaultService
+        let dataService: SubmitPostDataServiceable = DataService.defaultService
         let interactor = SubmitPostInteractor(moduleDelegate: moduleDelegate, dataService: dataService)
         let presenter = SubmitPostPresenter(interactor: interactor)
-        return SubmitPostViewController(presenter: presenter)
+        return SubmitPostViewController(presenter: presenter, videoURL: videoURL)
     }
 }

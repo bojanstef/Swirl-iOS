@@ -11,6 +11,7 @@ import CoreGraphics.CGGeometry
 import AVFoundation.AVCaptureVideoPreviewLayer
 
 protocol CreatePostInteractable {
+    var isVideoReady: Bool { get }
     func startCamera() throws
     func stopCamera()
     func cameraPreviewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer
@@ -19,6 +20,7 @@ protocol CreatePostInteractable {
     func doneRecording(completion: @escaping ((URL?, Error?) -> Void))
     func flipCamera()
     func dismiss()
+    func navigateToSubmitPost(with videoURL: URL)
 }
 
 final class CreatePostInteractor {
@@ -37,6 +39,10 @@ final class CreatePostInteractor {
 }
 
 extension CreatePostInteractor: CreatePostInteractable {
+    var isVideoReady: Bool {
+        return cameraService.isVideoReady
+    }
+
     func startCamera() throws {
         try cameraService.start()
     }
@@ -67,5 +73,9 @@ extension CreatePostInteractor: CreatePostInteractable {
 
     func dismiss() {
         moduleDelegate?.dismiss()
+    }
+
+    func navigateToSubmitPost(with videoURL: URL) {
+        moduleDelegate?.navigateToSubmitPost(with: videoURL)
     }
 }
