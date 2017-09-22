@@ -19,6 +19,7 @@ extension UIImage {
         case icon
         case settings
         case downArrow
+        case backArrow
         case flipCamera
     }
 
