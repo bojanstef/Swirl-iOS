@@ -23,6 +23,9 @@ private struct Constants {
 
 protocol CameraServiceable {
     var isVideoReady: Bool { get }
+    var clipCount: Int { get }
+    var totalTime: CMTime { get }
+    func setSessionCompletion(_ completion: @escaping (() -> Void))
     func start() throws
     func stop()
     func previewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer
@@ -35,6 +38,7 @@ protocol CameraServiceable {
 
 final class CameraService: NSObject {
     fileprivate let nextLevel: NextLevel
+    fileprivate var sessionCompletion: (() -> Void)?
 
     static var defaultService: CameraServiceable {
         let nextLevel = NextLevel()
@@ -51,6 +55,19 @@ final class CameraService: NSObject {
 extension CameraService: CameraServiceable {
     var isVideoReady: Bool {
         return nextLevel.session?.isVideoReady ?? false
+    }
+
+    var clipCount: Int {
+        guard let count = nextLevel.session?.clips.count else { return 0 }
+        return count + 1
+    }
+
+    var totalTime: CMTime {
+        return nextLevel.session?.duration ?? kCMTimeZero
+    }
+
+    func setSessionCompletion(_ completion: @escaping (() -> Void)) {
+        sessionCompletion = completion
     }
 
     func start() throws {
@@ -83,7 +100,7 @@ extension CameraService: CameraServiceable {
     func doneRecording(completion: @escaping ((URL?, Error?) -> Void)) {
         guard let session = nextLevel.session else { completion(nil, CameraErrors.noSession); return }
         if session.clips.count > 1 {
-            session.mergeClips(usingPreset: AVAssetExportPresetMediumQuality, completionHandler: completion)
+            session.mergeClips(usingPreset: AVAssetExportPresetHighestQuality, completionHandler: completion)
         } else {
             completion(session.lastClipUrl, nil)
         }
@@ -148,7 +165,11 @@ extension CameraService: NextLevelVideoDelegate {
                    inSession session: NextLevelSession) {}
     func nextLevel(_ nextLevel: NextLevel, didSkipAudioSampleBuffer sampleBuffer: CMSampleBuffer,
                    inSession session: NextLevelSession) {}
-    func nextLevel(_ nextLevel: NextLevel, didCompleteSession session: NextLevelSession) {}
+
+    func nextLevel(_ nextLevel: NextLevel, didCompleteSession session: NextLevelSession) {
+        sessionCompletion?()
+    }
+
     func nextLevel(_ nextLevel: NextLevel, didCompletePhotoCaptureFromVideoFrame photoDict: [String : Any]?) {}
 }
 
