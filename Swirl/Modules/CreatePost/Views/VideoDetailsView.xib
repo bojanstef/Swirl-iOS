@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoDetailsView" customModule="Swirl" customModuleProvider="target">
+            <connections>
+                <outlet property="clipsCountLabel" destination="FIW-Ai-WHm" id="Ikr-od-DhR"/>
+                <outlet property="clipsLabel" destination="Sop-ne-AHg" id="VMd-t7-u6a"/>
+                <outlet property="timeLabel" destination="HtV-tW-aIU" id="OJ6-Y7-3xP"/>
+                <outlet property="timeSecondsLabel" destination="CGy-AO-JCL" id="NRT-F9-GdK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="256" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="eWL-6K-Zho">
+                    <rect key="frame" x="0.0" y="0.0" width="256" height="44"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Wa2-A7-BDo">
+                            <rect key="frame" x="62" y="0.0" width="132" height="21"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clips" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sop-ne-AHg">
+                                    <rect key="frame" x="0.0" y="0.5" width="64" height="20.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="64" id="1eS-Ez-YEn"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIW-Ai-WHm">
+                                    <rect key="frame" x="68" y="0.5" width="64" height="20.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="64" id="yJU-WL-TJK"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="aKF-HS-P2k">
+                            <rect key="frame" x="62" y="23" width="132" height="21"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtV-tW-aIU">
+                                    <rect key="frame" x="0.0" y="0.5" width="64" height="20.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="64" id="WsO-7i-xeR"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGy-AO-JCL">
+                                    <rect key="frame" x="68" y="0.5" width="64" height="20.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="64" id="DIL-gX-FtV"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eWL-6K-Zho" secondAttribute="trailing" id="DaY-id-K2q"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="eWL-6K-Zho" secondAttribute="bottom" id="FYQ-Bf-itn"/>
+                <constraint firstItem="eWL-6K-Zho" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="TYq-Pv-pjD"/>
+                <constraint firstItem="eWL-6K-Zho" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ghJ-pS-JEV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="66" y="-202"/>
+        </view>
+    </objects>
+</document>

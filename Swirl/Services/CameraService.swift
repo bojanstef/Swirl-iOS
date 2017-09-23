@@ -18,9 +18,14 @@ private struct Constants {
     private static let seconds = GlobalConstants.maximumVideoCaptureTime
     static let maximumCaptureDuration = CMTime(seconds: seconds, preferredTimescale: 600)
     static let audioConfigurationBitRate = 44_000
+    static let videoConfigurationBitRate = 2_000_000
 }
 
 protocol CameraServiceable {
+    var isVideoReady: Bool { get }
+    var clipCount: Int { get }
+    var totalTime: CMTime { get }
+    func setSessionCompletion(_ completion: @escaping (() -> Void))
     func start() throws
     func stop()
     func previewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer
@@ -32,8 +37,8 @@ protocol CameraServiceable {
 }
 
 final class CameraService: NSObject {
-    fileprivate var recordingIsAllowed = true
     fileprivate let nextLevel: NextLevel
+    fileprivate var sessionCompletion: (() -> Void)?
 
     static var defaultService: CameraServiceable {
         let nextLevel = NextLevel()
@@ -48,6 +53,23 @@ final class CameraService: NSObject {
 }
 
 extension CameraService: CameraServiceable {
+    var isVideoReady: Bool {
+        return nextLevel.session?.isVideoReady ?? false
+    }
+
+    var clipCount: Int {
+        guard let count = nextLevel.session?.clips.count else { return 0 }
+        return count + 1
+    }
+
+    var totalTime: CMTime {
+        return nextLevel.session?.duration ?? kCMTimeZero
+    }
+
+    func setSessionCompletion(_ completion: @escaping (() -> Void)) {
+        sessionCompletion = completion
+    }
+
     func start() throws {
         if nextLevel.authorizationStatus(forMediaType: AVMediaType.video) == .authorized &&
             nextLevel.authorizationStatus(forMediaType: AVMediaType.audio) == .authorized {
@@ -68,19 +90,21 @@ extension CameraService: CameraServiceable {
     }
 
     func record() {
-        if recordingIsAllowed {
-            nextLevel.record()
-        }
+        nextLevel.record()
     }
 
     func pause() {
-        recordingIsAllowed = false
-        nextLevel.pause { [weak self] in self?.recordingIsAllowed = true }
+        nextLevel.pause()
     }
 
     func doneRecording(completion: @escaping ((URL?, Error?) -> Void)) {
         guard let session = nextLevel.session else { completion(nil, CameraErrors.noSession); return }
-        session.mergeClips(usingPreset: AVAssetExportPresetHighestQuality, completionHandler: completion)
+        if session.clips.count > 1 {
+            session.mergeClips(usingPreset: AVAssetExportPresetHighestQuality, completionHandler: completion)
+        } else {
+            completion(session.lastClipUrl, nil)
+        }
+        session.reset()
     }
 
     func removeLastClip() {
@@ -141,7 +165,11 @@ extension CameraService: NextLevelVideoDelegate {
                    inSession session: NextLevelSession) {}
     func nextLevel(_ nextLevel: NextLevel, didSkipAudioSampleBuffer sampleBuffer: CMSampleBuffer,
                    inSession session: NextLevelSession) {}
-    func nextLevel(_ nextLevel: NextLevel, didCompleteSession session: NextLevelSession) {}
+
+    func nextLevel(_ nextLevel: NextLevel, didCompleteSession session: NextLevelSession) {
+        sessionCompletion?()
+    }
+
     func nextLevel(_ nextLevel: NextLevel, didCompletePhotoCaptureFromVideoFrame photoDict: [String : Any]?) {}
 }
 
@@ -150,6 +178,7 @@ fileprivate extension CameraService {
         nextLevel.delegate = self
         nextLevel.videoDelegate = self
         nextLevel.videoConfiguration.maximumCaptureDuration = Constants.maximumCaptureDuration
+        nextLevel.videoConfiguration.bitRate = Constants.videoConfigurationBitRate
         nextLevel.audioConfiguration.bitRate = Constants.audioConfigurationBitRate
     }
 }

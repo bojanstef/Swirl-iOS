@@ -21,7 +21,6 @@ private struct Constants {
 }
 
 final class MainCoordinator {
-    fileprivate lazy var createPostController: UINavigationController = self.createController(.createPost)
     fileprivate lazy var createPostDummyController: UINavigationController = self.createController(.createPostDummy)
     fileprivate lazy var curateController: UINavigationController = self.createController(.curate)
     fileprivate lazy var discoverController: UINavigationController = self.createController(.discover)
@@ -53,11 +52,18 @@ extension MainCoordinator: Stoppable {
 
 extension MainCoordinator: MainTabBarModuleDelegate {
     func showCreateContent() {
-        navigationController.present(createPostController, animated: true, completion: nil)
+        let viewController = CreatePostWireframe(moduleDelegate: self).viewController
+        let createPostNavigationController = UINavigationController(rootViewController: viewController)
+        navigationController.present(createPostNavigationController, animated: true, completion: nil)
     }
 }
 
 extension MainCoordinator: CreatePostModuleDelegate {
+    func navigateToSubmitPost(from navigationController: UINavigationController, with videoURL: URL) {
+        let viewController = SubmitPostWireframe(moduleDelegate: self, videoURL: videoURL).viewController
+        navigationController.pushViewController(viewController, animated: true)
+    }
+
     func dismiss() {
         navigationController.dismiss(animated: true, completion: nil)
     }
@@ -66,6 +72,7 @@ extension MainCoordinator: CreatePostModuleDelegate {
 extension MainCoordinator: CurateModuleDelegate {}
 extension MainCoordinator: DiscoverModuleDelegate {}
 extension MainCoordinator: FollowingModuleDelegate {}
+extension MainCoordinator: SubmitPostModuleDelegate {}
 
 extension MainCoordinator: ProfileModuleDelegate {
     func openSettings() {

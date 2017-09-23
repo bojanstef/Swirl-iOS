@@ -13,12 +13,13 @@ extension UIImage {
         /** The top cases are grouped as a reminder:
          *  that they are used as the tab bar items **/
         case createPost, curate, discover, following, profile
+        case backArrow, rightArrow, downArrow
 
         case swirlEmoji
         case swirlButton
         case icon
         case settings
-        case downArrow
+        case undoButton
         case flipCamera
     }
 

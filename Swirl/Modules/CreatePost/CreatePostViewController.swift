@@ -11,20 +11,23 @@ import AVKit
 
 private struct Constants {
     static let doubleTap = 2
-    static let colorAlpha: CGFloat = 0.25
+    static let reactionTime: TimeInterval = 0.1
     static let buttonCornerRadius: CGFloat = 6
-    static let progressLayerHeight: CGFloat = 16
     static let minimumHoldToRecordLength: CFTimeInterval = 0.05
+    static let seeThroughBlack = UIColor(white: 0, alpha: 0.25)
     static let buttonEdgeInsets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
 }
 
 final class CreatePostDummyViewController: UIViewController {}
 final class CreatePostViewController: UIViewController {
     @IBOutlet fileprivate weak var cameraPreview: UIView!
-    @IBOutlet fileprivate weak var cameraButton: UIButton!
+    @IBOutlet fileprivate weak var videoDetailsView: VideoDetailsView!
     @IBOutlet fileprivate weak var dismissButton: UIButton!
     @IBOutlet fileprivate weak var flipCameraButton: UIButton!
-    fileprivate weak var progressLayer: ProgressLayer?
+    @IBOutlet fileprivate weak var undoButton: UIButton!
+    @IBOutlet fileprivate weak var cameraButton: UIButton!
+    @IBOutlet fileprivate weak var doneButton: UIButton!
+    fileprivate weak var updateRecordingTimeTimer: Timer?
     fileprivate let presenter: CreatePostPresentable
 
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -34,39 +37,29 @@ final class CreatePostViewController: UIViewController {
     }
 
     override var prefersStatusBarHidden: Bool { return true }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        startCamera()
-        setupNavBar()
-        setupButtons()
-        setupCameraButton()
-        setupCameraPreview()
-        setupProgressLayer()
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        presenter.setSessionCompletion(mergeClipsAndShowPost)
+        updateRecordingTimeTimer?.fire()
+
+        setupVideoDetailsView()
         setupDoubleTapGesture()
+        setupCameraPreview()
+        setupCameraButton()
+        setupButtons()
+        startCamera()
     }
 
-    @IBAction func doneButtonPressed(_ sender: Any) {
-        presenter.doneRecording { url, error in
-            if let error = error {
-                print(error)
-            } else {
-                guard let url = url else { print(#function, "No URL"); return }
-                print(#function, "URL:", url)
-                let player = AVPlayer(url: url)
-                let playerViewController = AVPlayerViewController()
-                playerViewController.player = player
-                self.present(playerViewController, animated: true) {
-                    playerViewController.player?.play()
-                }
-            }
-        }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        updateRecordingTimeTimer?.invalidate()
+        presenter.stopCamera()
     }
 }
 
 fileprivate extension CreatePostViewController {
     @IBAction func dismissButtonPressed(_ sender: Any) {
-        progressLayer?.removeFromSuperlayer()
         presenter.stopCamera()
         presenter.dismiss()
     }
@@ -83,18 +76,33 @@ fileprivate extension CreatePostViewController {
         }
     }
 
+    @IBAction func undoButtonPressed(_ sender: Any) {
+        presenter.removeLastVideoClip()
+        videoDetailsView.updateClipsLabel(presenter.videoClipsCount - 1)
+    }
+
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        mergeClipsAndShowPost()
+    }
+
     func cameraButtonPressed() {
+        guard presenter.isVideoReady else { return }
+        presenter.recordVideo()
+        videoDetailsView.updateClipsLabel(presenter.videoClipsCount)
+
         disableAndMakeTransparent(dismissButton)
         disableAndMakeTransparent(flipCameraButton)
-        progressLayer?.grow()
-        presenter.recordVideo()
+        disableAndMakeTransparent(undoButton)
+        disableAndMakeTransparent(doneButton)
     }
 
     func cameraButtonReleased() {
+        presenter.pauseRecording()
+
         enableAndMakeOpaque(dismissButton)
         enableAndMakeOpaque(flipCameraButton)
-        progressLayer?.pause()
-        presenter.pauseRecording()
+        enableAndMakeOpaque(undoButton)
+        enableAndMakeOpaque(doneButton)
     }
 
     func disableAndMakeTransparent(_ button: UIButton) {
@@ -115,8 +123,15 @@ fileprivate extension CreatePostViewController {
         }
     }
 
-    func setupNavBar() {
-        navigationController?.setNavigationBarHidden(true, animated: false)
+    func mergeClipsAndShowPost() {
+        presenter.doneRecording { [weak self] videoURL, error in
+            if let error = error {
+                print(error)
+            } else {
+                guard let videoURL = videoURL else { print(#function, "No URL"); return }
+                self?.showSubmitPost(with: videoURL)
+            }
+        }
     }
 
     func setupCameraPreview() {
@@ -131,15 +146,17 @@ fileprivate extension CreatePostViewController {
     }
 
     func setupButtons() {
-        let seeThroughBlack = UIColor(white: 0, alpha: Constants.colorAlpha)
+        setupButtonHelper(dismissButton)
+        setupButtonHelper(flipCameraButton)
+        setupButtonHelper(undoButton)
+        setupButtonHelper(doneButton)
+    }
 
-        dismissButton.backgroundColor = seeThroughBlack
-        dismissButton.layer.cornerRadius = Constants.buttonCornerRadius
-        dismissButton.imageEdgeInsets = Constants.buttonEdgeInsets
-
-        flipCameraButton.backgroundColor = seeThroughBlack
-        flipCameraButton.layer.cornerRadius = Constants.buttonCornerRadius
-        flipCameraButton.imageEdgeInsets = Constants.buttonEdgeInsets
+    func setupButtonHelper(_ button: UIButton) {
+        enableAndMakeOpaque(button)
+        button.backgroundColor = Constants.seeThroughBlack
+        button.layer.cornerRadius = Constants.buttonCornerRadius
+        button.imageEdgeInsets = Constants.buttonEdgeInsets
     }
 
     func setupDoubleTapGesture() {
@@ -148,10 +165,22 @@ fileprivate extension CreatePostViewController {
         view.addGestureRecognizer(flipCameraGestureRecognizer)
     }
 
-    func setupProgressLayer() {
-        let rect = CGRect(x: 0, y: 0, width: view.frame.width, height: Constants.progressLayerHeight)
-        self.progressLayer = ProgressLayer(rect: rect)
-        view.layer.addSublayer(progressLayer ?? CALayer())
+    func showSubmitPost(with videoURL: URL) {
+        guard let navigationController = navigationController else { return }
+        presenter.navigateToSubmitPost(from: navigationController, with: videoURL)
+    }
+
+    func setupVideoDetailsView() {
+        videoDetailsView.backgroundColor = Constants.seeThroughBlack
+        videoDetailsView.layer.cornerRadius = Constants.buttonCornerRadius
+        videoDetailsView.updateClipsLabel(0)
+        videoDetailsView.updateTimeLabel(0)
+        updateRecordingTimeTimer = Timer
+            .scheduledTimer(withTimeInterval: Constants.reactionTime, repeats: true) { [weak self] _ in
+
+            guard let this = self else { return }
+            this.videoDetailsView.updateTimeLabel(this.presenter.videoTotalTime.seconds)
+        }
     }
 }
 
