@@ -47,9 +47,9 @@ extension VideoDetailsView: VideoDetailsViewUpdateable {
 
 fileprivate extension VideoDetailsView {
     func setupLabels() {
-        labelSetupHelper(clipsLabel, text: "Clips")
+        labelSetupHelper(clipsLabel, text: "CLIPS")
         labelSetupHelper(clipsCountLabel, text: "0")
-        labelSetupHelper(timeLabel, text: "Time")
+        labelSetupHelper(timeLabel, text: "TIME")
         labelSetupHelper(timeSecondsLabel, text: "0")
     }
 
