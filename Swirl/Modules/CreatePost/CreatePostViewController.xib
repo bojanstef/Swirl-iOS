@@ -14,7 +14,10 @@
                 <outlet property="cameraButton" destination="bQC-xM-tNx" id="Evd-O8-SXK"/>
                 <outlet property="cameraPreview" destination="Fuf-zJ-DYa" id="cFL-l8-19K"/>
                 <outlet property="dismissButton" destination="P2a-N6-lsn" id="H5u-2L-RPx"/>
+                <outlet property="doneButton" destination="2vZ-yI-w3O" id="Dv4-Ec-Yaw"/>
                 <outlet property="flipCameraButton" destination="Qm6-q7-h6Z" id="aLY-vd-jjO"/>
+                <outlet property="undoButton" destination="Kre-7M-KuM" id="kxq-nz-efp"/>
+                <outlet property="videoDetailsView" destination="XLq-sm-kqN" id="sYw-fr-L93"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -56,24 +59,50 @@
                                 <action selector="flipCameraButtonPressed:" destination="-1" eventType="touchUpInside" id="W3B-g3-Fsc"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twC-Jl-Iam">
-                            <rect key="frame" x="166" y="318" width="42" height="30"/>
-                            <state key="normal" title="DONE"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLq-sm-kqN" customClass="VideoDetailsView" customModule="Swirl" customModuleProvider="target">
+                            <rect key="frame" x="92" y="32" width="191" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="5aC-QJ-hcq"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kre-7M-KuM">
+                            <rect key="frame" x="16" y="591" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="eF0-ee-lY6"/>
+                                <constraint firstAttribute="height" constant="44" id="j1c-ZK-oHz"/>
+                            </constraints>
+                            <state key="normal" image="undoButton"/>
                             <connections>
-                                <action selector="doneButtonPressed:" destination="-1" eventType="touchUpInside" id="5XK-ts-ATL"/>
+                                <action selector="undoButtonPressed:" destination="-1" eventType="touchUpInside" id="JQx-Vh-QhD"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vZ-yI-w3O">
+                            <rect key="frame" x="315" y="591" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="dbD-F7-N8B"/>
+                                <constraint firstAttribute="height" constant="44" id="w7U-y3-Ns3"/>
+                            </constraints>
+                            <state key="normal" image="rightArrow"/>
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="-1" eventType="touchUpInside" id="EvQ-kt-gdY"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="2vZ-yI-w3O" secondAttribute="trailing" constant="16" id="2Pg-Y1-pLp"/>
                         <constraint firstItem="P2a-N6-lsn" firstAttribute="leading" secondItem="Fuf-zJ-DYa" secondAttribute="leading" constant="16" id="2g9-eI-yOM"/>
-                        <constraint firstItem="twC-Jl-Iam" firstAttribute="centerX" secondItem="Fuf-zJ-DYa" secondAttribute="centerX" id="G1E-4W-1bo"/>
+                        <constraint firstItem="XLq-sm-kqN" firstAttribute="top" secondItem="Fuf-zJ-DYa" secondAttribute="top" constant="32" id="D3N-XK-uXO"/>
                         <constraint firstItem="P2a-N6-lsn" firstAttribute="top" secondItem="Fuf-zJ-DYa" secondAttribute="top" constant="32" id="Gmk-cR-xlh"/>
+                        <constraint firstAttribute="bottom" secondItem="Kre-7M-KuM" secondAttribute="bottom" constant="32" id="H7x-Jn-eS5"/>
                         <constraint firstAttribute="bottom" secondItem="bQC-xM-tNx" secondAttribute="bottom" constant="32" id="I7y-K0-XRk"/>
-                        <constraint firstItem="twC-Jl-Iam" firstAttribute="centerY" secondItem="Fuf-zJ-DYa" secondAttribute="centerY" id="J1N-a5-kr8"/>
+                        <constraint firstAttribute="bottom" secondItem="2vZ-yI-w3O" secondAttribute="bottom" constant="32" id="ZYt-2g-mqq"/>
                         <constraint firstItem="Qm6-q7-h6Z" firstAttribute="top" secondItem="Fuf-zJ-DYa" secondAttribute="top" constant="32" id="dMx-Pk-OOt"/>
+                        <constraint firstItem="XLq-sm-kqN" firstAttribute="leading" secondItem="P2a-N6-lsn" secondAttribute="trailing" constant="32" id="hYX-rP-ovE"/>
                         <constraint firstItem="bQC-xM-tNx" firstAttribute="centerX" secondItem="Fuf-zJ-DYa" secondAttribute="centerX" id="haV-hV-ONr"/>
+                        <constraint firstItem="Qm6-q7-h6Z" firstAttribute="leading" secondItem="XLq-sm-kqN" secondAttribute="trailing" constant="32" id="l7k-Yw-NR6"/>
                         <constraint firstAttribute="trailing" secondItem="Qm6-q7-h6Z" secondAttribute="trailing" constant="16" id="xE3-2K-Qwk"/>
+                        <constraint firstItem="Kre-7M-KuM" firstAttribute="leading" secondItem="Fuf-zJ-DYa" secondAttribute="leading" constant="16" id="ykT-Td-JWR"/>
                     </constraints>
                 </view>
             </subviews>
@@ -84,11 +113,14 @@
                 <constraint firstItem="Fuf-zJ-DYa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gFp-dg-stD"/>
                 <constraint firstItem="Fuf-zJ-DYa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="inb-W3-uR6"/>
             </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
     <resources>
         <image name="downArrow" width="44" height="44"/>
         <image name="flipCamera" width="44" height="44"/>
+        <image name="rightArrow" width="44" height="44"/>
         <image name="swirlButton" width="341" height="341"/>
+        <image name="undoButton" width="44" height="44"/>
     </resources>
 </document>

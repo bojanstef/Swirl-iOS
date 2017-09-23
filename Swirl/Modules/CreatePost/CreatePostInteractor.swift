@@ -6,12 +6,15 @@
 //  Copyright © 2017 Stefanovic Ventures. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreGraphics.CGGeometry
 import AVFoundation.AVCaptureVideoPreviewLayer
 
 protocol CreatePostInteractable {
     var isVideoReady: Bool { get }
+    var videoClipsCount: Int { get }
+    var videoTotalTime: CMTime { get }
+    func setSessionCompletion(_ completion: @escaping (() -> Void))
     func startCamera() throws
     func stopCamera()
     func cameraPreviewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer
@@ -19,8 +22,9 @@ protocol CreatePostInteractable {
     func pauseRecording()
     func doneRecording(completion: @escaping ((URL?, Error?) -> Void))
     func flipCamera()
+    func removeLastVideoClip()
     func dismiss()
-    func navigateToSubmitPost(with videoURL: URL)
+    func navigateToSubmitPost(from navigationController: UINavigationController, with videoURL: URL)
 }
 
 final class CreatePostInteractor {
@@ -41,6 +45,18 @@ final class CreatePostInteractor {
 extension CreatePostInteractor: CreatePostInteractable {
     var isVideoReady: Bool {
         return cameraService.isVideoReady
+    }
+
+    var videoClipsCount: Int {
+        return cameraService.clipCount
+    }
+
+    var videoTotalTime: CMTime {
+        return cameraService.totalTime
+    }
+
+    func setSessionCompletion(_ completion: @escaping (() -> Void)) {
+        cameraService.setSessionCompletion(completion)
     }
 
     func startCamera() throws {
@@ -71,11 +87,15 @@ extension CreatePostInteractor: CreatePostInteractable {
         cameraService.flipCamera()
     }
 
+    func removeLastVideoClip() {
+        cameraService.removeLastClip()
+    }
+
     func dismiss() {
         moduleDelegate?.dismiss()
     }
 
-    func navigateToSubmitPost(with videoURL: URL) {
-        moduleDelegate?.navigateToSubmitPost(with: videoURL)
+    func navigateToSubmitPost(from navigationController: UINavigationController, with videoURL: URL) {
+        moduleDelegate?.navigateToSubmitPost(from: navigationController, with: videoURL)
     }
 }

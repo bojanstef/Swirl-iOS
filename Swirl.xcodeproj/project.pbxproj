@@ -58,6 +58,8 @@
 		F18DEA221F6C74B000F81B50 /* ProfileSocialsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F18DEA201F6C74B000F81B50 /* ProfileSocialsView.xib */; };
 		F198C8561F699A1100AF64E0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198C8551F699A1100AF64E0 /* String+Extensions.swift */; };
 		F19C575E1F7339BB00117DAC /* ProgressLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C575D1F7339BB00117DAC /* ProgressLayer.swift */; };
+		F1A331301F75B359003B9FA4 /* VideoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3312F1F75B359003B9FA4 /* VideoDetailsView.swift */; };
+		F1A331321F75B37C003B9FA4 /* VideoDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1A331311F75B37C003B9FA4 /* VideoDetailsView.xib */; };
 		F1BCADC51F70AD1300D77AFC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADC31F70AD1300D77AFC /* MainTabBarController.swift */; };
 		F1BCADC61F70AD1300D77AFC /* MainTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1BCADC41F70AD1300D77AFC /* MainTabBarController.xib */; };
 		F1BCADC81F70AD7D00D77AFC /* MainTabBarWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BCADC71F70AD7D00D77AFC /* MainTabBarWireframe.swift */; };
@@ -139,6 +141,8 @@
 		F18DEA201F6C74B000F81B50 /* ProfileSocialsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileSocialsView.xib; path = Views/ProfileSocialsView.xib; sourceTree = "<group>"; };
 		F198C8551F699A1100AF64E0 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "Extensions/String+Extensions.swift"; sourceTree = "<group>"; };
 		F19C575D1F7339BB00117DAC /* ProgressLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressLayer.swift; path = Views/ProgressLayer.swift; sourceTree = "<group>"; };
+		F1A3312F1F75B359003B9FA4 /* VideoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoDetailsView.swift; path = Modules/CreatePost/Views/VideoDetailsView.swift; sourceTree = "<group>"; };
+		F1A331311F75B37C003B9FA4 /* VideoDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = VideoDetailsView.xib; path = Modules/CreatePost/Views/VideoDetailsView.xib; sourceTree = "<group>"; };
 		F1BCADC31F70AD1300D77AFC /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = Modules/MainTabBar/MainTabBarController.swift; sourceTree = "<group>"; };
 		F1BCADC41F70AD1300D77AFC /* MainTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainTabBarController.xib; path = Modules/MainTabBar/MainTabBarController.xib; sourceTree = "<group>"; };
 		F1BCADC71F70AD7D00D77AFC /* MainTabBarWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarWireframe.swift; path = Modules/MainTabBar/MainTabBarWireframe.swift; sourceTree = "<group>"; };
@@ -325,6 +329,7 @@
 		F14B7FA71F6368D00096C365 /* CreatePost */ = {
 			isa = PBXGroup;
 			children = (
+				F1A3312E1F75B30F003B9FA4 /* Views */,
 				F1BCADD31F70BD2900D77AFC /* CreatePostDataServiceable.swift */,
 				F1BCADD51F70BD2900D77AFC /* CreatePostInteractor.swift */,
 				F1BCADD61F70BD2900D77AFC /* CreatePostPresenter.swift */,
@@ -413,6 +418,15 @@
 			children = (
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		F1A3312E1F75B30F003B9FA4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1A3312F1F75B359003B9FA4 /* VideoDetailsView.swift */,
+				F1A331311F75B37C003B9FA4 /* VideoDetailsView.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		F1BCADC21F70AC9E00D77AFC /* MainTabBar */ = {
@@ -515,6 +529,7 @@
 				F1828F021F74819C00915349 /* VideoPlayerView.xib in Resources */,
 				F14B7FC41F6383A60096C365 /* CurateViewController.xib in Resources */,
 				F18DEA121F6C58E600F81B50 /* ProfileHeaderCell.xib in Resources */,
+				F1A331321F75B37C003B9FA4 /* VideoDetailsView.xib in Resources */,
 				F18DEA1A1F6C6FF000F81B50 /* PostCell.xib in Resources */,
 				F18DEA221F6C74B000F81B50 /* ProfileSocialsView.xib in Resources */,
 				F14B7F8D1F635A9A0096C365 /* LaunchScreen.storyboard in Resources */,
@@ -643,6 +658,7 @@
 				F14B7F991F635EE40096C365 /* AuthCoordinator.swift in Sources */,
 				F14B7FB01F636B670096C365 /* DiscoverViewController.swift in Sources */,
 				F1EB90741F67363D0016D57B /* SwirlUser.swift in Sources */,
+				F1A331301F75B359003B9FA4 /* VideoDetailsView.swift in Sources */,
 				F14B7F9C1F635F3C0096C365 /* Starting.swift in Sources */,
 				F14B7FAB1F636A8E0096C365 /* DiscoverWireframe.swift in Sources */,
 				F18BBA0C1F74699C0098F78D /* SubmitPostWireframe.swift in Sources */,

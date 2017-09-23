@@ -6,12 +6,15 @@
 //  Copyright © 2017 Stefanovic Ventures. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreGraphics.CGGeometry
 import AVFoundation.AVCaptureVideoPreviewLayer
 
 protocol CreatePostPresentable {
     var isVideoReady: Bool { get }
+    var videoClipsCount: Int { get }
+    var videoTotalTime: CMTime { get }
+    func setSessionCompletion(_ completion: @escaping (() -> Void))
     func startCamera() throws
     func stopCamera()
     func cameraPreviewLayer(frame: CGRect) -> AVCaptureVideoPreviewLayer
@@ -19,8 +22,9 @@ protocol CreatePostPresentable {
     func pauseRecording()
     func doneRecording(completion: @escaping ((URL?, Error?) -> Void))
     func flipCamera()
+    func removeLastVideoClip()
     func dismiss()
-    func navigateToSubmitPost(with videoURL: URL)
+    func navigateToSubmitPost(from navigationController: UINavigationController, with videoURL: URL)
 }
 
 final class CreatePostPresenter {
@@ -34,6 +38,18 @@ final class CreatePostPresenter {
 extension CreatePostPresenter: CreatePostPresentable {
     var isVideoReady: Bool {
         return interactor.isVideoReady
+    }
+
+    var videoClipsCount: Int {
+        return interactor.videoClipsCount
+    }
+
+    var videoTotalTime: CMTime {
+        return interactor.videoTotalTime
+    }
+
+    func setSessionCompletion(_ completion: @escaping (() -> Void)) {
+        interactor.setSessionCompletion(completion)
     }
 
     func startCamera() throws {
@@ -64,11 +80,15 @@ extension CreatePostPresenter: CreatePostPresentable {
         interactor.flipCamera()
     }
 
+    func removeLastVideoClip() {
+        interactor.removeLastVideoClip()
+    }
+
     func dismiss() {
         interactor.dismiss()
     }
 
-    func navigateToSubmitPost(with videoURL: URL) {
-        interactor.navigateToSubmitPost(with: videoURL)
+    func navigateToSubmitPost(from navigationController: UINavigationController, with videoURL: URL) {
+        interactor.navigateToSubmitPost(from: navigationController, with: videoURL)
     }
 }

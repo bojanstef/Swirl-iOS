@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CreatePostModuleDelegate: class {
-    func navigateToSubmitPost(with videoURL: URL)
+    func navigateToSubmitPost(from navigationController: UINavigationController, with videoURL: URL)
     func dismiss()
 }
 
