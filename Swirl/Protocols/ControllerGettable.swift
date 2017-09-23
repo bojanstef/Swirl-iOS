@@ -8,6 +8,7 @@
 
 import UIKit
 
-protocol ControllerGettable {
-    var viewController: UIViewController { get }
+@objc protocol ControllerGettable {
+    @objc optional var viewController: UIViewController { get }
+    @objc optional var tabBarController: UIViewController { get }
 }

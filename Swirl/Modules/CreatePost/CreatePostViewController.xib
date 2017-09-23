@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreatePostViewController" customModule="Swirl" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraButton" destination="bQC-xM-tNx" id="Evd-O8-SXK"/>
+                <outlet property="cameraPreview" destination="Fuf-zJ-DYa" id="cFL-l8-19K"/>
+                <outlet property="dismissButton" destination="P2a-N6-lsn" id="H5u-2L-RPx"/>
+                <outlet property="doneButton" destination="2vZ-yI-w3O" id="Dv4-Ec-Yaw"/>
+                <outlet property="flipCameraButton" destination="Qm6-q7-h6Z" id="aLY-vd-jjO"/>
+                <outlet property="undoButton" destination="Kre-7M-KuM" id="kxq-nz-efp"/>
+                <outlet property="videoDetailsView" destination="XLq-sm-kqN" id="sYw-fr-L93"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fuf-zJ-DYa">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQC-xM-tNx">
+                            <rect key="frame" x="123.5" y="507" width="128" height="128"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="128" id="A6V-Lw-9bv"/>
+                                <constraint firstAttribute="width" constant="128" id="hw0-aR-s18"/>
+                            </constraints>
+                            <state key="normal" image="swirlButton"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2a-N6-lsn">
+                            <rect key="frame" x="16" y="32" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="2Yo-Ce-KaV"/>
+                                <constraint firstAttribute="height" constant="44" id="8k6-xi-ygR"/>
+                            </constraints>
+                            <state key="normal" image="downArrow"/>
+                            <connections>
+                                <action selector="dismissButtonPressed:" destination="-1" eventType="touchUpInside" id="sez-GU-zXe"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qm6-q7-h6Z">
+                            <rect key="frame" x="315" y="32" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="Nr7-lQ-we9"/>
+                                <constraint firstAttribute="height" constant="44" id="shL-xA-eI5"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="flipCamera"/>
+                            <connections>
+                                <action selector="flipCameraButtonPressed:" destination="-1" eventType="touchUpInside" id="W3B-g3-Fsc"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XLq-sm-kqN" customClass="VideoDetailsView" customModule="Swirl" customModuleProvider="target">
+                            <rect key="frame" x="92" y="32" width="191" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="5aC-QJ-hcq"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kre-7M-KuM">
+                            <rect key="frame" x="16" y="591" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="eF0-ee-lY6"/>
+                                <constraint firstAttribute="height" constant="44" id="j1c-ZK-oHz"/>
+                            </constraints>
+                            <state key="normal" image="undoButton"/>
+                            <connections>
+                                <action selector="undoButtonPressed:" destination="-1" eventType="touchUpInside" id="JQx-Vh-QhD"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vZ-yI-w3O">
+                            <rect key="frame" x="315" y="591" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="dbD-F7-N8B"/>
+                                <constraint firstAttribute="height" constant="44" id="w7U-y3-Ns3"/>
+                            </constraints>
+                            <state key="normal" image="rightArrow"/>
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="-1" eventType="touchUpInside" id="EvQ-kt-gdY"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="2vZ-yI-w3O" secondAttribute="trailing" constant="16" id="2Pg-Y1-pLp"/>
+                        <constraint firstItem="P2a-N6-lsn" firstAttribute="leading" secondItem="Fuf-zJ-DYa" secondAttribute="leading" constant="16" id="2g9-eI-yOM"/>
+                        <constraint firstItem="XLq-sm-kqN" firstAttribute="top" secondItem="Fuf-zJ-DYa" secondAttribute="top" constant="32" id="D3N-XK-uXO"/>
+                        <constraint firstItem="P2a-N6-lsn" firstAttribute="top" secondItem="Fuf-zJ-DYa" secondAttribute="top" constant="32" id="Gmk-cR-xlh"/>
+                        <constraint firstAttribute="bottom" secondItem="Kre-7M-KuM" secondAttribute="bottom" constant="32" id="H7x-Jn-eS5"/>
+                        <constraint firstAttribute="bottom" secondItem="bQC-xM-tNx" secondAttribute="bottom" constant="32" id="I7y-K0-XRk"/>
+                        <constraint firstAttribute="bottom" secondItem="2vZ-yI-w3O" secondAttribute="bottom" constant="32" id="ZYt-2g-mqq"/>
+                        <constraint firstItem="Qm6-q7-h6Z" firstAttribute="top" secondItem="Fuf-zJ-DYa" secondAttribute="top" constant="32" id="dMx-Pk-OOt"/>
+                        <constraint firstItem="XLq-sm-kqN" firstAttribute="leading" secondItem="P2a-N6-lsn" secondAttribute="trailing" constant="32" id="hYX-rP-ovE"/>
+                        <constraint firstItem="bQC-xM-tNx" firstAttribute="centerX" secondItem="Fuf-zJ-DYa" secondAttribute="centerX" id="haV-hV-ONr"/>
+                        <constraint firstItem="Qm6-q7-h6Z" firstAttribute="leading" secondItem="XLq-sm-kqN" secondAttribute="trailing" constant="32" id="l7k-Yw-NR6"/>
+                        <constraint firstAttribute="trailing" secondItem="Qm6-q7-h6Z" secondAttribute="trailing" constant="16" id="xE3-2K-Qwk"/>
+                        <constraint firstItem="Kre-7M-KuM" firstAttribute="leading" secondItem="Fuf-zJ-DYa" secondAttribute="leading" constant="16" id="ykT-Td-JWR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Fuf-zJ-DYa" secondAttribute="bottom" id="H0q-yC-Upf"/>
+                <constraint firstAttribute="trailing" secondItem="Fuf-zJ-DYa" secondAttribute="trailing" id="Rkk-kn-uok"/>
+                <constraint firstItem="Fuf-zJ-DYa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gFp-dg-stD"/>
+                <constraint firstItem="Fuf-zJ-DYa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="inb-W3-uR6"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="downArrow" width="44" height="44"/>
+        <image name="flipCamera" width="44" height="44"/>
+        <image name="rightArrow" width="44" height="44"/>
+        <image name="swirlButton" width="341" height="341"/>
+        <image name="undoButton" width="44" height="44"/>
+    </resources>
+</document>

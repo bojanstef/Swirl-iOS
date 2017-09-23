@@ -10,12 +10,17 @@ import UIKit
 
 extension UIImage {
     enum AssetIdentifier: String {
-        /** These cases are grouped as a reminder:
+        /** The top cases are grouped as a reminder:
          *  that they are used as the tab bar items **/
-        case createContent, curate, discover, following, profile
+        case createPost, curate, discover, following, profile
+        case backArrow, rightArrow, downArrow
+
         case swirlEmoji
+        case swirlButton
         case icon
         case settings
+        case undoButton
+        case flipCamera
     }
 
     convenience init?(asset: AssetIdentifier) {
