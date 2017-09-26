@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostTitleView" customModule="Swirl" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="5Xf-Rz-3sZ" id="QcZ-Wy-kgf"/>
+                <outlet property="textView" destination="RKO-V8-7Bh" id="J9p-93-ocv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xf-Rz-3sZ">
+                    <rect key="frame" x="16" y="32" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="2Nd-4D-44b"/>
+                        <constraint firstAttribute="height" constant="44" id="CjE-0Y-CgA"/>
+                    </constraints>
+                    <state key="normal" image="backArrow"/>
+                    <connections>
+                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="gGc-cA-STl"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RKO-V8-7Bh">
+                    <rect key="frame" x="64" y="16" width="247" height="96"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="RKO-V8-7Bh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="AaN-73-b6q"/>
+                <constraint firstItem="5Xf-Rz-3sZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Nsa-UA-nqP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="RKO-V8-7Bh" secondAttribute="bottom" constant="16" id="Pqw-Ep-iia"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RKO-V8-7Bh" secondAttribute="trailing" constant="64" id="e7Y-tk-qwI"/>
+                <constraint firstItem="RKO-V8-7Bh" firstAttribute="leading" secondItem="5Xf-Rz-3sZ" secondAttribute="trailing" constant="4" id="uuL-HV-bjM"/>
+                <constraint firstItem="5Xf-Rz-3sZ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="32" id="vg0-cG-82u"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-68.5" y="-1.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backArrow" width="44" height="44"/>
+    </resources>
+</document>
