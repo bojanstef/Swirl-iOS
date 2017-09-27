@@ -9,6 +9,12 @@
 import UIKit
 import AVFoundation
 
+private struct Constants {
+    static let viewCornerRadius: CGFloat = 10
+    static let shadowOpacity: Float = 0.8
+    static let alphaValue: CGFloat = 0.8
+}
+
 final class VideoPlayerView: UIView {
     fileprivate var player: AVPlayer?
     fileprivate var videoURL: URL? { didSet { setupVideoPlayer() } }
@@ -44,11 +50,16 @@ fileprivate extension VideoPlayerView {
     func setupVideoPlayer() {
         guard let videoURL = videoURL else { return }
         player = AVPlayer(url: videoURL)
+        let playerLayer = createPlayerLayer(with: player)
+        layer.addSublayer(playerLayer)
+        player?.play()
+    }
+
+    func createPlayerLayer(with player: AVPlayer?) -> AVPlayerLayer {
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.videoGravity = .resizeAspectFill
-        playerLayer.frame = self.bounds
-        self.layer.addSublayer(playerLayer)
-        player?.play()
+        playerLayer.frame = bounds
+        return playerLayer
     }
 }
 

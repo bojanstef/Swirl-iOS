@@ -23,14 +23,14 @@
             <rect key="frame" x="0.0" y="0.0" width="256" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="eWL-6K-Zho">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eWL-6K-Zho">
                     <rect key="frame" x="0.0" y="0.0" width="256" height="44"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Wa2-A7-BDo">
-                            <rect key="frame" x="62" y="0.0" width="132" height="21"/>
+                            <rect key="frame" x="62" y="0.0" width="132" height="22"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clips" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sop-ne-AHg">
-                                    <rect key="frame" x="0.0" y="0.5" width="64" height="20.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLIPS" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sop-ne-AHg">
+                                    <rect key="frame" x="0.0" y="1" width="64" height="20.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="64" id="1eS-Ez-YEn"/>
                                     </constraints>
@@ -39,7 +39,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIW-Ai-WHm">
-                                    <rect key="frame" x="68" y="0.5" width="64" height="20.5"/>
+                                    <rect key="frame" x="68" y="1" width="64" height="20.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="64" id="yJU-WL-TJK"/>
                                     </constraints>
@@ -50,10 +50,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="aKF-HS-P2k">
-                            <rect key="frame" x="62" y="23" width="132" height="21"/>
+                            <rect key="frame" x="62" y="22" width="132" height="22"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtV-tW-aIU">
-                                    <rect key="frame" x="0.0" y="0.5" width="64" height="20.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtV-tW-aIU">
+                                    <rect key="frame" x="0.0" y="1" width="64" height="20.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="64" id="WsO-7i-xeR"/>
                                     </constraints>
@@ -62,7 +62,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGy-AO-JCL">
-                                    <rect key="frame" x="68" y="0.5" width="64" height="20.5"/>
+                                    <rect key="frame" x="68" y="1" width="64" height="20.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="64" id="DIL-gX-FtV"/>
                                     </constraints>

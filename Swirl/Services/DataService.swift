@@ -13,6 +13,11 @@ import FBSDKLoginKit
 
 private enum APIError: Error {
     case noUser
+    case noDownloadURL
+}
+
+private enum ContentType: String {
+    case video = "video/mp4"
 }
 
 private struct Constants {
@@ -24,16 +29,35 @@ private struct DatabaseNodes {
     static let posts = "posts"
 }
 
+private struct StorageNodes {
+    static let allPosts = "allPosts"
+}
+
 final class DataService {
     fileprivate let databaseReference: DatabaseReference
+    fileprivate let storageReference: StorageReference
 
     static var defaultService: DataService {
         let databaseReference = Database.database().reference()
-        return DataService(databaseReference: databaseReference)
+        let storageReference = Storage.storage().reference()
+        return DataService(databaseReference: databaseReference, storageReference: storageReference)
     }
 
-    private init(databaseReference: DatabaseReference) {
+    private init(databaseReference: DatabaseReference, storageReference: StorageReference) {
         self.databaseReference = databaseReference
+        self.storageReference = storageReference
+    }
+}
+
+/**** Common Methods ****/
+extension DataService {
+    func getCurrentUser(completion: @escaping ((SwirlUser?, Error?) -> Void)) {
+        guard let userUID = Auth.auth().currentUser?.uid else { completion(nil, APIError.noUser); return }
+        let ref = databaseReference.child(DatabaseNodes.users).child(userUID)
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            let swirlUser = SwirlUser.toValue(from: snapshot.toJSON)
+            completion(swirlUser, nil); return
+        })
     }
 }
 
@@ -59,15 +83,6 @@ extension DataService: AuthDataServiceable {
 }
 
 extension DataService: ProfileDataServiceable {
-    func getCurrentUser(completion: @escaping ((SwirlUser?, Error?) -> Void)) {
-        guard let userID = Auth.auth().currentUser?.uid else { completion(nil, APIError.noUser); return }
-        let ref = databaseReference.child(DatabaseNodes.users).child(userID)
-        ref.observeSingleEvent(of: .value, with: { snapshot in
-            let swirlUser = SwirlUser.toValue(from: snapshot.toJSON)
-            completion(swirlUser, nil); return
-        })
-    }
-
     // ISSUE: - https://github.com/bojanstef/Swirl-iOS/issues/6
     func observePosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void)) {
         let ref = databaseReference.child(DatabaseNodes.posts).child(swirlUser.uid)
@@ -79,9 +94,33 @@ extension DataService: ProfileDataServiceable {
     }
 }
 
+extension DataService: SubmitPostDataServiceable {
+    func submitPost(_ videoURL: URL, title: String, completion: @escaping ((Error?) -> Void)) {
+        guard let userUID = Auth.auth().currentUser?.uid else { completion(APIError.noUser); return }
+        let postUID = UUID().uuidString
+        do {
+            let videoData = try Data(contentsOf: videoURL, options: .mappedIfSafe)
+            let ref = storageReference.child(StorageNodes.allPosts).child(postUID)
+            ref.putData(videoData, metadata: createMetadata(contentType: .video)) { [weak self] metadata, error in
+                if let error = error {
+                    completion(error)
+                } else {
+                    guard let url = metadata?.downloadURL()?.absoluteString else {
+                        completion(APIError.noDownloadURL)
+                        return
+                    }
+                    let post = Post(uid: postUID, url: url, ownerUID: userUID, title: title)
+                    self?.savePost(post, completion: completion)
+                }
+            }
+        } catch {
+            completion(error)
+        }
+    }
+}
+
 extension DataService: CreatePostDataServiceable {}
 extension DataService: MainTabBarDataServiceable {}
-extension DataService: SubmitPostDataServiceable {}
 
 fileprivate extension DataService {
     func authenticateWithFirebase(_ credential: AuthCredential, completion: @escaping ((Bool, Error?) -> Void)) {
@@ -108,6 +147,38 @@ fileprivate extension DataService {
         let swirlUser = SwirlUser(uid: user.uid, username: username)
         ref.setValue(SwirlUser.toJSON(from: swirlUser)) { error, _ in
             completion(error == nil, error); return
+        }
+    }
+
+    func createMetadata(contentType: ContentType) -> StorageMetadata {
+        let metadata = StorageMetadata()
+        metadata.contentType = contentType.rawValue
+        return metadata
+    }
+
+    func savePost(_ post: Post, completion: @escaping ((Error?) -> Void)) {
+        let ref = databaseReference.child(DatabaseNodes.posts).child(post.uid)
+        ref.setValue(Post.toJSON(from: post)) { [weak self] error, _ in
+            if let error = error {
+                completion(error)
+            } else {
+                self?.appendToUserPosts(post.uid, ownerUID: post.ownerUID, completion: completion)
+            }
+        }
+    }
+
+    func appendToUserPosts(_ postUID: String, ownerUID: String, completion: @escaping ((Error?) -> Void)) {
+        getCurrentUser { [weak self] user, error in
+            guard let this = self, let user = user else { completion(APIError.noUser); return }
+            if let error = error {
+                completion(error)
+            } else {
+                let postUIDs = user.postUIDs + [postUID]
+                let ref = this.databaseReference.child(DatabaseNodes.users).child(user.uid)
+                ref.updateChildValues([SwirlUserValue.postUIDs: postUIDs]) { updateError, _ in
+                    completion(updateError)
+                }
+            }
         }
     }
 }

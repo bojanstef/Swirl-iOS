@@ -8,4 +8,6 @@
 
 import Foundation
 
-protocol SubmitPostDataServiceable {}
+protocol SubmitPostDataServiceable {
+    func submitPost(_ videoURL: URL, title: String, completion: @escaping ((Error?) -> Void))
+}

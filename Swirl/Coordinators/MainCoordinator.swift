@@ -33,6 +33,13 @@ final class MainCoordinator {
     }
 }
 
+/**** Common Methods ****/
+extension MainCoordinator {
+    func dismiss() {
+        navigationController.dismiss(animated: true, completion: nil)
+    }
+}
+
 extension MainCoordinator: Stoppable {
     func start() {
         let viewControllers: [UIViewController] = [
@@ -62,10 +69,6 @@ extension MainCoordinator: CreatePostModuleDelegate {
     func navigateToSubmitPost(from navigationController: UINavigationController, with videoURL: URL) {
         let viewController = SubmitPostWireframe(moduleDelegate: self, videoURL: videoURL).viewController
         navigationController.pushViewController(viewController, animated: true)
-    }
-
-    func dismiss() {
-        navigationController.dismiss(animated: true, completion: nil)
     }
 }
 

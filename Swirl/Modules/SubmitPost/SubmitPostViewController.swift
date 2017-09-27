@@ -9,14 +9,14 @@
 import UIKit
 
 private struct Constants {
-    static let colorAlpha: CGFloat = 0.25
-    static let buttonCornerRadius: CGFloat = 6
-    static let buttonEdgeInsets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
+    static let darkSeethrough = UIColor(white: 0, alpha: 0.6)
+    static let cornerRadius: CGFloat = 12
+    static let activityIndicatorSquare: CGFloat = 128
 }
 
 final class SubmitPostViewController: UIViewController {
     @IBOutlet fileprivate weak var videoPlayerView: VideoPlayerView!
-    @IBOutlet fileprivate weak var backButton: UIButton!
+    @IBOutlet fileprivate weak var postTitleView: PostTitleView!
     fileprivate let presenter: SubmitPostPresentable
     fileprivate let videoURL: URL
 
@@ -27,23 +27,57 @@ final class SubmitPostViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
+    override var prefersStatusBarHidden: Bool { return true }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         videoPlayerView.setVideoURL(videoURL)
-        setupButtons()
+        postTitleView.delegate = self
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismissKeyboard()
     }
 }
 
-fileprivate extension SubmitPostViewController {
-    @IBAction func backButtonPressed(_ sender: Any) {
+extension SubmitPostViewController: PostTitleViewDelegate {
+    func backButtonPressed() {
         navigationController?.popViewController(animated: true)
     }
 
-    func setupButtons() {
-        let seeThroughBlack = UIColor(white: 0, alpha: Constants.colorAlpha)
+    func submitButtonPressed() {
+        dismissKeyboard()
+        disableViews()
+        presenter.submitPost(videoURL, title: postTitleView.title) { [weak self] error in
+            self?.enableViews()
+            if let error = error {
+                print(error)
+            } else {
+                self?.presenter.dismiss()
+            }
+        }
+    }
 
-        backButton.backgroundColor = seeThroughBlack
-        backButton.layer.cornerRadius = Constants.buttonCornerRadius
-        backButton.imageEdgeInsets = Constants.buttonEdgeInsets
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
+    func disableViews() {
+        videoPlayerView.isUserInteractionEnabled = false
+        postTitleView.isUserInteractionEnabled = false
+        let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activityIndicatorView.frame = CGRect(x: 0, y: 0,
+                                             width: Constants.activityIndicatorSquare,
+                                             height: Constants.activityIndicatorSquare)
+        activityIndicatorView.layer.cornerRadius = Constants.cornerRadius
+        activityIndicatorView.backgroundColor = Constants.darkSeethrough
+        activityIndicatorView.center = view.center
+        activityIndicatorView.startAnimating()
+        view.addSubview(activityIndicatorView)
+    }
+
+    func enableViews() {
+        videoPlayerView.isUserInteractionEnabled = true
+        postTitleView.isUserInteractionEnabled = true
+        view.subviews.forEach { if $0 is UIActivityIndicatorView { $0.removeFromSuperview() } }
     }
 }

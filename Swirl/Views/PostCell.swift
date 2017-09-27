@@ -18,6 +18,6 @@ final class PostCell: UICollectionViewCell {
 
 extension PostCell: PostSetupable {
     func setup(with post: Post) {
-        testLabel.text = "Owner: \(post.owner)"
+        testLabel.text = "Owner: \(post.ownerUID)"
     }
 }
