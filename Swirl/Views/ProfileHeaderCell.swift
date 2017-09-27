@@ -59,7 +59,7 @@ fileprivate extension ProfileHeaderCell {
 
         totalViewsLabel.backgroundColor = .lightBlue
         totalViewsLabel.attributedText = NSAttributedString(
-            string: String(profile.posts.reduce(0) { $0 + $1.views }).appending(Constants.viewsTitle),
+            string: String(profile.posts.reduce(0) { $0 + $1.loops }).appending(Constants.viewsTitle),
             attributes: Constants.totalViewsTextAttributes
         )
     }
