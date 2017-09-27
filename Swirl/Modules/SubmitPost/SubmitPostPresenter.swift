@@ -8,7 +8,10 @@
 
 import Foundation
 
-protocol SubmitPostPresentable {}
+protocol SubmitPostPresentable {
+    func dismiss()
+    func submitPost(_ videoURL: URL, title: String, completion: @escaping ((Error?) -> Void))
+}
 
 final class SubmitPostPresenter {
     fileprivate let interactor: SubmitPostInteractable
@@ -18,4 +21,12 @@ final class SubmitPostPresenter {
     }
 }
 
-extension SubmitPostPresenter: SubmitPostPresentable {}
+extension SubmitPostPresenter: SubmitPostPresentable {
+    func dismiss() {
+        interactor.dismiss()
+    }
+
+    func submitPost(_ videoURL: URL, title: String, completion: @escaping ((Error?) -> Void)) {
+        interactor.submitPost(videoURL, title: title, completion: completion)
+    }
+}

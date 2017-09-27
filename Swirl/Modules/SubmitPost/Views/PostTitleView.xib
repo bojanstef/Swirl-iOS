@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostTitleView" customModule="Swirl" customModuleProvider="target">
             <connections>
                 <outlet property="backButton" destination="5Xf-Rz-3sZ" id="QcZ-Wy-kgf"/>
+                <outlet property="submitButton" destination="Z1i-qn-L4D" id="Prt-5k-SR2"/>
                 <outlet property="textView" destination="RKO-V8-7Bh" id="J9p-93-ocv"/>
             </connections>
         </placeholder>
@@ -33,28 +34,42 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RKO-V8-7Bh">
-                    <rect key="frame" x="64" y="16" width="247" height="96"/>
+                    <rect key="frame" x="64" y="32" width="247" height="94"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1i-qn-L4D">
+                    <rect key="frame" x="315" y="32" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="LIc-nq-Iur"/>
+                        <constraint firstAttribute="height" constant="44" id="QFh-g0-o8X"/>
+                    </constraints>
+                    <state key="normal" image="rightArrow"/>
+                    <connections>
+                        <action selector="submitButtonPressed:" destination="-1" eventType="touchUpInside" id="SNm-Qm-rPj"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="RKO-V8-7Bh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="AaN-73-b6q"/>
+                <constraint firstItem="RKO-V8-7Bh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="32" id="AaN-73-b6q"/>
+                <constraint firstItem="Z1i-qn-L4D" firstAttribute="leading" secondItem="RKO-V8-7Bh" secondAttribute="trailing" constant="4" id="LkY-yY-y6H"/>
                 <constraint firstItem="5Xf-Rz-3sZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Nsa-UA-nqP"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="RKO-V8-7Bh" secondAttribute="bottom" constant="16" id="Pqw-Ep-iia"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RKO-V8-7Bh" secondAttribute="trailing" constant="64" id="e7Y-tk-qwI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="RKO-V8-7Bh" secondAttribute="bottom" constant="2" id="Pqw-Ep-iia"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Z1i-qn-L4D" secondAttribute="trailing" constant="16" id="X3w-x7-OdP"/>
+                <constraint firstItem="Z1i-qn-L4D" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="32" id="ZtO-2r-BpH"/>
                 <constraint firstItem="RKO-V8-7Bh" firstAttribute="leading" secondItem="5Xf-Rz-3sZ" secondAttribute="trailing" constant="4" id="uuL-HV-bjM"/>
                 <constraint firstItem="5Xf-Rz-3sZ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="32" id="vg0-cG-82u"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-68.5" y="-1.5"/>
+            <point key="canvasLocation" x="-68.5" y="-2"/>
         </view>
     </objects>
     <resources>
         <image name="backArrow" width="44" height="44"/>
+        <image name="rightArrow" width="44" height="44"/>
     </resources>
 </document>

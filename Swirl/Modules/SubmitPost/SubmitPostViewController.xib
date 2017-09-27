@@ -23,11 +23,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Xa-fQ-mBe" customClass="VideoPlayerView" customModule="Swirl" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOm-0U-gVv" customClass="PostTitleView" customModule="Swirl" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="20" width="375" height="128"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="128" id="2rd-43-qRF"/>
@@ -36,11 +36,11 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="aOm-0U-gVv" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="43r-gz-kwW"/>
-                <constraint firstItem="aOm-0U-gVv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Bva-BU-HhO"/>
+                <constraint firstItem="aOm-0U-gVv" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="43r-gz-kwW"/>
+                <constraint firstItem="aOm-0U-gVv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Bva-BU-HhO"/>
                 <constraint firstItem="3Xa-fQ-mBe" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="PAm-ST-d5D"/>
-                <constraint firstItem="3Xa-fQ-mBe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ab6-cU-vU2"/>
-                <constraint firstItem="aOm-0U-gVv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kew-1C-3uw"/>
+                <constraint firstItem="3Xa-fQ-mBe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ab6-cU-vU2"/>
+                <constraint firstItem="aOm-0U-gVv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kew-1C-3uw"/>
                 <constraint firstItem="3Xa-fQ-mBe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qVU-99-9cT"/>
                 <constraint firstItem="3Xa-fQ-mBe" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="rmW-Nx-N5J"/>
             </constraints>

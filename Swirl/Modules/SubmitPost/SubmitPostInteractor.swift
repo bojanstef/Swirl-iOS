@@ -8,7 +8,10 @@
 
 import Foundation
 
-protocol SubmitPostInteractable {}
+protocol SubmitPostInteractable {
+    func dismiss()
+    func submitPost(_ videoURL: URL, title: String, completion: @escaping ((Error?) -> Void))
+}
 
 final class SubmitPostInteractor {
     fileprivate weak var moduleDelegate: SubmitPostModuleDelegate?
@@ -20,4 +23,12 @@ final class SubmitPostInteractor {
     }
 }
 
-extension SubmitPostInteractor: SubmitPostInteractable {}
+extension SubmitPostInteractor: SubmitPostInteractable {
+    func dismiss() {
+        moduleDelegate?.dismiss()
+    }
+
+    func submitPost(_ videoURL: URL, title: String, completion: @escaping ((Error?) -> Void)) {
+        dataService.submitPost(videoURL, title: title, completion: completion)
+    }
+}
