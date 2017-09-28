@@ -9,7 +9,8 @@
 import Firebase
 
 extension DataSnapshot {
-    var toJSON: JSON? {
-        return self.value as? JSON
+    var data: Data? {
+        guard let json = self.value as? [String: Any] else { return nil }
+        return try? JSONSerialization.data(withJSONObject: json, options: [])
     }
 }

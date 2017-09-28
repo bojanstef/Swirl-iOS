@@ -39,6 +39,7 @@
 		F14B7FCC1F6384670096C365 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FCA1F6384670096C365 /* ProfileViewController.xib */; };
 		F14B7FCE1F6389260096C365 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F14B7FCD1F6389260096C365 /* GoogleService-Info.plist */; };
 		F161F8BB1F69F4FB0055A8FB /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F161F8BA1F69F4FB0055A8FB /* UIFont+Extensions.swift */; };
+		F162A1EB1F7C5DD3003875AF /* DataSnapshot+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F162A1EA1F7C5DD3003875AF /* DataSnapshot+Extensions.swift */; };
 		F16EBE641F6B839C00D6CCE7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16EBE631F6B839C00D6CCE7 /* Post.swift */; };
 		F1828F001F747CC300915349 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1828EFF1F747CC300915349 /* VideoPlayerView.swift */; };
 		F1828F021F74819C00915349 /* VideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1828F011F74819C00915349 /* VideoPlayerView.xib */; };
@@ -53,7 +54,6 @@
 		F18DEA0D1F6C585300F81B50 /* ProfileSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA0C1F6C585300F81B50 /* ProfileSectionController.swift */; };
 		F18DEA111F6C58E600F81B50 /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA0F1F6C58E600F81B50 /* ProfileHeaderCell.swift */; };
 		F18DEA121F6C58E600F81B50 /* ProfileHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F18DEA101F6C58E600F81B50 /* ProfileHeaderCell.xib */; };
-		F18DEA161F6C5F8F00F81B50 /* DataSnapshot+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA151F6C5F8F00F81B50 /* DataSnapshot+Extensions.swift */; };
 		F18DEA191F6C6FF000F81B50 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA171F6C6FF000F81B50 /* PostCell.swift */; };
 		F18DEA1A1F6C6FF000F81B50 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F18DEA181F6C6FF000F81B50 /* PostCell.xib */; };
 		F18DEA211F6C74B000F81B50 /* ProfileSocialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18DEA1F1F6C74B000F81B50 /* ProfileSocialsView.swift */; };
@@ -84,7 +84,6 @@
 		F1EB905C1F6627AE0016D57B /* AuthCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1EB905B1F6627AE0016D57B /* AuthCardView.xib */; };
 		F1EB90661F66393E0016D57B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90651F66393E0016D57B /* UIView+Extensions.swift */; };
 		F1EB90741F67363D0016D57B /* SwirlUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90731F67363D0016D57B /* SwirlUser.swift */; };
-		F1EB90781F67496C0016D57B /* ModelConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EB90771F67496C0016D57B /* ModelConvertable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +122,7 @@
 		F14B7FCA1F6384670096C365 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileViewController.xib; path = Modules/Profile/ProfileViewController.xib; sourceTree = "<group>"; };
 		F14B7FCD1F6389260096C365 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F161F8BA1F69F4FB0055A8FB /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+Extensions.swift"; path = "Extensions/UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		F162A1EA1F7C5DD3003875AF /* DataSnapshot+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DataSnapshot+Extensions.swift"; path = "Extensions/DataSnapshot+Extensions.swift"; sourceTree = "<group>"; };
 		F16EBE631F6B839C00D6CCE7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = Models/Post.swift; sourceTree = "<group>"; };
 		F1828EFF1F747CC300915349 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoPlayerView.swift; path = Views/VideoPlayerView.swift; sourceTree = "<group>"; };
 		F1828F011F74819C00915349 /* VideoPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = VideoPlayerView.xib; path = Views/VideoPlayerView.xib; sourceTree = "<group>"; };
@@ -137,7 +137,6 @@
 		F18DEA0C1F6C585300F81B50 /* ProfileSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSectionController.swift; path = SectionControllers/ProfileSectionController.swift; sourceTree = "<group>"; };
 		F18DEA0F1F6C58E600F81B50 /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileHeaderCell.swift; path = Views/ProfileHeaderCell.swift; sourceTree = "<group>"; };
 		F18DEA101F6C58E600F81B50 /* ProfileHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileHeaderCell.xib; path = Views/ProfileHeaderCell.xib; sourceTree = "<group>"; };
-		F18DEA151F6C5F8F00F81B50 /* DataSnapshot+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataSnapshot+Extensions.swift"; path = "Extensions/DataSnapshot+Extensions.swift"; sourceTree = "<group>"; };
 		F18DEA171F6C6FF000F81B50 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostCell.swift; path = Views/PostCell.swift; sourceTree = "<group>"; };
 		F18DEA181F6C6FF000F81B50 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostCell.xib; path = Views/PostCell.xib; sourceTree = "<group>"; };
 		F18DEA1F1F6C74B000F81B50 /* ProfileSocialsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSocialsView.swift; path = Views/ProfileSocialsView.swift; sourceTree = "<group>"; };
@@ -168,7 +167,6 @@
 		F1EB905B1F6627AE0016D57B /* AuthCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AuthCardView.xib; path = Modules/Auth/Views/AuthCardView.xib; sourceTree = "<group>"; };
 		F1EB90651F66393E0016D57B /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "Extensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F1EB90731F67363D0016D57B /* SwirlUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwirlUser.swift; path = Models/SwirlUser.swift; sourceTree = "<group>"; };
-		F1EB90771F67496C0016D57B /* ModelConvertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelConvertable.swift; path = Protocols/ModelConvertable.swift; sourceTree = "<group>"; };
 		FC7CF23AE2863C50D8FF7E8D /* Pods-Swirl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swirl.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swirl/Pods-Swirl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -294,7 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				F14B7FAC1F636B220096C365 /* ControllerGettable.swift */,
-				F1EB90771F67496C0016D57B /* ModelConvertable.swift */,
 				F14B7F9B1F635F3C0096C365 /* Starting.swift */,
 				F14B7F9D1F6360A00096C365 /* Stoppable.swift */,
 			);
@@ -377,7 +374,7 @@
 		F14B7FB21F636D800096C365 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F18DEA151F6C5F8F00F81B50 /* DataSnapshot+Extensions.swift */,
+				F162A1EA1F7C5DD3003875AF /* DataSnapshot+Extensions.swift */,
 				F198C8551F699A1100AF64E0 /* String+Extensions.swift */,
 				F1CC7FF81F650C43006242F1 /* UIColor+Extensions.swift */,
 				F161F8BA1F69F4FB0055A8FB /* UIFont+Extensions.swift */,
@@ -665,6 +662,7 @@
 				F18DEA191F6C6FF000F81B50 /* PostCell.swift in Sources */,
 				F18BBA151F7469DE0098F78D /* SubmitPostViewController.swift in Sources */,
 				F1BCADDC1F70BD2900D77AFC /* CreatePostInteractor.swift in Sources */,
+				F162A1EB1F7C5DD3003875AF /* DataSnapshot+Extensions.swift in Sources */,
 				F1CC7FF31F64EFD6006242F1 /* AuthPresenter.swift in Sources */,
 				F14B7FC71F6384030096C365 /* FollowingViewController.swift in Sources */,
 				F14B7F991F635EE40096C365 /* AuthCoordinator.swift in Sources */,
@@ -687,7 +685,6 @@
 				F1BCADDD1F70BD2900D77AFC /* CreatePostPresenter.swift in Sources */,
 				F1EB90661F66393E0016D57B /* UIView+Extensions.swift in Sources */,
 				F14B7FBE1F63833B0096C365 /* FollowingWireframe.swift in Sources */,
-				F1EB90781F67496C0016D57B /* ModelConvertable.swift in Sources */,
 				F11CE5851F64B70600CD60C2 /* AuthWireframe.swift in Sources */,
 				F18DEA111F6C58E600F81B50 /* ProfileHeaderCell.swift in Sources */,
 				F14B7F831F635A9A0096C365 /* AppDelegate.swift in Sources */,
@@ -708,7 +705,6 @@
 				F11CE5821F64B6F300CD60C2 /* AuthViewController.swift in Sources */,
 				F14B7FBC1F63803E0096C365 /* CurateWireframe.swift in Sources */,
 				F18DEA0A1F6C4A6A00F81B50 /* Profile.swift in Sources */,
-				F18DEA161F6C5F8F00F81B50 /* DataSnapshot+Extensions.swift in Sources */,
 				F161F8BB1F69F4FB0055A8FB /* UIFont+Extensions.swift in Sources */,
 				F14B7FC01F63836F0096C365 /* ProfileWireframe.swift in Sources */,
 			);

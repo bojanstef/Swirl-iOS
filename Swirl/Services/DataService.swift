@@ -14,6 +14,7 @@ import FBSDKLoginKit
 private enum APIError: Error {
     case noUser
     case noDownloadURL
+    case noData
 }
 
 private enum ContentType: String {
@@ -55,8 +56,13 @@ extension DataService {
         guard let userUID = Auth.auth().currentUser?.uid else { completion(nil, APIError.noUser); return }
         let ref = databaseReference.child(DatabaseNodes.users).child(userUID)
         ref.observeSingleEvent(of: .value, with: { snapshot in
-            let swirlUser = SwirlUser.toValue(from: snapshot.toJSON)
-            completion(swirlUser, nil); return
+            do {
+                guard let data = snapshot.data else { completion(nil, APIError.noData); return }
+                let swirlUser = try JSONDecoder().decode(SwirlUser.self, from: data)
+                completion(swirlUser, nil)
+            } catch {
+                completion(nil, error)
+            }
         })
     }
 }
@@ -87,9 +93,13 @@ extension DataService: ProfileDataServiceable {
     func observePosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void)) {
         let ref = databaseReference.child(DatabaseNodes.posts).child(swirlUser.uid)
         ref.observeSingleEvent(of: .value, with: { snapshot in
-            guard let dict = snapshot.toJSON else { completion([], APIError.noUser); return }
-            print(dict)
-            completion([], nil)
+            do {
+                guard let data = snapshot.data else { completion([], APIError.noData); return }
+                let posts = try JSONDecoder().decode([Post].self, from: data)
+                completion(posts, nil)
+            } catch {
+                completion([], error)
+            }
         })
     }
 }
@@ -136,17 +146,22 @@ fileprivate extension DataService {
             if snapshot.exists() {
                 completion(true, nil); return
             } else {
-                self?.saveSwirlUser(user, to: ref, completion: completion)
+                let transformedDisplayName = user.displayName?.removingWhitespaces.lowercased()
+                let swirlUser = SwirlUser(uid: user.uid, username: transformedDisplayName ?? String.randomAnimalUnique)
+                self?.saveSwirlUser(swirlUser, to: ref, completion: completion)
             }
         })
     }
 
-    func saveSwirlUser(_ user: User, to ref: DatabaseReference, completion: @escaping ((Bool, Error?) -> Void)) {
-        let transformedDisplayName = user.displayName?.removingWhitespaces.lowercased()
-        let username = transformedDisplayName ?? String.randomAnimalUnique
-        let swirlUser = SwirlUser(uid: user.uid, username: username)
-        ref.setValue(SwirlUser.toJSON(from: swirlUser)) { error, _ in
-            completion(error == nil, error); return
+    func saveSwirlUser(_ swirlUser: SwirlUser, to ref: DatabaseReference,
+                       completion: @escaping ((Bool, Error?) -> Void)) {
+        do {
+            guard let json = try swirlUser.encode() else { completion(false, APIError.noData); return }
+            ref.setValue(json) { error, _ in
+                completion(error == nil, error)
+            }
+        } catch {
+            completion(false, error)
         }
     }
 
@@ -157,13 +172,18 @@ fileprivate extension DataService {
     }
 
     func savePost(_ post: Post, completion: @escaping ((Error?) -> Void)) {
-        let ref = databaseReference.child(DatabaseNodes.posts).child(post.uid)
-        ref.setValue(Post.toJSON(from: post)) { [weak self] error, _ in
-            if let error = error {
-                completion(error)
-            } else {
-                self?.appendToUserPosts(post.uid, ownerUID: post.ownerUID, completion: completion)
+        do {
+            guard let json = try post.encode() else { completion(APIError.noData); return }
+            let ref = databaseReference.child(DatabaseNodes.posts).child(post.uid)
+            ref.setValue(json) { [weak self] error, _ in
+                if let error = error {
+                    completion(error)
+                } else {
+                    self?.appendToUserPosts(post.uid, ownerUID: post.ownerUID, completion: completion)
+                }
             }
+        } catch {
+            completion(error)
         }
     }
 
@@ -175,7 +195,7 @@ fileprivate extension DataService {
             } else {
                 let postUIDs = user.postUIDs + [postUID]
                 let ref = this.databaseReference.child(DatabaseNodes.users).child(user.uid)
-                ref.updateChildValues([SwirlUserValue.postUIDs: postUIDs]) { updateError, _ in
+                ref.updateChildValues(["postUIDs": postUIDs]) { updateError, _ in
                     completion(updateError)
                 }
             }

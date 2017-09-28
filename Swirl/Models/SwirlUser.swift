@@ -8,7 +8,7 @@
 
 import IGListKit
 
-final class SwirlUser {
+final class SwirlUser: Codable {
     let uid: String
     let username: String
     let biography: String
@@ -28,45 +28,10 @@ final class SwirlUser {
         self.followingUIDs = followingUIDs
         self.photoURL = photoURL
     }
-}
 
-struct SwirlUserValue {
-    static let uid = "uid"
-    static let username = "username"
-    static let biography = "biography"
-    static let postUIDs = "postUIDs"
-    static let followerUIDs = "followerUIDs"
-    static let followingUIDs = "followingUIDs"
-    static let photoURL = "photoURL"
-}
-
-extension SwirlUser: ModelConvertable {
-    static func toJSON(from value: SwirlUser) -> JSON {
-        return [
-            SwirlUserValue.uid: value.uid,
-            SwirlUserValue.username: value.username,
-            SwirlUserValue.biography: value.biography,
-            SwirlUserValue.postUIDs: value.postUIDs,
-            SwirlUserValue.followerUIDs: value.followerUIDs,
-            SwirlUserValue.followingUIDs: value.followingUIDs,
-            SwirlUserValue.photoURL: value.photoURL as Any
-        ]
-    }
-
-    static func toValue(from json: JSON?) -> SwirlUser? {
-        guard let json = json,
-            let uid = json[SwirlUserValue.uid] as? String,
-            let username = json[SwirlUserValue.username] as? String,
-            let biography = json[SwirlUserValue.biography] as? String
-        else { return nil }
-
-        let postUIDs = json[SwirlUserValue.postUIDs] as? [String] ?? []
-        let followerUIDs = json[SwirlUserValue.followerUIDs] as? [String] ?? []
-        let followingUIDs = json[SwirlUserValue.followingUIDs] as? [String] ?? []
-        let photoURL = json[SwirlUserValue.photoURL] as? String
-
-        return SwirlUser(uid: uid, username: username, biography: biography, postUIDs: postUIDs,
-                         followerUIDs: followerUIDs, followingUIDs: followingUIDs, photoURL: photoURL)
+    func encode() throws -> [String: Any]? {
+        let jsonData = try JSONEncoder().encode(self)
+        return try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any]
     }
 }
 
