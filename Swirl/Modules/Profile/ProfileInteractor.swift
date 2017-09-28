@@ -10,7 +10,7 @@ import Foundation
 
 protocol ProfileInteractable {
     func getCurrentUser(completion: @escaping ((SwirlUser?, Error?) -> Void))
-    func observePosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void))
+    func getPosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void))
     func openSettings()
 }
 
@@ -29,8 +29,8 @@ extension ProfileInteractor: ProfileInteractable {
         dataService.getCurrentUser(completion: completion)
     }
 
-    func observePosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void)) {
-        dataService.observePosts(for: swirlUser, completion: completion)
+    func getPosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void)) {
+        dataService.getPosts(for: swirlUser, completion: completion)
     }
 
     func openSettings() {

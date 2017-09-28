@@ -26,11 +26,7 @@ final class ProfileViewController: UIViewController {
         super.viewWillAppear(animated)
         setupCollectionView()
         setupNavBar()
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        loadCurrentUser()
+        observeProfile()
     }
 }
 
@@ -77,7 +73,7 @@ fileprivate extension ProfileViewController {
         adapter.dataSource = self
     }
 
-    func loadCurrentUser() {
+    func observeProfile() {
         presenter.getCurrentUser { [weak self] swirlUser, error in
             if let error = error {
                 print(error); return
@@ -96,7 +92,7 @@ fileprivate extension ProfileViewController {
     }
 
     func loadPosts(for swirlUser: SwirlUser) {
-        presenter.observePosts(for: swirlUser) { [weak self] posts, error in
+        presenter.getPosts(for: swirlUser) { [weak self] posts, error in
             if let error = error {
                 print(error); return
             } else {
