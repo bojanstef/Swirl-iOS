@@ -14,6 +14,7 @@ import FBSDKLoginKit
 private enum APIError: Error {
     case noUser
     case noDownloadURL
+    case noPosts
 }
 
 private enum ContentType: String {
@@ -30,7 +31,7 @@ private struct DatabaseNodes {
 }
 
 private struct StorageNodes {
-    static let allPosts = "allPosts"
+    static let videos = "videos"
 }
 
 final class DataService {
@@ -83,13 +84,14 @@ extension DataService: AuthDataServiceable {
 }
 
 extension DataService: ProfileDataServiceable {
-    // ISSUE: - https://github.com/bojanstef/Swirl-iOS/issues/6
-    func observePosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void)) {
+    func getPosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void)) {
         let ref = databaseReference.child(DatabaseNodes.posts).child(swirlUser.uid)
-        ref.observeSingleEvent(of: .value, with: { snapshot in
-            guard let dict = snapshot.toJSON else { completion([], APIError.noUser); return }
-            print(dict)
-            completion([], nil)
+        ref.observeSingleEvent(of: .value, with: { snapshots in
+            let posts: [Post] = snapshots.children.allObjects.flatMap { snapshot in
+                guard let snapshot = snapshot as? DataSnapshot else { return nil }
+                return Post.toValue(from: snapshot.toJSON)
+            }
+            completion(posts, nil)
         })
     }
 }
@@ -98,23 +100,18 @@ extension DataService: SubmitPostDataServiceable {
     func submitPost(_ videoURL: URL, title: String, completion: @escaping ((Error?) -> Void)) {
         guard let userUID = Auth.auth().currentUser?.uid else { completion(APIError.noUser); return }
         let postUID = UUID().uuidString
-        do {
-            let videoData = try Data(contentsOf: videoURL, options: .mappedIfSafe)
-            let ref = storageReference.child(StorageNodes.allPosts).child(postUID)
-            ref.putData(videoData, metadata: createMetadata(contentType: .video)) { [weak self] metadata, error in
-                if let error = error {
-                    completion(error)
-                } else {
-                    guard let url = metadata?.downloadURL()?.absoluteString else {
-                        completion(APIError.noDownloadURL)
-                        return
-                    }
-                    let post = Post(uid: postUID, url: url, ownerUID: userUID, title: title)
-                    self?.savePost(post, completion: completion)
+        let ref = storageReference.child(StorageNodes.videos).child(postUID)
+        ref.putFile(from: videoURL, metadata: createMetadata(contentType: .video)) { [weak self] metadata, error in
+            if let error = error {
+                completion(error)
+            } else {
+                guard let url = metadata?.downloadURL()?.absoluteString else {
+                    completion(APIError.noDownloadURL)
+                    return
                 }
+                let post = Post(uid: postUID, url: url, ownerUID: userUID, title: title)
+                self?.savePost(post, completion: completion)
             }
-        } catch {
-            completion(error)
         }
     }
 }
@@ -157,7 +154,7 @@ fileprivate extension DataService {
     }
 
     func savePost(_ post: Post, completion: @escaping ((Error?) -> Void)) {
-        let ref = databaseReference.child(DatabaseNodes.posts).child(post.uid)
+        let ref = databaseReference.child(DatabaseNodes.posts).child(post.ownerUID).child(post.uid)
         ref.setValue(Post.toJSON(from: post)) { [weak self] error, _ in
             if let error = error {
                 completion(error)

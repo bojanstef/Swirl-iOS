@@ -10,5 +10,5 @@ import Foundation
 
 protocol ProfileDataServiceable {
     func getCurrentUser(completion: @escaping ((SwirlUser?, Error?) -> Void))
-    func observePosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void))
+    func getPosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void))
 }

@@ -10,7 +10,7 @@ import Foundation
 
 protocol ProfilePresentable {
     func getCurrentUser(completion: @escaping ((SwirlUser?, Error?) -> Void))
-    func observePosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void))
+    func getPosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void))
     func openSettings()
 }
 
@@ -27,8 +27,8 @@ extension ProfilePresenter: ProfilePresentable {
         interactor.getCurrentUser(completion: completion)
     }
 
-    func observePosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void)) {
-        interactor.observePosts(for: swirlUser, completion: completion)
+    func getPosts(for swirlUser: SwirlUser, completion: @escaping (([Post], Error?) -> Void)) {
+        interactor.getPosts(for: swirlUser, completion: completion)
     }
 
     func openSettings() {
