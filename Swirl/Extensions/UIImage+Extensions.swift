@@ -21,6 +21,8 @@ extension UIImage {
         case settings
         case undoButton
         case flipCamera
+        case mute
+        case volume
     }
 
     convenience init?(asset: AssetIdentifier) {

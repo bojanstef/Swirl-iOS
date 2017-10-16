@@ -9,7 +9,7 @@
 import IGListKit
 
 private struct Constants {
-    static let cellHeight: CGFloat = 64
+    static let spaceBetweenCells: CGFloat = 2
     static let headerHeight: CGFloat = 256 + 44 + 64
 }
 
@@ -21,6 +21,8 @@ final class ProfileSectionController: ListSectionController {
         self.delegate = delegate
         super.init()
         supplementaryViewSource = self
+        minimumLineSpacing = Constants.spaceBetweenCells
+        minimumInteritemSpacing = Constants.spaceBetweenCells
     }
 
     override func numberOfItems() -> Int {
@@ -29,8 +31,9 @@ final class ProfileSectionController: ListSectionController {
     }
 
     override func sizeForItem(at index: Int) -> CGSize {
-        guard let width = collectionContext?.containerSize.width else { return .zero }
-        return CGSize(width: width, height: Constants.cellHeight)
+        guard let containerWidth = collectionContext?.containerSize.width else { return .zero }
+        let squareSize = (containerWidth / 3) - Constants.spaceBetweenCells
+        return CGSize(width: squareSize, height: squareSize)
     }
 
     override func cellForItem(at index: Int) -> UICollectionViewCell {
@@ -44,6 +47,10 @@ final class ProfileSectionController: ListSectionController {
 
     override func didUpdate(to object: Any) {
         profile = object as? Profile
+    }
+
+    override func didSelectItem(at index: Int) {
+        print(#function, profile?.posts[index].title as Any)
     }
 }
 
