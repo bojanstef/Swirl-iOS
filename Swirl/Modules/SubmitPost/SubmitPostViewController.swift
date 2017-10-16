@@ -30,7 +30,7 @@ final class SubmitPostViewController: UIViewController {
     override var prefersStatusBarHidden: Bool { return true }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        videoPlayerView.setVideoURL(videoURL)
+        videoPlayerView.setup(videoURL, isMuted: false)
         postTitleView.delegate = self
     }
 

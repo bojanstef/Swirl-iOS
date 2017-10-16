@@ -10,17 +10,19 @@ import UIKit
 import AVFoundation
 
 private struct Constants {
-    static let viewCornerRadius: CGFloat = 10
-    static let shadowOpacity: Float = 0.8
-    static let alphaValue: CGFloat = 0.8
+    static let seeThroughBlack = UIColor(white: 0, alpha: 0.25)
+    static let viewCornerRadius: CGFloat = 6
+    static let viewEdgeInsets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
 }
 
 final class VideoPlayerView: UIView {
     fileprivate var player: AVPlayer?
     fileprivate var videoURL: URL? { didSet { setupVideoPlayer() } }
+    fileprivate var isMuted = true
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        loadNib { $0.backgroundColor = .clear }
         setupLooping()
     }
 
@@ -30,8 +32,9 @@ final class VideoPlayerView: UIView {
         )
     }
 
-    func setVideoURL(_ videoURL: URL) {
+    func setup(_ videoURL: URL, isMuted: Bool) {
         self.videoURL = videoURL
+        self.isMuted = isMuted
     }
 }
 
@@ -51,7 +54,8 @@ fileprivate extension VideoPlayerView {
         guard let videoURL = videoURL else { return }
         player = AVPlayer(url: videoURL)
         let playerLayer = createPlayerLayer(with: player)
-        layer.addSublayer(playerLayer)
+        layer.insertSublayer(playerLayer, at: 0)
+        player?.isMuted = isMuted
         player?.play()
     }
 

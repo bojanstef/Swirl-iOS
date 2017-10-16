@@ -13,7 +13,7 @@ final class ProfileViewController: UIViewController {
     fileprivate let presenter: ProfilePresentable
     fileprivate var profile = Profile()
     fileprivate lazy var adapter: ListAdapter = {
-        return ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 1)
+        return ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 3)
     }()
 
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
